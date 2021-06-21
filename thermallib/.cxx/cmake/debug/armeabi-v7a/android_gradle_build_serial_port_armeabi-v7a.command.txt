@@ -1,0 +1,7 @@
+Executable : E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+E:\WORK_CODE\Android\studio_workspace\WashingPlayer\washingZ_svn\serialport\.cxx\cmake\debug\armeabi-v7a
+serial_port
+jvmArgs : 
+

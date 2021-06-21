@@ -1,0 +1,230 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 21 min SDK version: armeabi-v7a",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Trying to locate CMake in local SDK repository.",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "CMake \u00273.6.0\u0027 found in SDK did not match requested version \u00273.10.2\u0027.",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\.cxx\\cmake\\debug\\armeabi-v7a\\android_gradle_build.json due to:",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\.cxx\\cmake\\debug\\armeabi-v7a\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\.cxx\\cmake\\debug\\armeabi-v7a\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe\narguments : \n-HE:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DCMAKE_TOOLCHAIN_FILE\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_NDK\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\n-DANDROID_PLATFORM\u003dandroid-21\n-DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a\n-DCMAKE_ANDROID_NDK\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\n-DCMAKE_MAKE_PROGRAM\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d21\n-BE:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\.cxx\\cmake\\debug\\armeabi-v7a\n-GNinja\njvmArgs : \n\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ/14RsWithTP/jni\",\n  \"buildDirectory\": \"E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ/14RsWithTP/.cxx/cmake/debug/armeabi-v7a\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_BUILD_TYPE\\u003dDebug\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk-bundle\\\\build\\\\cmake\\\\android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003darmeabi-v7a\",\n    \"-DANDROID_NDK\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk-bundle\",\n    \"-DANDROID_PLATFORM\\u003dandroid-21\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003darmeabi-v7a\",\n    \"-DCMAKE_ANDROID_NDK\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk-bundle\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003dE:\\\\WORK_CODE\\\\Android\\\\studio_workspace\\\\WashingPlayer\\\\washingZ\\\\14RsWithTP\\\\build\\\\intermediates\\\\cmake\\\\debug\\\\obj\\\\armeabi-v7a\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\cmake\\\\3.10.2.4988404\\\\bin\\\\ninja.exe\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d21\"\n  ]\n}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":33,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compiler ABI info",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":65,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info - done\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compiler ABI info - done",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compile features",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":96,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":126,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":155,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":184,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features - done\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compile features - done",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"ANDROID_ABI\u003darmeabi-v7a\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "ANDROID_ABI\u003darmeabi-v7a",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Error at CMakeLists.txt:12 (find_package):\\n  By not providing \\\"FindOpenCV.cmake\\\" in CMAKE_MODULE_PATH this project has\\n  asked CMake to find a package configuration file provided by \\\"OpenCV\\\", but\\n  CMake did not find one.\\n\\n  Could not find a package configuration file provided by \\\"OpenCV\\\" with any\\n  of the following names:\\n\\n    OpenCVConfig.cmake\\n    opencv-config.cmake\\n\\n  Add the installation prefix of \\\"OpenCV\\\" to CMAKE_PREFIX_PATH or set\\n  \\\"OpenCV_DIR\\\" to a directory containing one of the above files.  If \\\"OpenCV\\\"\\n  provides a separate development package or SDK, be sure it has been\\n  installed.\\n\\n\",\"title\":\"Error\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  }
+]

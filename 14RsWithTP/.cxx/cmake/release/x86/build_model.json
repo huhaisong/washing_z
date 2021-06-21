@@ -1,0 +1,225 @@
+{
+  "abi": "X86",
+  "abiPlatformVersion": 21,
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "cmake": {
+    "cmakeArtifactsBaseFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86",
+    "cmakeServerLogFile": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cxx\\release\\x86",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
+      ],
+      "buildRoot": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86",
+      "cmakeToolchain": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-21"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\build\\intermediates\\cmake\\release\\obj\\x86"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "21"
+        },
+        {
+          "name": "OpenCV_DIR",
+          "value": "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk/native/jni"
+        },
+        {
+          "name": "ANDROID_TOOLCHAIN",
+          "value": "clang"
+        },
+        {
+          "name": "ANDROID_STL",
+          "value": "c++_shared"
+        }
+      ]
+    }
+  },
+  "cxxBuildFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86",
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DOpenCV_DIR\u003dE:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk/native/jni",
+      "-DANDROID_TOOLCHAIN\u003dclang",
+      "-DANDROID_STL\u003dc++_shared"
+    ],
+    "buildTargetSet": [
+      "detection_based_tracker"
+    ],
+    "cFlagsList": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "cppFlagsList": [],
+    "isDebuggableEnabled": false,
+    "module": {
+      "buildSystem": "CMAKE",
+      "cmake": {
+        "cmakeExe": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+      },
+      "cmakeToolchainFile": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx",
+      "gradleModulePathName": ":14RsWithTP",
+      "intermediatesFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\build\\intermediates",
+      "makeFile": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+      "moduleBuildFile": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\build.gradle",
+      "moduleRootFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP",
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkFolder": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle",
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 28,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28
+        }
+      },
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkVersion": "18.1.5063045",
+      "project": {
+        "compilerSettingsCacheFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\.cxx",
+        "cxxFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\.cxx",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "rootBuildGradleFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn",
+        "sdkFolder": "E:\\WORK_CODE\\Android\\android_studioSDK"
+      },
+      "splitsAbiFilterSet": [],
+      "stlSharedObjectMap": {
+        "GNUSTL_SHARED": {
+          "ARMEABI_V7A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\armeabi-v7a\\libgnustl_shared.so",
+          "ARM64_V8A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\arm64-v8a\\libgnustl_shared.so",
+          "X86": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\x86\\libgnustl_shared.so",
+          "X86_64": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\x86_64\\libgnustl_shared.so"
+        },
+        "GNUSTL_STATIC": {},
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\libs\\armeabi-v7a\\libc++_shared.so",
+          "ARM64_V8A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\libs\\arm64-v8a\\libc++_shared.so",
+          "X86": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\libs\\x86\\libc++_shared.so",
+          "X86_64": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\libs\\x86_64\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "STLPORT_SHARED": {
+          "ARMEABI_V7A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\stlport\\libs\\armeabi-v7a\\libstlport_shared.so",
+          "ARM64_V8A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\stlport\\libs\\arm64-v8a\\libstlport_shared.so",
+          "X86": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\stlport\\libs\\x86\\libstlport_shared.so",
+          "X86_64": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\sources\\cxx-stl\\stlport\\libs\\x86_64\\libstlport_shared.so"
+        },
+        "STLPORT_STATIC": {},
+        "SYSTEM": {}
+      }
+    },
+    "objFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\build\\intermediates\\cmake\\release\\obj",
+    "variantName": "release",
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ]
+  }
+}

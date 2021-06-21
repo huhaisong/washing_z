@@ -1,0 +1,7 @@
+Executable : E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+E:\WORK_CODE\Android\studio_workspace\WashingPlayer\washingPlayer_svn\14RsWithTP\.cxx\cmake\debug\x86_64
+detection_based_tracker
+jvmArgs : 
+

@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "serial_port-Release-x86_64": {
+      "artifactName": "serial_port",
+      "buildCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86_64\" serial_port",
+      "abi": "x86_64",
+      "output": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libserial_port.so"
+    }
+  }
+}

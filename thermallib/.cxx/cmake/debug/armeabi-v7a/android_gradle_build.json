@@ -1,0 +1,42 @@
+{
+  "stringTable": {
+    "0": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/.cxx/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi19 --gcc-toolchain=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot -Dserial_port_EXPORTS -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "serial_port-Debug-armeabi-v7a": {
+      "buildCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\armeabi-v7a\" serial_port",
+      "buildType": "debug",
+      "toolchain": "1320641182",
+      "abi": "armeabi-v7a",
+      "artifactName": "serial_port",
+      "files": [
+        {
+          "src": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\src\\main\\cpp\\SerialPort.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libserial_port.so"
+    }
+  },
+  "toolchains": {
+    "1320641182": {
+      "cCompilerExecutable": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

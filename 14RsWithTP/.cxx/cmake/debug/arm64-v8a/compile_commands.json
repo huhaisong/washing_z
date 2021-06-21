@@ -1,0 +1,7 @@
+[
+{
+  "directory": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/.cxx/cmake/debug/arm64-v8a",
+  "command": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot  -Ddetection_based_tracker_EXPORTS -IE:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/jni -isystem E:/WORK_CODE/Android/opencv_sdk-master/sdk/native/jni/include -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sources/cxx-stl/llvm-libc++/include -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sources/cxx-stl/llvm-libc++abi/include  -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot/usr/include/aarch64-linux-android -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11  -O0 -fno-limit-debug-info  -fPIC   -std=gnu++11 -o CMakeFiles\\detection_based_tracker.dir\\DetectionBasedTracker_jni.cpp.o -c E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\DetectionBasedTracker_jni.cpp",
+  "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\DetectionBasedTracker_jni.cpp"
+}
+]

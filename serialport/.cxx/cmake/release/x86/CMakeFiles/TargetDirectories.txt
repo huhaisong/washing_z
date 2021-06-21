@@ -1,0 +1,3 @@
+D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir
+D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86/CMakeFiles/serial_port.dir
+D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir

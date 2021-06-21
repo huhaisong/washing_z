@@ -1,0 +1,24 @@
+{
+  "buildFiles": [
+    "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk\\native\\jni\\abi-x86_64\\OpenCVConfig.cmake",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk\\native\\jni\\abi-x86_64\\OpenCVModules.cmake",
+    "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk\\native\\jni\\OpenCVConfig.cmake",
+    "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk\\native\\jni\\abi-x86_64\\OpenCVModules-release.cmake",
+    "E:\\WORK_CODE\\Android\\opencv_sdk-master\\sdk\\native\\jni\\OpenCVConfig-version.cmake",
+    "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "detection_based_tracker-Release-x86_64": {
+      "artifactName": "detection_based_tracker",
+      "buildCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\release\\x86_64\" detection_based_tracker",
+      "abi": "x86_64",
+      "output": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libdetection_based_tracker.so"
+    }
+  }
+}

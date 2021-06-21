@@ -1,0 +1,14 @@
+# ninja log v5
+1	3348	616398973	CMakeFiles/detection_based_tracker.dir/DetectionBasedTracker_jni.cpp.o	758a67bd4a57a2c3
+3350	6104	616398976	E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/build/intermediates/cmake/debug/obj/x86_64/libdetection_based_tracker.so	3c4fc62e103495a5
+1	42	0	clean	51df8a96a8f368df
+2	1056	616400342	CMakeFiles/detection_based_tracker.dir/DetectionBasedTracker_jni.cpp.o	758a67bd4a57a2c3
+1056	5331	616400346	E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/build/intermediates/cmake/debug/obj/x86_64/libdetection_based_tracker.so	3c4fc62e103495a5
+1	91	0	clean	51df8a96a8f368df
+3	1179	620557843	CMakeFiles/detection_based_tracker.dir/DetectionBasedTracker_jni.cpp.o	758a67bd4a57a2c3
+1179	2731	620557845	E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/build/intermediates/cmake/debug/obj/x86_64/libdetection_based_tracker.so	3c4fc62e103495a5
+0	21	0	clean	51df8a96a8f368df
+3	1811	620922364	CMakeFiles/detection_based_tracker.dir/DetectionBasedTracker_jni.cpp.o	758a67bd4a57a2c3
+1811	2928	620922366	E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/build/intermediates/cmake/debug/obj/x86_64/libdetection_based_tracker.so	3c4fc62e103495a5
+2	1332	625827247	CMakeFiles/detection_based_tracker.dir/DetectionBasedTracker_jni.cpp.o	758a67bd4a57a2c3
+1332	2231	625827248	E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingPlayer_svn/14RsWithTP/build/intermediates/cmake/debug/obj/x86_64/libdetection_based_tracker.so	3c4fc62e103495a5

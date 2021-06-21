@@ -1,0 +1,42 @@
+{
+  "stringTable": {
+    "0": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/.cxx/cmake/debug/x86_64",
+    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/x86_64-4.9/prebuilt/windows-x86_64 --sysroot=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot -Dserial_port_EXPORTS -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot/usr/include/x86_64-linux-android -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "serial_port-Debug-x86_64": {
+      "buildCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" serial_port",
+      "buildType": "debug",
+      "toolchain": "1320641182",
+      "abi": "x86_64",
+      "artifactName": "serial_port",
+      "files": [
+        {
+          "src": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\src\\main\\cpp\\SerialPort.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libserial_port.so"
+    }
+  },
+  "toolchains": {
+    "1320641182": {
+      "cCompilerExecutable": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

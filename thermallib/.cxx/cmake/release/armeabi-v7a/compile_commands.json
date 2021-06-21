@@ -1,0 +1,7 @@
+[
+{
+  "directory": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/.cxx/cmake/release/armeabi-v7a",
+  "command": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi19 --gcc-toolchain=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot -Dserial_port_EXPORTS  -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\serial_port.dir\\src\\main\\cpp\\SerialPort.c.o   -c E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\src\\main\\cpp\\SerialPort.c",
+  "file": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/src/main/cpp/SerialPort.c"
+}
+]

@@ -1,0 +1,21 @@
+# ninja log v5
+32	2729	631790948	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	6ddf5dd808bf657b
+2730	4872	631790950	../../../../build/intermediates/cmake/debug/obj/x86_64/libserial_port.so	ce271ec660e8eb9e
+0	20	0	clean	51df8a96a8f368df
+0	17	0	clean	51df8a96a8f368df
+0	16	0	clean	51df8a96a8f368df
+0	17	0	clean	51df8a96a8f368df
+0	21	0	clean	51df8a96a8f368df
+27	1390	632510496	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	6ddf5dd808bf657b
+1390	2012	632510497	../../../../build/intermediates/cmake/debug/obj/x86_64/libserial_port.so	ce271ec660e8eb9e
+0	17	0	clean	51df8a96a8f368df
+0	19	0	clean	51df8a96a8f368df
+2	191	632511048	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	6ddf5dd808bf657b
+191	489	632511049	../../../../build/intermediates/cmake/debug/obj/x86_64/libserial_port.so	ce271ec660e8eb9e
+1	19	0	clean	51df8a96a8f368df
+0	18	0	clean	51df8a96a8f368df
+46	333	633456071	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	6ddf5dd808bf657b
+334	1299	633456072	../../../../build/intermediates/cmake/debug/obj/x86_64/libserial_port.so	ce271ec660e8eb9e
+0	24	0	clean	51df8a96a8f368df
+2	164	633456151	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	6ddf5dd808bf657b
+164	347	633456151	../../../../build/intermediates/cmake/debug/obj/x86_64/libserial_port.so	ce271ec660e8eb9e

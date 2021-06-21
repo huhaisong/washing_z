@@ -1,0 +1,2 @@
+ninja: Entering directory `E:\WORK_CODE\Android\studio_workspace\WashingPlayer\washingPlayer_svn\14RsWithTP\.cxx\cmake\debug\x86_64'
+ninja: no work to do.

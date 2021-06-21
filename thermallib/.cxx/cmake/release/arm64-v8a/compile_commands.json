@@ -1,0 +1,7 @@
+[
+{
+  "directory": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/.cxx/cmake/release/arm64-v8a",
+  "command": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=aarch64-none-linux-android21 --gcc-toolchain=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot -Dserial_port_EXPORTS  -isystem E:/WORK_CODE/Android/android_studioSDK/ndk-bundle/sysroot/usr/include/aarch64-linux-android -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles\\serial_port.dir\\src\\main\\cpp\\SerialPort.c.o   -c E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingZ_svn\\serialport\\src\\main\\cpp\\SerialPort.c",
+  "file": "E:/WORK_CODE/Android/studio_workspace/WashingPlayer/washingZ_svn/serialport/src/main/cpp/SerialPort.c"
+}
+]

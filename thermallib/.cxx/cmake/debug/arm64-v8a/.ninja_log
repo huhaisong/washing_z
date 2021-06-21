@@ -1,0 +1,21 @@
+# ninja log v5
+35	4030	631790943	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	d0b625e1795eeefd
+4031	5024	631790944	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserial_port.so	e0c40f485ddff35a
+0	19	0	clean	51df8a96a8f368df
+1	24	0	clean	51df8a96a8f368df
+0	71	0	clean	51df8a96a8f368df
+0	19	0	clean	51df8a96a8f368df
+0	19	0	clean	51df8a96a8f368df
+5	294	632510493	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	d0b625e1795eeefd
+294	1083	632510494	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserial_port.so	e0c40f485ddff35a
+0	18	0	clean	51df8a96a8f368df
+1	20	0	clean	51df8a96a8f368df
+2	224	632511047	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	d0b625e1795eeefd
+224	548	632511047	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserial_port.so	e0c40f485ddff35a
+1	22	0	clean	51df8a96a8f368df
+0	17	0	clean	51df8a96a8f368df
+29	229	633456069	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	d0b625e1795eeefd
+229	565	633456070	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserial_port.so	e0c40f485ddff35a
+0	37	0	clean	51df8a96a8f368df
+2	185	633456150	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	d0b625e1795eeefd
+185	382	633456150	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserial_port.so	e0c40f485ddff35a

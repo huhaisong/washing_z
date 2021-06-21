@@ -1,0 +1,26 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 21 min SDK version: x86_64",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON \u0027E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\.cxx\\cmake\\debug\\x86_64\\android_gradle_build.json\u0027 was up-to-date",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed without problems",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\WashingPlayer\\washingPlayer_svn\\14RsWithTP\\jni\\CMakeLists.txt",
+    "tag": "debug|x86_64"
+  }
+]
