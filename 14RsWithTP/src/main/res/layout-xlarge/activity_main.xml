@@ -88,6 +88,14 @@
         android:layout_height="match_parent" />
 
     <View
+        android:id="@+id/red_stroke"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_red_stroke"
+        android:visibility="gone" />
+
+
+    <View
         android:id="@+id/temp_stroke"
         android:layout_width="350dp"
         android:layout_height="350dp"
