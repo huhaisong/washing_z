@@ -27,6 +27,7 @@ import com.example.hu.mediaplayerapk.util.RestartAlarmWatcher;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import static com.example.hu.mediaplayerapk.application.MyApplication.external_beacon_path;
 import static com.example.hu.mediaplayerapk.application.MyApplication.external_event_path;
@@ -127,16 +128,22 @@ public class WorkTimerService extends Service {
 
     private void checkAlarm() {
         if (SPUtils.getInt(mContext, Config.IS_OPEN_ALARM_NOTICE, 0) == 1) {
-            long interval = (long) (SPUtils.getFloat(mContext, Config.ALARM_NOTICE_INTERVAL, 1f) * 60 * 1000);
+            long interval = (long) (SPUtils.getFloat(mContext, Config.ALARM_NOTICE_INTERVAL, 1f) *60 * 60 * 1000);
             Log.e(TAG, "interval: " + interval);
-            long nowTime = System.currentTimeMillis();
+
+            Calendar curCalendar = Calendar.getInstance();
+            curCalendar.setTimeZone(TimeZone.getDefault());
+            long nowTime = curCalendar.getTimeInMillis();
+
             Calendar beginCalendar = Calendar.getInstance();
+            beginCalendar.setTimeZone(TimeZone.getDefault());
             beginCalendar.setTimeInMillis(System.currentTimeMillis());
             beginCalendar.set(Calendar.HOUR_OF_DAY, SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_HOUR, 0));//有点奇怪
             beginCalendar.set(Calendar.MINUTE, SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_MINUTE, 0));
             beginCalendar.set(Calendar.SECOND, 0);
             long beginTime = beginCalendar.getTimeInMillis();
             Calendar endCalendar = Calendar.getInstance();
+            endCalendar.setTimeZone(TimeZone.getDefault());
             endCalendar.set(Calendar.HOUR_OF_DAY, SPUtils.getInt(mContext, Config.ALARM_NOTICE_END_TIME_HOUR, 0));//有点奇怪
             endCalendar.set(Calendar.MINUTE, SPUtils.getInt(mContext, Config.ALARM_NOTICE_END_TIME_MINUTE, 0));
             endCalendar.set(Calendar.SECOND, 0);
@@ -149,10 +156,11 @@ public class WorkTimerService extends Service {
 //            TimeUtil.showTime(beginTime, "beginTime");
 //            TimeUtil.showTime(endTime, "endTime");
 //            TimeUtil.showTime(nowTime, "nowTime");
-            for (int i = 0; (beginTime + interval * i) <= endTime + interval; i++) {
+            for (int i = 0; (beginTime + interval * i) <= (endTime ); i++) {
                 long stageTime = beginTime + interval * i;
 //                TimeUtil.showTime(stageTime, "stageTime");
-                if (nowTime <= (stageTime + 6000) && nowTime >= (stageTime - 6000)) {
+               // Log.d(TAG, " nowTime "+nowTime+ " stageTime "+stageTime +" Delta "+(stageTime - nowTime));
+                if ((nowTime <= (stageTime + 6000)) && (nowTime >= (stageTime - 6000))) {
                     mHandler.sendEmptyMessage(MESSAGE_WHAT_ALARM);
                     return;
                 }

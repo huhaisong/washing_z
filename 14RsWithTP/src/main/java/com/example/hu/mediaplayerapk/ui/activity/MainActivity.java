@@ -170,6 +170,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 }
             } else if (msg.what == MESSAGE_WHAT_ALARM) {
                 if (mainActivityPlayModel != null) {
+                    Log.d(TAG, "MESSAGE_WHAT_ALARM");
                     mainActivityPlayModel.noticeAlarm();
                 }
             }
@@ -454,6 +455,11 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         touchModel.onTouchEvent(event);
+
+        if(mainActivityPlayModel != null)
+        {
+            mainActivityPlayModel.cancelCurAlarm();
+        }
         return mGestureDetector.onTouchEvent(event) || super.onTouchEvent(event);
     }
 
@@ -561,11 +567,11 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 } else {
                     PopWashingChooseDialog(intentNo);
                 }*/
-                if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
+                /*if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else {
+                } else */{
                     PopTempCaptureActivity(intentNo, ID, gender);
 
                 }
@@ -681,6 +687,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         float CurTemp = 0;
         if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {
             prepareBeaconTagNo = intentNo;
+            Log.d(TAG, " tempWhiteView.setVisibility(View.VISIBLE);");
             tempWhiteView.setVisibility(View.VISIBLE);
         }
         //直接在此判断是播放长视频还是短视频

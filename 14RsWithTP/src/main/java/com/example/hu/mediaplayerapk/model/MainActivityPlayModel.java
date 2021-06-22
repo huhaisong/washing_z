@@ -57,6 +57,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -92,8 +93,10 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 
     private static final int PLAY_NEXT_MESSAGE = 7777;
     private static final int PLAY_VIDEO_MESSAGE = 8888;
-    private static final int REMOVE_RED_STROKE = 2222;
+    //private static final int REMOVE_RED_STROKE = 2222;
     private static final int CHECK_EXTERNAL_SDCARD = 1111;
+
+    private AlarmWarning mAlarmWarning;
 
     private int[] horizontalItemId = {
             R.id.image_horizontal_cross_item1, R.id.image_horizontal_cross_item2, R.id.image_horizontal_cross_item3, R.id.image_horizontal_cross_item4, R.id.image_horizontal_cross_item5, R.id.image_horizontal_cross_item6, R.id.image_horizontal_cross_item7, R.id.image_horizontal_cross_item8, R.id.image_horizontal_cross_item9, R.id.image_horizontal_cross_item10,
@@ -133,11 +136,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
                 case PLAY_NEXT_MESSAGE:
                     playNext(1);
                     break;
-                case REMOVE_RED_STROKE:
-                    if (redStrokeView != null) {
-                        redStrokeView.setVisibility(View.GONE);
-                    }
-                    break;
+
                 case PLAY_VIDEO_MESSAGE:
                     if (isSurfaceViewCreated) {
                         mHandler.removeMessages(PLAY_VIDEO_MESSAGE);
@@ -188,11 +187,16 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
     public void noticeAlarm() {
         Log.e(TAG, "---------------------receive noticeAlarm: ");
         if (isPlaying() && !isEVENT) {
-            if (redStrokeView != null) {
-                redStrokeView.setVisibility(View.VISIBLE);
-                mHandler.sendEmptyMessageDelayed(REMOVE_RED_STROKE,
-                        SPUtils.getInt(mContext, Config.ALARM_NOTICE_VALID_TIME, 1) * 60 * 1000);
+            if (mAlarmWarning != null) {
+                mAlarmWarning.startAlarmWarning();
             }
+        }
+    }
+
+    public void cancelCurAlarm()
+    {
+        if (mAlarmWarning != null ) {
+            mAlarmWarning.stopAlarmWarning();
         }
     }
 
@@ -360,6 +364,8 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
         if (animationTime == -1) {
             animationTime = 5;
         }
+
+        mAlarmWarning = new AlarmWarning(mContext, redStrokeView);
     }
 
     public String startPlay() {
@@ -1123,7 +1129,6 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
         }
     }
     /*动画效果*/
-
     private void playVideo() {
         if (imageLinearLayout.getVisibility() != View.GONE) {
             imageLinearLayout.removeAllViews();
@@ -1132,8 +1137,10 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
         if (mSurfaceView.getVisibility() != View.VISIBLE) {
             mSurfaceView.setVisibility(View.VISIBLE);
         }
-        if (redStrokeView != null && isEVENT)
-            redStrokeView.setVisibility(View.GONE);
+        if (mAlarmWarning != null && isEVENT)
+        {
+            mAlarmWarning.stopAlarmWarning();
+        }
         mHandler.sendEmptyMessage(PLAY_VIDEO_MESSAGE);
     }
 
@@ -1153,7 +1160,10 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
         imageLinearLayout.setVisibility(View.GONE);
 
         mSurfaceView.setVisibility(View.GONE);
-
+        if(mAlarmWarning != null) {
+            mAlarmWarning.stopAlarmWarning();
+            //mAlarmWarning = null;
+        }
     }
 
     public void stop() {
@@ -1203,14 +1213,19 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
     private void checkAlarm() {
         if (SPUtils.getInt(mContext, Config.IS_OPEN_ALARM_NOTICE, 0) == 1) {
             long interval = (long) (SPUtils.getFloat(mContext, Config.ALARM_NOTICE_INTERVAL, 1f) * 60 * 1000);
-            long nowTime = System.currentTimeMillis();
+            Calendar curCalendar = Calendar.getInstance();
+            curCalendar.setTimeZone(TimeZone.getDefault());
+            long nowTime = curCalendar.getTimeInMillis();
+
             Calendar beginCalendar = Calendar.getInstance();
+            beginCalendar.setTimeZone(TimeZone.getDefault());
             beginCalendar.setTimeInMillis(System.currentTimeMillis());
             beginCalendar.set(Calendar.HOUR_OF_DAY, SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_HOUR, 0));//有点奇怪
             beginCalendar.set(Calendar.MINUTE, SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_MINUTE, 0));
             beginCalendar.set(Calendar.SECOND, 0);
             long beginTime = beginCalendar.getTimeInMillis();
             Calendar endCalendar = Calendar.getInstance();
+            endCalendar.setTimeZone(TimeZone.getDefault());
             endCalendar.set(Calendar.HOUR_OF_DAY, SPUtils.getInt(mContext, Config.ALARM_NOTICE_END_TIME_HOUR, 0));//有点奇怪
             endCalendar.set(Calendar.MINUTE, SPUtils.getInt(mContext, Config.ALARM_NOTICE_END_TIME_MINUTE, 0));
             endCalendar.set(Calendar.SECOND, 0);
@@ -1225,8 +1240,8 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
                     return;
                 }
             }
-            if (redStrokeView != null) {
-                redStrokeView.setVisibility(View.GONE);
+            if (mAlarmWarning != null) {
+                mAlarmWarning.stopAlarmWarning();
             }
         }
     }

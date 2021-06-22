@@ -121,7 +121,7 @@ public static int MALE = 1;
 
     public static final String CFGFaceShortVIDEOTime = "CFGFaceShortVIDEOTime";
     public static final long DefFaceShortVideoTime = (long)3.0*60*60*1000L;  //unit:milliseconds
-    public static final long MinFaceShortVideoTime = (long)0.1*60*60*1000L;  //unit:milliseconds
+    public static final long MinFaceShortVideoTime = (long)(0.1*60*60*1000L);  //unit:milliseconds
 
     public static final String CFGFaceResumeTime = "CFGFaceResumeTime";
     public static final long DefFaceResumeTime = (long)(2*60*1000L);   //断点续播的时间
@@ -152,7 +152,7 @@ public static int MALE = 1;
     public static final String ALARM_NOTICE_START_TIME_MINUTE = "ALARM_NOTICE_START_TIME_MINUTE";
     public static final String ALARM_NOTICE_END_TIME_HOUR = "ALARM_NOTICE_END_TIME_HOUR";
     public static final String ALARM_NOTICE_END_TIME_MINUTE = "ALARM_NOTICE_END_TIME_MINUTE";
-    public static final String ALARM_NOTICE_INTERVAL = "ALARM_NOTICE_INTERVAL";
+    public static final String ALARM_NOTICE_INTERVAL = "ALARM_NOTICE_INTERVAL";  //unit: hour
     public static final String ALARM_NOTICE_VALID_TIME = "ALARM_NOTICE_VALID_TIME";
 
 }
