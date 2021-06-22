@@ -19,7 +19,9 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -29,6 +31,7 @@ import com.example.hu.mediaplayerapk.broadcast.HumanReceive;
 import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.dialog.ChooseDialog;
 import com.example.hu.mediaplayerapk.dialog.WashingChooseDialog;
+import com.example.hu.mediaplayerapk.emailUtil.mailSenderUtil;
 import com.example.hu.mediaplayerapk.model.DrawInfo;
 import com.example.hu.mediaplayerapk.model.MainActivityPlayModel;
 import com.example.hu.mediaplayerapk.model.MainGestureListener;
@@ -45,11 +48,13 @@ import com.example.hu.mediaplayerapk.util.DrawHelper;
 import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.Logger;
 import com.example.hu.mediaplayerapk.util.SPUtils;
+import com.example.hu.mediaplayerapk.util.TimeUtil;
 import com.example.hu.mediaplayerapk.util.face.FaceManagerUtil;
 import com.example.hu.mediaplayerapk.widget.FaceRectView;
 import com.rockchip.Gpio;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -82,6 +87,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private Context mContext;
     private WashingChooseDialog ChooseDialog;
     private FaceRectView faceRectView;
+    private View tempWhiteView;
 
     private void setScreenBrightnessOff() {
         Log.e(TAG, "setScreenBrightnessOff: ");
@@ -209,6 +215,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         mainGestureListener = new MainGestureListener(this, volumeAndLightPop);
         mGestureDetector = new GestureDetector(this, mainGestureListener);
         faceRectView = (FaceRectView) findViewById(R.id.face_rect_view);
+        tempWhiteView = findViewById(R.id.temp_stroke);
         touchModel = new TouchModel(this);
         IntentFilter bluetoothFilter = new IntentFilter();
         bluetoothFilter.addAction(BLUETOOTH_BROADCAST_NAME);
@@ -271,6 +278,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         isOnResume = true;
         mainActivityPlayModel.onResume();
 
+        if (tempWhiteView != null)
+            tempWhiteView.setVisibility(View.GONE);
         receiver = new HumanReceive();
         IntentFilter filter = new IntentFilter();
         filter.addAction(HumanReceive.MSG);
@@ -517,7 +526,6 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 beaconTagNo = intentNo;
                 mainActivityPlayModel.startPlayBeacon(false);
 
-
                 Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
             } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来没人，现在又有人了
                 if (rect != null) {
@@ -559,6 +567,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
                 } else {
                     PopTempCaptureActivity(intentNo, ID, gender);
+
                 }
                 if (rect != null) {
                     DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
@@ -571,6 +580,16 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private DrawHelper drawHelper;
 
     public void drawFace(DrawInfo info) {
+        Log.e(TAG, "drawFace: " + info.getRect().toString());
+        if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {//&&正中间的条件             tempWhiteView.setVisibility(View.GONE);
+            float CurTemp = ((MyApplication) mContext.getApplicationContext()).getCurTemp();
+            if (CurTemp >= SPUtils.getFloat(mContext, Config.CFGErrorTempCFG, Config.DefErrorTempValue)) {
+                mailSenderUtil.sendErrorReport(mContext, "\nDateTime: " + TimeUtil.getCurrentFormatTime() + "\nFace ID: " + info.getName() + "\nTemp: " + CurTemp, null);
+                Toast.makeText(mContext, "Exception Temperature Data detected, Please contact manager!\n", Toast.LENGTH_LONG).show();
+            }
+
+            // TODO: 2021/6/22 显示体温 一秒后消失  并设置体温，以便保存进数据库
+        }
         if (drawHelper == null) {
             drawHelper = new DrawHelper(640, 480, faceRectView.getWidth(), faceRectView.getHeight(), 0, Camera.CameraInfo.CAMERA_FACING_FRONT, false);
         }
@@ -657,25 +676,22 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     }
 
     private void PopTempCaptureActivity(int intentNo, String ID, String gender) {
-
+        float CurTemp = 0;
         if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {
-            unregisterHumanDetectingBroadcast();
             prepareBeaconTagNo = intentNo;
-            Intent myIntent = new Intent(MainActivity.this, TempActivity.class);
-            startActivity(myIntent);
-        } else {
-            //直接在此判断是播放长视频还是短视频
-            if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {
-                WashingSelected = WASHING_SELECTED_T70;
-            } else {
-                WashingSelected = WASHING_SELECTED_T40;
-            }
-            beaconTagNo = intentNo;
-            BeaconEventNo = (WashingSelected == WASHING_SELECTED_T70) ? -1 : 0;  //第一个文件是T70
-            WashingSelected = WASHING_SELECTED_NONE;
-            mainActivityPlayModel.startPlayBeacon(false);
-            Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
+            tempWhiteView.setVisibility(View.VISIBLE);
         }
+        //直接在此判断是播放长视频还是短视频
+        if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {
+            WashingSelected = WASHING_SELECTED_T70;
+        } else {
+            WashingSelected = WASHING_SELECTED_T40;
+        }
+        beaconTagNo = intentNo;
+        BeaconEventNo = (WashingSelected == WASHING_SELECTED_T70) ? -1 : 0;  //第一个文件是T70
+        WashingSelected = WASHING_SELECTED_NONE;
+        mainActivityPlayModel.startPlayBeacon(false);
+        Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, CurTemp);
     }
 
     private void PopWashingChooseDialog(int intentNo) {

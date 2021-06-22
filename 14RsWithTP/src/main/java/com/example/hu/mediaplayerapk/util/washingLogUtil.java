@@ -18,8 +18,7 @@ public class washingLogUtil {
 
     private static String TAG = "washingLogUtil";
 
-    public static ArrayList<WashingReportItem> buildAllReport()
-    {
+    public static ArrayList<WashingReportItem> buildAllReport() {
         String FolderPath;
         ArrayList<WashingReportItem> allReportList = new ArrayList<>();
         WashingReportItem oneIDReport;
@@ -48,8 +47,7 @@ public class washingLogUtil {
                 }
                 if (temp.isDirectory()) {
                     oneIDReport = buildSingleReport(file[i]);
-                    if(oneIDReport != null)
-                    {
+                    if (oneIDReport != null) {
                         allReportList.add(oneIDReport);
                     }
                 }
@@ -64,11 +62,12 @@ public class washingLogUtil {
     //reBuild washing Report Log
     //1.read all raw log files and build new report files
     //single report format: statis and raw log
-    private static WashingReportItem buildSingleReport(String ID)
-    {
+    private static WashingReportItem buildSingleReport(String ID) {
         boolean result = true;
-        WashingReportItem totalReport = new WashingReportItem(ID);
-        WashingReportItem singleDayReport ;//= new WashingReportItem(ID);
+        WashingReportItem totalReport = new WashingReportItem(0, 0, 0,
+                0, 0, 0, ID,
+                -1,0,0,0);
+        WashingReportItem singleDayReport;//= new WashingReportItem(ID);
         String FolderPath;
 
         Log.d(TAG, "buildSingleReport " + ID);
@@ -77,11 +76,11 @@ public class washingLogUtil {
         try {
             File oldfile = new File(FolderPath);
             if (!oldfile.exists()) {
-                Log.e(TAG,oldfile.getAbsolutePath()+" not exist");
+                Log.e(TAG, oldfile.getAbsolutePath() + " not exist");
                 return null;
             }
             if (!oldfile.canRead()) {
-                Log.e(TAG,oldfile.getAbsolutePath()+" cannot read");
+                Log.e(TAG, oldfile.getAbsolutePath() + " cannot read");
                 return null;
             }
             String[] file = oldfile.list();
@@ -99,7 +98,7 @@ public class washingLogUtil {
                 }
                 if (temp.isFile()) {
                     singleDayReport = readSingleWashingLog(ID, temp.getPath());
-                    if(singleDayReport != null) {
+                    if (singleDayReport != null) {
                         if ((totalReport.getTempValidCnt() + singleDayReport.getTempValidCnt()) > 0) {
                             totalReport.setAverageTemp((totalReport.getTempValidCnt() * totalReport.getAverageTemp() + singleDayReport.getTempValidCnt() * singleDayReport.getAverageTemp()) / (totalReport.getTempValidCnt() + singleDayReport.getTempValidCnt()));
                         }
@@ -107,13 +106,11 @@ public class washingLogUtil {
                         totalReport.setWashingEventCnt(totalReport.getWashingEventCnt() + singleDayReport.getWashingEventCnt());
                         totalReport.setMoveAwayCnt(totalReport.getMoveAwayCnt() + singleDayReport.getMoveAwayCnt());
                         totalReport.setTempErrorCnt(totalReport.getTempErrorCnt() + singleDayReport.getTempErrorCnt());
-                        if((totalReport.getGender() == -1)&&(singleDayReport.getGender() != -1))
-                        {
-                            totalReport.setGender(singleDayReport.getGender());
+                        if ((totalReport.getIsLadyOrMen() == -1) && (singleDayReport.getIsLadyOrMen() != -1)) {
+                            totalReport.setIsLadyOrMen(singleDayReport.getIsLadyOrMen());
                         }
 
-                        if((totalReport.getLastTemp() == 0)&&(singleDayReport.getLastTemp() != 0))
-                        {
+                        if ((totalReport.getLastTemp() == 0) && (singleDayReport.getLastTemp() != 0)) {
                             totalReport.setLastTemp(singleDayReport.getLastTemp());
                         }
                     }
@@ -134,7 +131,7 @@ public class washingLogUtil {
     public static WashingReportItem readSingleWashingLog(String ID, String path) {
         File file = new File(path);
         BufferedReader reader;
-        WashingReportItem item = new WashingReportItem(ID);
+        WashingReportItem item = new WashingReportItem(0, 0, 0, 0, 0, 0, ID, -1,0,0,0);
         int tmp;
         double tmpDouble;
         double totalTempValue = 0;
@@ -169,50 +166,41 @@ public class washingLogUtil {
             while (str != null) {
                 //日期，时间，性别,是否洗手事件，是否中途离开事件，是否体温异常事件,体温值（换行）
                 String[] strArray = str.split(",");
-                if(strArray.length == 7)
-                {
-                    try{
-                        if(strArray[2].equalsIgnoreCase("1.0"))
-                        {
-                            item.setGender(1);
-                        }
-                        else if(strArray[2].equalsIgnoreCase("-1.0"))
-                        {
-                            item.setGender(0);
+                if (strArray.length == 7) {
+                    try {
+                        if (strArray[2].equalsIgnoreCase("1.0")) {
+                            item.setIsLadyOrMen(1);
+                        } else if (strArray[2].equalsIgnoreCase("-1.0")) {
+                            item.setIsLadyOrMen(0);
                         }
                         tmp = Integer.valueOf(strArray[3]);
-                        if(tmp == 1) {
+                        if (tmp == 1) {
                             item.setWashingEventCnt(item.getWashingEventCnt() + 1);
                         }
 
                         tmp = Integer.valueOf(strArray[4]);
-                        if(tmp == 1) {
+                        if (tmp == 1) {
                             item.setMoveAwayCnt(item.getMoveAwayCnt() + 1);
                         }
 
                         tmp = Integer.valueOf(strArray[5]);
-                        if(tmp == 1) {
+                        if (tmp == 1) {
                             item.setTempErrorCnt(item.getTempErrorCnt() + 1);
                         }
 
                         tmpDouble = Double.valueOf(strArray[6]);
-                        if(tmpDouble != 0)
-                        {
-                            item.setTempValidCnt(item.getTempValidCnt()+1);
+                        if (tmpDouble != 0) {
+                            item.setTempValidCnt(item.getTempValidCnt() + 1);
                             totalTempValue += tmpDouble;
                             //if(lastTempValue == 0)
                             {
                                 lastTempValue = tmpDouble;
                             }
                         }
+                    } catch (java.lang.NumberFormatException e) {
+                        Log.e(TAG, "Parse Temp error " + e.toString());
                     }
-                    catch(java.lang.NumberFormatException e)
-                    {
-                        Log.e(TAG, "Parse Temp error "+e.toString());
-                    }
-                }
-                else
-                {
+                } else {
                     Log.e(TAG, "Read Log error " + str);
                 }
                 str = reader.readLine();
@@ -223,9 +211,8 @@ public class washingLogUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(item.getTempValidCnt() != 0)
-        {
-            item.setAverageTemp(totalTempValue/item.getTempValidCnt());
+        if (item.getTempValidCnt() != 0) {
+            item.setAverageTemp(totalTempValue / item.getTempValidCnt());
             item.setLastTemp(lastTempValue);
         }
 

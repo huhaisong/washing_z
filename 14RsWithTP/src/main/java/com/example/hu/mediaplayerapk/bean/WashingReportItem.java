@@ -7,37 +7,21 @@ import org.greenrobot.greendao.annotation.Generated;
 public class WashingReportItem {
 
     int washingEventCnt = 0; //洗手总次数
-    int moveAwayCnt = 0;     //终端次数
+    int moveAwayCnt = 0;     //是否中断
     int tempErrorCnt = 0;    //错误测温
     int tempValidCnt = 0;    //有效测温
     double averageTemp;      //平均体温
     double lastTemp;  //最后一次体温
     String FaceID;
-    int isLadyOrMen;  //-1:unknown: 1:lady, 0: men
+    int isLadyOrMen;  //男女 -1:unknown: 1:lady, 0: men
+    private int lastPlayNum;
+    private int lastPlayTime;
+    int time;
 
-    public WashingReportItem()
-    {
-        washingEventCnt = moveAwayCnt = tempErrorCnt = tempValidCnt =  0;
-        averageTemp = 0;
-        lastTemp = 0;
-        FaceID = "null";
-        isLadyOrMen = -1;
-        return;
-    }
-
-    public WashingReportItem(String ID)
-    {
-        washingEventCnt = moveAwayCnt = tempErrorCnt = tempValidCnt = 0;
-        averageTemp = 0;
-        lastTemp = 0;
-        FaceID = ID;
-        isLadyOrMen = -1;
-        return;
-    }
-
-    @Generated(hash = 1877529764)
-    public WashingReportItem(int washingEventCnt, int moveAwayCnt, int tempErrorCnt, int tempValidCnt, double averageTemp, double lastTemp, String FaceID,
-            int isLadyOrMen) {
+    @Generated(hash = 1594989526)
+    public WashingReportItem(int washingEventCnt, int moveAwayCnt, int tempErrorCnt,
+            int tempValidCnt, double averageTemp, double lastTemp, String FaceID,
+            int isLadyOrMen, int lastPlayNum, int lastPlayTime, int time) {
         this.washingEventCnt = washingEventCnt;
         this.moveAwayCnt = moveAwayCnt;
         this.tempErrorCnt = tempErrorCnt;
@@ -46,87 +30,69 @@ public class WashingReportItem {
         this.lastTemp = lastTemp;
         this.FaceID = FaceID;
         this.isLadyOrMen = isLadyOrMen;
+        this.lastPlayNum = lastPlayNum;
+        this.lastPlayTime = lastPlayTime;
+        this.time = time;
     }
 
-    public void setFaceID(String ID)
-    {
-        FaceID = ID;
-        return;
+    @Generated(hash = 1803537257)
+    public WashingReportItem() {
     }
 
-    public void setWashingEventCnt(int cnt)
-    {
-        washingEventCnt = cnt;
+    public int getWashingEventCnt() {
+        return this.washingEventCnt;
     }
 
-    public void setMoveAwayCnt(int cnt)
-    {
-        moveAwayCnt = cnt;
+    public void setWashingEventCnt(int washingEventCnt) {
+        this.washingEventCnt = washingEventCnt;
     }
 
-    public void setTempErrorCnt(int cnt)
-    {
-        tempErrorCnt = cnt;
+    public int getMoveAwayCnt() {
+        return this.moveAwayCnt;
     }
 
-    public void setTempValidCnt(int cnt)
-    {
-        tempValidCnt = cnt;
+    public void setMoveAwayCnt(int moveAwayCnt) {
+        this.moveAwayCnt = moveAwayCnt;
     }
 
-    public void setAverageTemp(double temp)
-    {
-        int tmp = (int)Math.round(temp*100.0);
-
-        averageTemp = tmp/100.0;
+    public int getTempErrorCnt() {
+        return this.tempErrorCnt;
     }
 
-    public void setLastTemp(double temp)
-    {
-        int tmp = (int)Math.round(temp*100.0);
-
-        lastTemp = tmp/100.0;
+    public void setTempErrorCnt(int tempErrorCnt) {
+        this.tempErrorCnt = tempErrorCnt;
     }
 
-    public int getWashingEventCnt()
-    {
-        return washingEventCnt;
+    public int getTempValidCnt() {
+        return this.tempValidCnt;
     }
 
-    public int getMoveAwayCnt()
-    {
-        return moveAwayCnt;
+    public void setTempValidCnt(int tempValidCnt) {
+        this.tempValidCnt = tempValidCnt;
     }
 
-    public int getTempErrorCnt()
-    {
-        return tempErrorCnt;
+    public double getAverageTemp() {
+        return this.averageTemp;
     }
 
-    public int getTempValidCnt()
-    {
-        return tempValidCnt;
+    public void setAverageTemp(double averageTemp) {
+        this.averageTemp = averageTemp;
     }
 
-    public String getFaceID()
-    {
-        return FaceID;
+    public double getLastTemp() {
+        return this.lastTemp;
     }
 
-    public double getAverageTemp()
-    {
-        return averageTemp;
+    public void setLastTemp(double lastTemp) {
+        this.lastTemp = lastTemp;
     }
 
-    public double getLastTemp() {return lastTemp;}
-    public int getGender(){return isLadyOrMen;}
-    public void setGender(int isLady){ isLadyOrMen = isLady;}
+    public String getFaceID() {
+        return this.FaceID;
+    }
 
-    public String toString()
-    {
-        String ret = "Face:" +FaceID+" WashingEvent:"+washingEventCnt+ " moveAway:"+ moveAwayCnt+ " tempError:"+ tempErrorCnt +" averageTemp: "+ averageTemp;
-
-        return ret;
+    public void setFaceID(String FaceID) {
+        this.FaceID = FaceID;
     }
 
     public int getIsLadyOrMen() {
@@ -137,4 +103,27 @@ public class WashingReportItem {
         this.isLadyOrMen = isLadyOrMen;
     }
 
+    public int getLastPlayNum() {
+        return this.lastPlayNum;
+    }
+
+    public void setLastPlayNum(int lastPlayNum) {
+        this.lastPlayNum = lastPlayNum;
+    }
+
+    public int getLastPlayTime() {
+        return this.lastPlayTime;
+    }
+
+    public void setLastPlayTime(int lastPlayTime) {
+        this.lastPlayTime = lastPlayTime;
+    }
+
+    public int getTime() {
+        return this.time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
 }

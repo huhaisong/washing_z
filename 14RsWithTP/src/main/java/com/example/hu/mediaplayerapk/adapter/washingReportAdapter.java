@@ -135,7 +135,7 @@ public class washingReportAdapter extends BaseAdapter {
                     holder.image.setImageURI(picUri);
                 }
                 else {
-                    if (item.getGender() == 1) {
+                    if (item.getIsLadyOrMen() == 1) {
 
 
                         holder.image.setImageBitmap(lady_pic);
