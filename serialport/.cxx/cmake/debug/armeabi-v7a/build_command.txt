@@ -1,19 +1,19 @@
-Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+Executable : E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
--HD:\workspace\demo\washingZ_svn\serialport
+-HE:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport
 -DCMAKE_BUILD_TYPE=Debug
--DCMAKE_TOOLCHAIN_FILE=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
+-DCMAKE_TOOLCHAIN_FILE=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
 -DANDROID_ABI=armeabi-v7a
--DANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DANDROID_NDK=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669
 -DANDROID_PLATFORM=android-19
 -DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
--DCMAKE_ANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DCMAKE_ANDROID_NDK=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\workspace\demo\washingZ_svn\serialport\build\intermediates\cmake\debug\obj\armeabi-v7a
--DCMAKE_MAKE_PROGRAM=C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\build\intermediates\cmake\debug\obj\armeabi-v7a
+-DCMAKE_MAKE_PROGRAM=E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=19
--BD:\workspace\demo\washingZ_svn\serialport\.cxx\cmake\debug\armeabi-v7a
+-BE:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\.cxx\cmake\debug\armeabi-v7a
 -GNinja
 jvmArgs : 
 

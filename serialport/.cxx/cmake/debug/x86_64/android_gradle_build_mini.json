@@ -1,19 +1,19 @@
 {
   "buildFiles": [
-    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
-    "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
-    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt"
   ],
   "cleanCommands": [
-    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" clean"
+    "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "serial_port-Debug-x86_64": {
       "artifactName": "serial_port",
-      "buildCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\" serial_port",
+      "buildCommand": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64\" serial_port",
       "abi": "x86_64",
-      "output": "D:\\workspace\\demo\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libserial_port.so"
+      "output": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libserial_port.so"
     }
   }
 }

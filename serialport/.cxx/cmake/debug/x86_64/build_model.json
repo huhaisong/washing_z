@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64",
-    "cmakeServerLogFile": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cxx\\debug\\x86_64",
+    "cmakeArtifactsBaseFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64",
+    "cmakeServerLogFile": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cxx\\debug\\x86_64",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,9 +15,9 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64",
-      "cmakeToolchain": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "buildRoot": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64",
+      "cmakeToolchain": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -25,7 +25,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -33,7 +33,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -45,7 +45,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -53,11 +53,11 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "D:\\workspace\\demo\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\debug\\obj\\x86_64"
+          "value": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build\\intermediates\\cmake\\debug\\obj\\x86_64"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -70,14 +70,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64",
+  "cxxBuildFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64",
   "info": {
     "abi": "X86_64",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\debug\\x86_64",
+  "originalCxxBuildFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\debug\\x86_64",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -88,24 +88,24 @@
     "module": {
       "buildSystem": "CMAKE",
       "cmake": {
-        "cmakeExe": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        "ninjaExe": "E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
-      "cmakeToolchainFile": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx",
+      "cmakeToolchainFile": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx",
       "gradleModulePathName": ":serialport",
-      "intermediatesFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\build\\intermediates",
-      "makeFile": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
-      "moduleBuildFile": "D:\\workspace\\demo\\washingZ_svn\\serialport\\build.gradle",
-      "moduleRootFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport",
+      "intermediatesFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build\\intermediates",
+      "makeFile": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+      "moduleBuildFile": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build.gradle",
+      "moduleRootFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
+      "ndkFolder": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -161,28 +161,28 @@
       ],
       "ndkVersion": "21.0.6113669",
       "project": {
-        "compilerSettingsCacheFolder": "D:\\workspace\\demo\\washingZ_svn\\.cxx",
-        "cxxFolder": "D:\\workspace\\demo\\washingZ_svn\\.cxx",
+        "compilerSettingsCacheFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\.cxx",
+        "cxxFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "D:\\workspace\\demo\\washingZ_svn",
-        "sdkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk"
+        "rootBuildGradleFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z",
+        "sdkFolder": "E:\\WORK_CODE\\Android\\android_studioSDK"
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "D:\\workspace\\demo\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",

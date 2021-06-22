@@ -1,7 +1,7 @@
-Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+Executable : E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\ninja.exe
 arguments : 
 -C
-D:\workspace\demo\washingZ_svn\serialport\.cxx\cmake\debug\x86
+E:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\.cxx\cmake\debug\x86
 serial_port
 jvmArgs : 
 

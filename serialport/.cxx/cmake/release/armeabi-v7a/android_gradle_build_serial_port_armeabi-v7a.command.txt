@@ -1,7 +1,0 @@
-Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
-arguments : 
--C
-D:\workspace\demo\washingZ_svn\serialport\.cxx\cmake\release\armeabi-v7a
-serial_port
-jvmArgs : 
-
