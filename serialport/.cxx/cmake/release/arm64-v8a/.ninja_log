@@ -7,3 +7,8 @@
 0	13	0	clean	81a0c8a35c45b8df
 0	14	0	clean	81a0c8a35c45b8df
 0	14	0	clean	81a0c8a35c45b8df
+1	141	646053593	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	e1dd3f0e09043270
+141	227	646053593	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libserial_port.so	9fbee6298df5576
+0	16	0	clean	81a0c8a35c45b8df
+1	145	646058253	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	e1dd3f0e09043270
+145	236	646058253	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libserial_port.so	9fbee6298df5576

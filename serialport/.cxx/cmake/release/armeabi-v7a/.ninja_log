@@ -7,3 +7,8 @@
 0	18	0	clean	81a0c8a35c45b8df
 0	13	0	clean	81a0c8a35c45b8df
 0	15	0	clean	81a0c8a35c45b8df
+3	528	646053592	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	3f33c5b708d167d8
+529	862	646053592	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libserial_port.so	cff8d667d434cbd2
+0	17	0	clean	81a0c8a35c45b8df
+3	575	646058252	CMakeFiles/serial_port.dir/src/main/cpp/SerialPort.c.o	3f33c5b708d167d8
+576	902	646058253	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libserial_port.so	cff8d667d434cbd2
