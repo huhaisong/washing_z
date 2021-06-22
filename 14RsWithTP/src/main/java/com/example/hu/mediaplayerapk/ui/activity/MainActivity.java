@@ -512,6 +512,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private void FaceDetectPlayingStateMachine(int intentNo, String ID, String gender, Rect rect) {
         if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
             if (intentNo == Config.BEACON_TAG_NO_PERSION) {//没人
+                tempWhiteView.setVisibility(View.GONE);
                 if (beaconTagNo == Config.BEACON_TAG_NO_PERSION && intentNo == Config.BEACON_TAG_NO_PERSION) {  //原来没人，现在再次没人
                     return;
                 }
@@ -533,7 +534,6 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     drawFace(drawinfo);
                 }
                 /*if (enableWashingSelect == false) {
-
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
                 } else {
@@ -573,6 +573,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
                     drawFace(drawinfo);
                 }
+            } else {
+                tempWhiteView.setVisibility(View.GONE);
             }
         }
     }

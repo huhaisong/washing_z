@@ -96,12 +96,12 @@
 
 
     <View
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/temp_stroke"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/shape_red_stroke"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_white_stroke"
         android:visibility="gone" />
 
 </RelativeLayout>
