@@ -33,6 +33,7 @@ import com.example.hu.mediaplayerapk.dialog.ChooseDialog;
 import com.example.hu.mediaplayerapk.dialog.WashingChooseDialog;
 import com.example.hu.mediaplayerapk.emailUtil.mailSenderUtil;
 import com.example.hu.mediaplayerapk.model.DrawInfo;
+import com.example.hu.mediaplayerapk.model.FaceTemper;
 import com.example.hu.mediaplayerapk.model.MainActivityPlayModel;
 import com.example.hu.mediaplayerapk.model.MainGestureListener;
 import com.example.hu.mediaplayerapk.model.TouchModel;
@@ -74,6 +75,9 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public static final int WASHING_SELECTED_T40 = 1;
     public static final int WASHING_SELECTED_T70 = 2;
     public static final int WASHING_SELECTED_NONE = 0;
+    public static final int EVENT_T70_FILE  = -1;  //First one is T70
+    public static final int EVENT_T40_FILE  = 0;  //Second one is T40
+	
     public static final int MESSAGE_WHAT_ALARM = 5555;
 
     private HumanReceive receiver = null;
@@ -88,6 +92,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private WashingChooseDialog ChooseDialog;
     private FaceRectView faceRectView;
     private View tempWhiteView;
+    private FaceTemper mFaceTemper;
 
     private void setScreenBrightnessOff() {
         Log.e(TAG, "setScreenBrightnessOff: ");
@@ -265,7 +270,13 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         }
     };*/
 
-
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus == true) {
+            mFaceTemper = new FaceTemper(mContext, faceRectView, tempWhiteView);
+        }
+        return;
+    }
     private TouchModel touchModel;
     private USBReceive usbBroadCastReceive;
 
@@ -279,8 +290,6 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         isOnResume = true;
         mainActivityPlayModel.onResume();
 
-        if (tempWhiteView != null)
-            tempWhiteView.setVisibility(View.GONE);
         receiver = new HumanReceive();
         IntentFilter filter = new IntentFilter();
         filter.addAction(HumanReceive.MSG);
@@ -518,27 +527,47 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private void FaceDetectPlayingStateMachine(int intentNo, String ID, String gender, Rect rect) {
         if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
             if (intentNo == Config.BEACON_TAG_NO_PERSION) {//没人
-                tempWhiteView.setVisibility(View.GONE);
+                if (mFaceTemper != null) {
+                    mFaceTemper.close();
+                }
                 if (beaconTagNo == Config.BEACON_TAG_NO_PERSION && intentNo == Config.BEACON_TAG_NO_PERSION) {  //原来没人，现在再次没人
                     return;
                 }
-                //原来有人，现在没人
-                String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
-                        + Config.PICKTURE_TEMP_FOLDER;
 
-                if (mainActivityPlayModel != null) {
-                    FaceManagerUtil.savePlayRecord(ID, mainActivityPlayModel.getCurrentNum(), mainActivityPlayModel.getCurrentPosition());
+                if (SPUtils.getInt(mContext, Config.CFGInterrupptingFinishEN, Config.DefInterruptingFinishEN) == 1) {
+                    int curPosition = 0;
+                    int FinishThreshold = 0;
+                    curPosition = mainActivityPlayModel.getCurrentPosition();
+                    curPosition = curPosition / 1000;
+                    if (mainActivityPlayModel.getCurrentNum() == EVENT_T70_FILE) {
+                        FinishThreshold = SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime);
+                    } else if (mainActivityPlayModel.getCurrentNum() == EVENT_T40_FILE) {
+                        FinishThreshold = SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime);
+                    }
+
+                    Log.d(TAG, "curPosition: " + curPosition + "  FinishThreshold:" + FinishThreshold + " getCurrentNum " + mainActivityPlayModel.getCurrentNum());
+                    if ((curPosition < 0) || (curPosition >= FinishThreshold)) {
+                        intentNo = Config.BEACON_TAG_PERSION;  //Defined as finishing
+                    }
                 }
 
-                beaconTagNo = intentNo;
-                mainActivityPlayModel.startPlayBeacon(false);
+                if (intentNo == Config.BEACON_TAG_PERSION) {
+                    //success washing
+                    FaceManagerUtil.savePlayRecord(ID, -1, -1);
+                } else {
 
-                Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
-            } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来没人，现在又有人了
-                if (rect != null) {
+                    if (mainActivityPlayModel != null) {
+                        FaceManagerUtil.savePlayRecord(ID, mainActivityPlayModel.getCurrentNum(), mainActivityPlayModel.getCurrentPosition());
+                    }
+                    beaconTagNo = intentNo;
+                    mainActivityPlayModel.startPlayBeacon(false);
+                    Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
+                }
+            } else if (intentNo == Config.BEACON_TAG_PERSION/* && beaconTagNo == Config.BEACON_TAG_NO_PERSION*/) {//原来没人，现在又有人了
+                /*if (rect != null) {
                     DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
                     drawFace(drawinfo);
-                }
+                }*/
                 /*if (enableWashingSelect == false) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
@@ -547,15 +576,11 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 }*/
                 if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
+                    //断点续播，不需要进入测温
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
                 } else {
                     PopTempCaptureActivity(intentNo, ID, gender);
-                }
-            } else {
-                if (rect != null) {
-                    DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
-                    drawFace(drawinfo);
                 }
             }
         } else {
@@ -567,68 +592,24 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 } else {
                     PopWashingChooseDialog(intentNo);
                 }*/
-                /*if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
+                if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else */{
-                    PopTempCaptureActivity(intentNo, ID, gender);
-
                 }
-                if (rect != null) {
-                    DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
-                    drawFace(drawinfo);
+				else
+				{
+                    PopTempCaptureActivity(intentNo, ID, gender);
                 }
             } else {
-                tempWhiteView.setVisibility(View.GONE);
+                if(mFaceTemper != null)
+                {
+                    mFaceTemper.close();
+                }
             }
         }
     }
-
-    private DrawHelper drawHelper;
-
-    public void drawFace(DrawInfo info) {
-        Log.e(TAG, "drawFace: " + info.getRect().toString());
-        if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {//&&正中间的条件             tempWhiteView.setVisibility(View.GONE);
-            float CurTemp = ((MyApplication) mContext.getApplicationContext()).getCurTemp();
-            if (CurTemp >= SPUtils.getFloat(mContext, Config.CFGErrorTempCFG, Config.DefErrorTempValue)) {
-                mailSenderUtil.sendErrorReport(mContext, "\nDateTime: " + TimeUtil.getCurrentFormatTime() + "\nFace ID: " + info.getName() + "\nTemp: " + CurTemp, null);
-                Toast.makeText(mContext, "Exception Temperature Data detected, Please contact manager!\n", Toast.LENGTH_LONG).show();
-            }
-
-            // TODO: 2021/6/22 显示体温 一秒后消失  并设置体温，以便保存进数据库
-        }
-        if (drawHelper == null) {
-            drawHelper = new DrawHelper(640, 480, faceRectView.getWidth(), faceRectView.getHeight(), 0, Camera.CameraInfo.CAMERA_FACING_FRONT, false);
-        }
-        removeFaceViewHandler.removeMessages(1);
-        if ((faceRectView == null)) {
-            return;
-        }
-        if (faceRectView != null) {
-            faceRectView.clearFaceInfo();
-        }
-        List<DrawInfo> drawInfoList = new ArrayList<>();
-        if (info != null) {
-            for (int i = 0; i < 1; i++) {
-                drawInfoList.add(info);
-            }
-        }
-        drawHelper.draw(faceRectView, drawInfoList);
-        removeFaceViewHandler.sendEmptyMessageDelayed(1, 500);
-    }
-
-    private Handler removeFaceViewHandler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message msg) {
-            if (faceRectView != null) {
-                faceRectView.clearFaceInfo();
-            }
-            return false;
-        }
-    });
-
-
+    
     //**************************************************************
 
 
@@ -687,8 +668,11 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         float CurTemp = 0;
         if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {
             prepareBeaconTagNo = intentNo;
-            Log.d(TAG, " tempWhiteView.setVisibility(View.VISIBLE);");
-            tempWhiteView.setVisibility(View.VISIBLE);
+            //open faceTemper
+            if(mFaceTemper != null)
+            {
+                mFaceTemper.open();
+            }
         }
         //直接在此判断是播放长视频还是短视频
         if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {

@@ -172,29 +172,32 @@ public class DrawHelper {
             return;
         }
         Paint paint = new Paint();
+        Rect rect = drawInfo.getRect();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(faceRectThickness);
         paint.setColor(color);
-        Path mPath = new Path();
-        //左上
-        Rect rect = drawInfo.getRect();
-        mPath.moveTo(rect.left, rect.top + rect.height() / 4);
-        mPath.lineTo(rect.left, rect.top);
-        mPath.lineTo(rect.left + rect.width() / 4, rect.top);
-        //右上
-        mPath.moveTo(rect.right - rect.width() / 4, rect.top);
-        mPath.lineTo(rect.right, rect.top);
-        mPath.lineTo(rect.right, rect.top + rect.height() / 4);
-        //右下
-        mPath.moveTo(rect.right, rect.bottom - rect.height() / 4);
-        mPath.lineTo(rect.right, rect.bottom);
-        mPath.lineTo(rect.right - rect.width() / 4, rect.bottom);
-        //左下
-        mPath.moveTo(rect.left + rect.width() / 4, rect.bottom);
-        mPath.lineTo(rect.left, rect.bottom);
-        mPath.lineTo(rect.left, rect.bottom - rect.height() / 4);
-        canvas.drawPath(mPath, paint);
 
+        if(drawInfo.getHideRect() == false) {
+
+            Path mPath = new Path();
+            //左上
+            mPath.moveTo(rect.left, rect.top + rect.height() / 4);
+            mPath.lineTo(rect.left, rect.top);
+            mPath.lineTo(rect.left + rect.width() / 4, rect.top);
+            //右上
+            mPath.moveTo(rect.right - rect.width() / 4, rect.top);
+            mPath.lineTo(rect.right, rect.top);
+            mPath.lineTo(rect.right, rect.top + rect.height() / 4);
+            //右下
+            mPath.moveTo(rect.right, rect.bottom - rect.height() / 4);
+            mPath.lineTo(rect.right, rect.bottom);
+            mPath.lineTo(rect.right - rect.width() / 4, rect.bottom);
+            //左下
+            mPath.moveTo(rect.left + rect.width() / 4, rect.bottom);
+            mPath.lineTo(rect.left, rect.bottom);
+            mPath.lineTo(rect.left, rect.bottom - rect.height() / 4);
+            canvas.drawPath(mPath, paint);
+        }
 
         if (drawInfo.getName() == null) {
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
@@ -209,7 +212,14 @@ public class DrawHelper {
         } else {
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
             paint.setTextSize(rect.width() / 16);
-            canvas.drawText(drawInfo.getName(), rect.left, rect.top - 10, paint);
+            if(drawInfo.getHideRect() == true)
+            {
+                canvas.drawText(drawInfo.getName(), rect.right, rect.bottom - 10, paint);
+            }
+            else
+            {
+                canvas.drawText(drawInfo.getName(), rect.left, rect.top - 10, paint);
+            }
         }
     }
 

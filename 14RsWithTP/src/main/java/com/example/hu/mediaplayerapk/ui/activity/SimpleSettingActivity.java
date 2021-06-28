@@ -12,11 +12,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -47,6 +49,12 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     private TextView alarmEndTextView;
     private Switch switchTempOnOff;
     private Switch alarmSwitch;
+	
+	private EditText editTextFirstFinish;    //断点续播超时时间
+    private EditText editText2ndFinish;  //短视频超时时间
+    NumberPicker numberFirstFinish;
+    NumberPicker number2ndFinish;
+	
     private Context mContext;
     private TextView textViewVer;
 
@@ -86,6 +94,11 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
 
         switchTempOnOff = (Switch) findViewById(R.id.switch_tempEn);
         textViewVer = (TextView) findViewById(R.id.apkVerion);
+		
+		editTextFirstFinish = (EditText)findViewById(R.id.editFirstFinish);
+        editText2ndFinish = (EditText)findViewById(R.id.edit2ndFinished);
+        //numberFirstFinish = (NumberPicker) findViewById(R.idgn.firstFinishNumber);
+        //number2ndFinish = (NumberPicker) findViewById(R.id.secondFinishNumber);
 
 
         btn_log.setOnClickListener(new View.OnClickListener() {
@@ -163,6 +176,26 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         editTextFaceUnDetectedTime.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceDisappearEventTime, Config.DefFaceDisappearEventTime) / (float) 1000L)));
         editTextShortVideoTimeOut.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceShortVIDEOTime, Config.DefFaceShortVideoTime) / (float) (60 * 60 * 1000L))));
         editTextFaceResumeTime.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime) / (float) (60 * 1000L))));
+		
+		Log.d(TAG, SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime)+" "+
+                SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime));
+        if(editTextFirstFinish != null) {
+            editTextFirstFinish.setText(String.valueOf(SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime)));
+            editText2ndFinish.setText(String.valueOf(SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime)));
+        }
+
+        if(numberFirstFinish != null)
+        {
+            numberFirstFinish.setMinValue(Config.MinLongWashingFinishTime);
+            numberFirstFinish.setMaxValue(Config.MaxLongWashingFinishTime);
+            numberFirstFinish.setValue(SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime));
+        }
+        if(number2ndFinish != null)
+        {
+            number2ndFinish.setMinValue(Config.MinShortWashingFinishTime);
+            number2ndFinish.setMaxValue(Config.MaxShortWashingFinishTime);
+            number2ndFinish.setValue(SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime));
+        }
     }
 
     protected void onDestroy() {
@@ -199,6 +232,28 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
             if (shortVideoTimeout >= Config.MinFaceShortVideoTime) {
                 SPUtils.putLong(mContext, Config.CFGFaceShortVIDEOTime, shortVideoTimeout);
             }
+        }
+		
+		if(editTextFirstFinish != null)
+        {
+            int temp = (int)(Integer.valueOf(editTextFirstFinish.getText().toString()));
+            if(temp >=1) {
+                SPUtils.putInt(mContext, Config.CFGLongWashingFinishTime, temp);
+            }
+        }
+
+        if(editText2ndFinish != null)
+        {
+            int temp = (int)(Integer.valueOf(editText2ndFinish.getText().toString()));
+            if(temp >=1) {
+                SPUtils.putInt(mContext, Config.CFGShortWashingFinishTime, temp);
+            }
+        }
+
+        if(numberFirstFinish != null)
+        {
+            SPUtils.putInt(mContext, Config.CFGLongWashingFinishTime, numberFirstFinish.getValue());
+            SPUtils.putInt(mContext, Config.CFGShortWashingFinishTime, number2ndFinish.getValue());
         }
 
         Float alarmInterval = Float.valueOf(alarmIntervalEdit.getText().toString());

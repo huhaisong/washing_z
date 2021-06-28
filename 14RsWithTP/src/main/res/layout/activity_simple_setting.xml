@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <Button
@@ -41,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <Button
@@ -170,6 +172,73 @@
                 android:ems="10"
                 android:hint=">=0.1(Hours)"
                 android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+
+            <Button
+                android:id="@+id/btn_firstFinished"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="首次洗手視頻完成判定(S)"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/editFirstFinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint=">0(Seconds)"
+                android:inputType="numberDecimal" ></EditText>
+
+            <!--
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/firstFinishNumber"
+                android:focusable="true"
+                android:layout_marginLeft="20dp"
+                android:focusableInTouchMode="true">
+            </NumberPicker>
+            -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+
+            <Button
+                android:id="@+id/btn_2ndFinished"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="第2次以後洗手視頻完成判定(S)"
+                android:textSize="12sp" />
+           <!--
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secondFinishNumber"
+                android:focusable="true"
+                android:layout_marginLeft="20dp"
+                android:focusableInTouchMode="true">
+            </NumberPicker>
+            -->
+
+            <EditText
+                android:id="@+id/edit2ndFinished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="> 0(Seconds)"
+                android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <Button

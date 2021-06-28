@@ -155,4 +155,18 @@ public static int MALE = 1;
     public static final String ALARM_NOTICE_INTERVAL = "ALARM_NOTICE_INTERVAL";  //unit: hour
     public static final String ALARM_NOTICE_VALID_TIME = "ALARM_NOTICE_VALID_TIME";
 
+
+	//提前结束判断时间算完成
+    public static final String CFGInterrupptingFinishEN = "CFGInterrupptingFinishEN";
+    public static final int DefInterruptingFinishEN = 1;
+
+    public static final String CFGLongWashingFinishTime = "CFGLongWashingFinishTime";
+    public static final int DefLongWashingFinishTime = 66;  //播完到66秒即表示洗手完成，不用拷贝到NG
+    public static final int MinLongWashingFinishTime = 1;
+    public static final int MaxLongWashingFinishTime = 100;
+
+    public static final String CFGShortWashingFinishTime = "CFGShortWashingFinishTime";
+    public static final int DefShortWashingFinishTime = 31;  //播完到31秒即表示洗手完成，不用拷贝到NG
+    public static final int MinShortWashingFinishTime = 1;
+    public static final int MaxShortWashingFinishTime = 100;
 }
