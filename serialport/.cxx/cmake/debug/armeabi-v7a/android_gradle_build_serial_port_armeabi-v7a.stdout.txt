@@ -1,2 +1,0 @@
-ninja: Entering directory `E:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\.cxx\cmake\debug\armeabi-v7a'
-ninja: no work to do.

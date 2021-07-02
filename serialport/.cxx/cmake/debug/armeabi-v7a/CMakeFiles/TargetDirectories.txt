@@ -1,3 +1,0 @@
-E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/serial_port.dir
-E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
