@@ -10,19 +10,19 @@ public class WashingReportItem {
 
     @Id(autoincrement = true)
     Long id;//数据库ID 自增长
-    @Unique
     String FaceID;    //faceID
     int washingEventCnt = 0; //洗手总次数
     int moveAwayCnt = 0;     //是否中断
-    int tempErrorCnt = 0;    //错误测温
+    int tempErrorCnt = 0;    //错误测温   //0为正确测温  1为错误测温
     int tempValidCnt = 0;    //有效测温
     double averageTemp;      //平均体温
     double lastTemp;  //最后一次体温
     int isLadyOrMen;  //男女 -1:unknown: 1:lady, 0: men
-    private int playNum;  //判断是初回动画还是2回动画
-    private int isPlayInterrupt;  //视频是否中断
+    private int playNum;  //判断是初回动画还是2回动画  1初回 2 2回动画
+    private int isPlayInterrupt;  //视频是否中断  1 打断 0非打断
     private int isLongInterval;  //是否是长间隔
     int time;  //洗手的时间   单位（s）
+
     @Generated(hash = 2057643641)
     public WashingReportItem(Long id, String FaceID, int washingEventCnt,
             int moveAwayCnt, int tempErrorCnt, int tempValidCnt, double averageTemp,
@@ -45,6 +45,7 @@ public class WashingReportItem {
     @Generated(hash = 1803537257)
     public WashingReportItem() {
     }
+
     public Long getId() {
         return this.id;
     }

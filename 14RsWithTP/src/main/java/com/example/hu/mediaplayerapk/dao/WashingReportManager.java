@@ -42,6 +42,8 @@ public class WashingReportManager {
      * 会自动判定是插入还是替换
      */
     public void insertOrReplace(WashingReportItem washingReportItem) {
+
+        washingReportItem.setTime((int) (System.currentTimeMillis()/1000));
         try {
             WashingReportItem mOldResponseBean = washingReportItemDao.queryBuilder().where(WashingReportItemDao.Properties.Id.eq(washingReportItem.getId())).build().unique();//拿到之前的记录
             if (mOldResponseBean != null) {

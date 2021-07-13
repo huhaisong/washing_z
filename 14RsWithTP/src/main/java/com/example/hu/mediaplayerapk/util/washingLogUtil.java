@@ -64,9 +64,9 @@ public class washingLogUtil {
     //single report format: statis and raw log
     private static WashingReportItem buildSingleReport(String ID) {
         boolean result = true;
-        WashingReportItem totalReport = new WashingReportItem(0, 0, 0,
-                0, 0, 0, ID,
-                -1, 0, 0, 0, 0);
+
+        WashingReportItem totalReport = new WashingReportItem();
+        totalReport.setFaceID(ID);
         WashingReportItem singleDayReport;//= new WashingReportItem(ID);
         String FolderPath;
 
@@ -131,7 +131,8 @@ public class washingLogUtil {
     public static WashingReportItem readSingleWashingLog(String ID, String path) {
         File file = new File(path);
         BufferedReader reader;
-        WashingReportItem item = new WashingReportItem(0, 0, 0, 0, 0, 0, ID, -1, 0, 0, 0,0);
+        WashingReportItem item = new WashingReportItem();
+        item.setFaceID(ID);
         int tmp;
         double tmpDouble;
         double totalTempValue = 0;

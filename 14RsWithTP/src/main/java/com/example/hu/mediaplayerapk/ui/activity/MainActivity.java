@@ -27,8 +27,10 @@ import androidx.annotation.RequiresApi;
 
 import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.application.MyApplication;
+import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 import com.example.hu.mediaplayerapk.broadcast.HumanReceive;
 import com.example.hu.mediaplayerapk.config.Config;
+import com.example.hu.mediaplayerapk.dao.WashingReportManager;
 import com.example.hu.mediaplayerapk.dialog.ChooseDialog;
 import com.example.hu.mediaplayerapk.dialog.WashingChooseDialog;
 import com.example.hu.mediaplayerapk.emailUtil.mailSenderUtil;
@@ -75,9 +77,9 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public static final int WASHING_SELECTED_T40 = 1;
     public static final int WASHING_SELECTED_T70 = 2;
     public static final int WASHING_SELECTED_NONE = 0;
-    public static final int EVENT_T70_FILE  = -1;  //First one is T70
-    public static final int EVENT_T40_FILE  = 0;  //Second one is T40
-	
+    public static final int EVENT_T70_FILE = -1;  //First one is T70
+    public static final int EVENT_T40_FILE = 0;  //Second one is T40
+
     public static final int MESSAGE_WHAT_ALARM = 5555;
 
     private HumanReceive receiver = null;
@@ -120,6 +122,13 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
             return mainActivityPlayModel.isPlaying();
         }
         return false;
+    }
+
+    public int getCurPlayNumber() {
+        if (mainActivityPlayModel != null) {
+            return mainActivityPlayModel.getCurrentNum();
+        }
+        return 0;
     }
 
     private static final String TAG = "MainActivity";
@@ -277,6 +286,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         }
         return;
     }
+
     private TouchModel touchModel;
     private USBReceive usbBroadCastReceive;
 
@@ -465,8 +475,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public boolean onTouchEvent(MotionEvent event) {
         touchModel.onTouchEvent(event);
 
-        if(mainActivityPlayModel != null)
-        {
+        if (mainActivityPlayModel != null) {
             mainActivityPlayModel.cancelCurAlarm();
         }
         return mGestureDetector.onTouchEvent(event) || super.onTouchEvent(event);
@@ -524,6 +533,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         }
     }
 
+    private WashingReportItem mWashingReportItem = new WashingReportItem();
+
     private void FaceDetectPlayingStateMachine(int intentNo, String ID, String gender, Rect rect) {
         if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
             if (intentNo == Config.BEACON_TAG_NO_PERSION) {//没人
@@ -555,25 +566,29 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     //success washing
                     FaceManagerUtil.savePlayRecord(ID, -1, -1);
                 } else {
-
                     if (mainActivityPlayModel != null) {
                         FaceManagerUtil.savePlayRecord(ID, mainActivityPlayModel.getCurrentNum(), mainActivityPlayModel.getCurrentPosition());
                     }
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(false);
                     Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
+
+                    //保存进数据库
+                    mWashingReportItem.setFaceID(ID);
+                    if (gender.equalsIgnoreCase("1.0")) {
+                        mWashingReportItem.setIsLadyOrMen(1);
+                    } else if (gender.equalsIgnoreCase("-1.0")) {
+                        mWashingReportItem.setIsLadyOrMen(0);
+                    }
+                    mWashingReportItem.setIsPlayInterrupt(1);
+                    if (mainActivityPlayModel.getCurrentNum() == EVENT_T70_FILE) {
+                        mWashingReportItem.setPlayNum(1);
+                    } else if (mainActivityPlayModel.getCurrentNum() == EVENT_T40_FILE) {
+                        mWashingReportItem.setPlayNum(2);
+                    }
+                    WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
                 }
             } else if (intentNo == Config.BEACON_TAG_PERSION/* && beaconTagNo == Config.BEACON_TAG_NO_PERSION*/) {//原来没人，现在又有人了
-                /*if (rect != null) {
-                    DrawInfo drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
-                    drawFace(drawinfo);
-                }*/
-                /*if (enableWashingSelect == false) {
-                    beaconTagNo = intentNo;
-                    mainActivityPlayModel.startPlayBeacon();
-                } else {
-                    PopWashingChooseDialog(intentNo);
-                }*/
                 if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     //断点续播，不需要进入测温
@@ -585,31 +600,21 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
             }
         } else {
             if (intentNo == Config.BEACON_TAG_PERSION) {//有人
-                /*if (enableWashingSelect == false) {
-                    beaconTagNo = intentNo;
-                    mainActivityPlayModel.startPlayBeacon();
-
-                } else {
-                    PopWashingChooseDialog(intentNo);
-                }*/
                 if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                }
-				else
-				{
+                } else {
                     PopTempCaptureActivity(intentNo, ID, gender);
                 }
             } else {
-                if(mFaceTemper != null)
-                {
+                if (mFaceTemper != null) {
                     mFaceTemper.close();
                 }
             }
         }
     }
-    
+
     //**************************************************************
 
 
@@ -665,12 +670,10 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     }
 
     private void PopTempCaptureActivity(int intentNo, String ID, String gender) {
-        float CurTemp = 0;
         if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {
             prepareBeaconTagNo = intentNo;
             //open faceTemper
-            if(mFaceTemper != null)
-            {
+            if (mFaceTemper != null) {
                 mFaceTemper.open();
             }
         }
@@ -684,7 +687,22 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         BeaconEventNo = (WashingSelected == WASHING_SELECTED_T70) ? -1 : 0;  //第一个文件是T70
         WashingSelected = WASHING_SELECTED_NONE;
         mainActivityPlayModel.startPlayBeacon(false);
-        Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, CurTemp);
+        Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
+
+
+        //保存进数据库
+        mWashingReportItem.setFaceID(ID);
+        if (gender.equalsIgnoreCase("1.0")) {
+            mWashingReportItem.setIsLadyOrMen(1);
+        } else if (gender.equalsIgnoreCase("-1.0")) {
+            mWashingReportItem.setIsLadyOrMen(0);
+        }
+        if (mainActivityPlayModel.getCurrentNum() == EVENT_T70_FILE) {
+            mWashingReportItem.setPlayNum(1);
+        } else if (mainActivityPlayModel.getCurrentNum() == EVENT_T40_FILE) {
+            mWashingReportItem.setPlayNum(2);
+        }
+        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
     }
 
     private void PopWashingChooseDialog(int intentNo) {

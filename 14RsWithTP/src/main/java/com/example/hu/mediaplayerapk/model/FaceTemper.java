@@ -12,9 +12,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.hu.mediaplayerapk.application.MyApplication;
+import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 import com.example.hu.mediaplayerapk.config.Config;
+import com.example.hu.mediaplayerapk.dao.WashingReportManager;
 import com.example.hu.mediaplayerapk.emailUtil.mailSenderUtil;
 import com.example.hu.mediaplayerapk.receiver.PistaEyesReceiver;
+import com.example.hu.mediaplayerapk.ui.activity.MainActivity;
 import com.example.hu.mediaplayerapk.util.DrawHelper;
 import com.example.hu.mediaplayerapk.util.Logger;
 import com.example.hu.mediaplayerapk.util.SPUtils;
@@ -26,6 +29,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.EVENT_T40_FILE;
+import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.EVENT_T70_FILE;
 import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.WASHING_SELECTED_NONE;
 import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.WASHING_SELECTED_T40;
 import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.WASHING_SELECTED_T70;
@@ -42,7 +47,7 @@ public class FaceTemper {
     private FaceRectView faceRectView;
     private DrawHelper drawHelper;
     private View tempWhiteView;
-    private  String TAG = "FaceTemper";
+    private String TAG = "FaceTemper";
     private Context mContext;
     private String CurID = "0";
     private String CurGender = "0";
@@ -58,7 +63,7 @@ public class FaceTemper {
     private final int FACETEMP_FINISHED = 2;  //之后所有都消失
     private int faceTemperState = FACETEMP_DETECTING;
     private boolean debug = true;
-    private Rect standardRect = new Rect(200,100,440,440);  //640*480的面积
+    private Rect standardRect = new Rect(200, 100, 440, 440);  //640*480的面积
 
     private Handler timeoutHandller = new Handler(new Handler.Callback() {
         @Override
@@ -78,8 +83,7 @@ public class FaceTemper {
 
 
     //必须确保view已经初始化成功
-    public FaceTemper(Context thisContext, FaceRectView thisView, View thisWhiteRect)
-    {
+    public FaceTemper(Context thisContext, FaceRectView thisView, View thisWhiteRect) {
         mContext = thisContext;
         faceRectView = thisView;
         tempWhiteView = thisWhiteRect;
@@ -87,16 +91,14 @@ public class FaceTemper {
     }
 
     //开始显示人脸框和白色框
-    public void open()
-    {
+    public void open() {
         faceTemperState = FACETEMP_DETECTING;
         tempWhiteView.setVisibility(View.VISIBLE);
         registerHumanDetectingBroadcast();
     }
 
     //关闭人脸框和白色框
-    public void close()
-    {
+    public void close() {
         unregisterHumanDetectingBroadcast();
         tempWhiteView.setVisibility(View.GONE);
         drawFace(null);
@@ -111,15 +113,30 @@ public class FaceTemper {
     private void finishAndSelectPlay(String ID) {
         close();
         Logger.WashingLoggerAppend(ID, CurGender, 1, 0, CurTempIsError, CurTempStr);  //
+
+
+        //保存进数据库
+        WashingReportItem mWashingReportItem = new WashingReportItem();
+        mWashingReportItem.setFaceID(ID);
+        if (CurGender.equalsIgnoreCase("1.0")) {
+            mWashingReportItem.setIsLadyOrMen(1);
+        } else if (CurGender.equalsIgnoreCase("-1.0")) {
+            mWashingReportItem.setIsLadyOrMen(0);
+        }
+        if (((MainActivity) mContext).getCurPlayNumber() == EVENT_T70_FILE) {
+            mWashingReportItem.setPlayNum(1);
+        } else if (((MainActivity) mContext).getCurPlayNumber() == EVENT_T40_FILE) {
+            mWashingReportItem.setPlayNum(2);
+        }
+        mWashingReportItem.setLastTemp(Double.valueOf(CurTempStr));
+        mWashingReportItem.setTempValidCnt(CurTempIsError);
+        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
         //finish();
     }
 
-    private void FaceStateMachine(Rect rect)
-    {
-        if(faceTemperState == FACETEMP_DETECTING)
-        {
-            if(standardRect.contains(rect))
-            {
+    private void FaceStateMachine(Rect rect) {
+        if (faceTemperState == FACETEMP_DETECTING) {
+            if (standardRect.contains(rect)) {
                 faceTemperState = FACETEMP_DETECTED;
 
                 if (CurTemp == 0) {
@@ -141,7 +158,7 @@ public class FaceTemper {
                         Toast.makeText(mContext, "Exception Temperature Data detected, Please contact manager!\n", Toast.LENGTH_LONG).show();
                     }
                     close();
-                    timeoutHandller.sendEmptyMessageDelayed(TEMP_READY_PLAY, 3*1000);
+                    timeoutHandller.sendEmptyMessageDelayed(TEMP_READY_PLAY, 3 * 1000);
                     drawTemp();
                 }
             }
@@ -168,13 +185,11 @@ public class FaceTemper {
                                 CurGender = gender;
                             }
 
-                            if(debug == false) {
-                                 if(faceTemperState == FACETEMP_DETECTING) {
+                            if (debug == false) {
+                                if (faceTemperState == FACETEMP_DETECTING) {
                                     drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
                                 }
-                            }
-                            else
-                            {
+                            } else {
                                 drawinfo = new DrawInfo(rect, 1, 2, 3, rect.toString());
                             }
                             drawFace(drawinfo);
@@ -196,8 +211,7 @@ public class FaceTemper {
         }
     }
 
-    private void drawTemp()
-    {
+    private void drawTemp() {
 
         {
             DrawInfo drawinfo = null;
