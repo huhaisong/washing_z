@@ -34,6 +34,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     private static final String TAG = "SimpleSettingActivity";
     private Button btn_return;
     private Button btn_log;
+    private Button btn_detail_log;
     private EditText editTextEmailAddr;  //邮件地址
     private EditText editTextErrorTemp;  //高温体温值
     private EditText editTextFaceDetectedTime;  //人脸检测稳定
@@ -49,12 +50,12 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     private TextView alarmEndTextView;
     private Switch switchTempOnOff;
     private Switch alarmSwitch;
-	
-	private EditText editTextFirstFinish;    //断点续播超时时间
+
+    private EditText editTextFirstFinish;    //断点续播超时时间
     private EditText editText2ndFinish;  //短视频超时时间
     NumberPicker numberFirstFinish;
     NumberPicker number2ndFinish;
-	
+
     private Context mContext;
     private TextView textViewVer;
 
@@ -84,6 +85,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
 
         btn_return = (Button) findViewById(R.id.btn_return);
         btn_log = (Button) findViewById(R.id.btn_logView);
+        btn_detail_log = (Button) findViewById(R.id.btn_detail_logView);
         editTextEmailAddr = (EditText) findViewById(R.id.editTextEmailAddress);
         editTextErrorTemp = (EditText) findViewById(R.id.editErrorTemp);
         editTextFaceDetectedTime = (EditText) findViewById(R.id.editFaceDetected);
@@ -94,9 +96,9 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
 
         switchTempOnOff = (Switch) findViewById(R.id.switch_tempEn);
         textViewVer = (TextView) findViewById(R.id.apkVerion);
-		
-		editTextFirstFinish = (EditText)findViewById(R.id.editFirstFinish);
-        editText2ndFinish = (EditText)findViewById(R.id.edit2ndFinished);
+
+        editTextFirstFinish = (EditText) findViewById(R.id.editFirstFinish);
+        editText2ndFinish = (EditText) findViewById(R.id.edit2ndFinished);
         //numberFirstFinish = (NumberPicker) findViewById(R.idgn.firstFinishNumber);
         //number2ndFinish = (NumberPicker) findViewById(R.id.secondFinishNumber);
 
@@ -105,6 +107,14 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, WashingReportListActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+
+        btn_detail_log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, WashingReportDetailListActivity.class);
                 mContext.startActivity(intent);
             }
         });
@@ -176,22 +186,20 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         editTextFaceUnDetectedTime.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceDisappearEventTime, Config.DefFaceDisappearEventTime) / (float) 1000L)));
         editTextShortVideoTimeOut.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceShortVIDEOTime, Config.DefFaceShortVideoTime) / (float) (60 * 60 * 1000L))));
         editTextFaceResumeTime.setText(String.valueOf((float) (SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime) / (float) (60 * 1000L))));
-		
-		Log.d(TAG, SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime)+" "+
+
+        Log.d(TAG, SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime) + " " +
                 SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime));
-        if(editTextFirstFinish != null) {
+        if (editTextFirstFinish != null) {
             editTextFirstFinish.setText(String.valueOf(SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime)));
             editText2ndFinish.setText(String.valueOf(SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime)));
         }
 
-        if(numberFirstFinish != null)
-        {
+        if (numberFirstFinish != null) {
             numberFirstFinish.setMinValue(Config.MinLongWashingFinishTime);
             numberFirstFinish.setMaxValue(Config.MaxLongWashingFinishTime);
             numberFirstFinish.setValue(SPUtils.getInt(mContext, Config.CFGLongWashingFinishTime, Config.DefLongWashingFinishTime));
         }
-        if(number2ndFinish != null)
-        {
+        if (number2ndFinish != null) {
             number2ndFinish.setMinValue(Config.MinShortWashingFinishTime);
             number2ndFinish.setMaxValue(Config.MaxShortWashingFinishTime);
             number2ndFinish.setValue(SPUtils.getInt(mContext, Config.CFGShortWashingFinishTime, Config.DefShortWashingFinishTime));
@@ -233,25 +241,22 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
                 SPUtils.putLong(mContext, Config.CFGFaceShortVIDEOTime, shortVideoTimeout);
             }
         }
-		
-		if(editTextFirstFinish != null)
-        {
-            int temp = (int)(Integer.valueOf(editTextFirstFinish.getText().toString()));
-            if(temp >=1) {
+
+        if (editTextFirstFinish != null) {
+            int temp = (int) (Integer.valueOf(editTextFirstFinish.getText().toString()));
+            if (temp >= 1) {
                 SPUtils.putInt(mContext, Config.CFGLongWashingFinishTime, temp);
             }
         }
 
-        if(editText2ndFinish != null)
-        {
-            int temp = (int)(Integer.valueOf(editText2ndFinish.getText().toString()));
-            if(temp >=1) {
+        if (editText2ndFinish != null) {
+            int temp = (int) (Integer.valueOf(editText2ndFinish.getText().toString()));
+            if (temp >= 1) {
                 SPUtils.putInt(mContext, Config.CFGShortWashingFinishTime, temp);
             }
         }
 
-        if(numberFirstFinish != null)
-        {
+        if (numberFirstFinish != null) {
             SPUtils.putInt(mContext, Config.CFGLongWashingFinishTime, numberFirstFinish.getValue());
             SPUtils.putInt(mContext, Config.CFGShortWashingFinishTime, number2ndFinish.getValue());
         }

@@ -20,7 +20,7 @@ public class WashingReportItem {
     int isLadyOrMen;  //男女 -1:unknown: 1:lady, 0: men
     private int playNum;  //判断是初回动画还是2回动画  1初回 2 2回动画
     private int isPlayInterrupt;  //视频是否中断  1 打断 0非打断
-    private int isLongInterval;  //是否是长间隔
+    private int isLongInterval;  //是否是长间隔  1是长间隔 0非长间隔
     int time;  //洗手的时间   单位（s）
 
     @Generated(hash = 2057643641)

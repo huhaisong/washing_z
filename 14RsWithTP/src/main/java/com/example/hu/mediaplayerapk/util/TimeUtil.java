@@ -189,21 +189,21 @@ public class TimeUtil {
         return process;
     }
 
-    public static String getCurrentFormatTime(){
+    public static String getCurrentFormatTime() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");// HH:mm:ss
 //获取当前时间
         Date date = new Date(System.currentTimeMillis());
         return simpleDateFormat.format(date);
     }
 
-    public static String getCurrentFormatDate(){
+    public static String getCurrentFormatDate() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");// HH:mm:ss
 //获取当前时间
         Date date = new Date(System.currentTimeMillis());
         return simpleDateFormat.format(date);
     }
 
-    public static String getCurrentFormatTimeOnly(){
+    public static String getCurrentFormatTimeOnly() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");// HH:mm:ss
 //获取当前时间
         Date date = new Date(System.currentTimeMillis());
@@ -230,6 +230,25 @@ public class TimeUtil {
         date[2] = mCalendar.get(Calendar.SECOND);
         return date;
     }
+
+
+    public static int getCurrentMonthLastDay() {
+        Calendar a = Calendar.getInstance();
+        a.set(Calendar.DATE, 1);//把日期设置为当月第一天
+        a.roll(Calendar.DATE, -1);//日期回滚一天，也就是最后一天
+        int maxDate = a.get(Calendar.DATE);
+        return maxDate;
+    }
+
+    public static int getMonthLastDay(int month) {
+        Calendar a = Calendar.getInstance();
+        a.set(Calendar.MONTH, month - 1);
+        a.set(Calendar.DATE, 1);//把日期设置为当月第一天
+        a.roll(Calendar.DATE, -1);//日期回滚一天，也就是最后一天
+        int maxDate = a.get(Calendar.DATE);
+        return maxDate;
+    }
+
 
     public static void showTime(long time, String str) {
         Calendar mCalendar = Calendar.getInstance();
@@ -291,9 +310,9 @@ public class TimeUtil {
     public static long getStringToDate(String dateString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = new Date();
-        try{
+        try {
             date = dateFormat.parse(dateString);
-        } catch(ParseException e) {
+        } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

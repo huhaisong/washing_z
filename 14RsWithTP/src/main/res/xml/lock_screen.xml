@@ -10,6 +10,6 @@
         <reset-password /> <!-- 更改屏幕解锁密码 -->
         <set-global-proxy />  <!-- 设置设备全局代理 -->
         <watch-login /> <!-- 监控屏幕解锁尝试次数 -->
-        <wipe-data /> <!-- 恢复出厂设置 -->
+        <wipe-date /> <!-- 恢复出厂设置 -->
     </uses-policies>
 </device-admin>

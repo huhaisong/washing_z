@@ -43,7 +43,7 @@ public class WashingReportManager {
      */
     public void insertOrReplace(WashingReportItem washingReportItem) {
 
-        washingReportItem.setTime((int) (System.currentTimeMillis()/1000));
+        washingReportItem.setTime((int) (System.currentTimeMillis() / 1000));
         try {
             WashingReportItem mOldResponseBean = washingReportItemDao.queryBuilder().where(WashingReportItemDao.Properties.Id.eq(washingReportItem.getId())).build().unique();//拿到之前的记录
             if (mOldResponseBean != null) {
@@ -68,5 +68,20 @@ public class WashingReportManager {
 
     public WashingReportItem searchById(int id) {
         return washingReportItemDao.queryBuilder().where(WashingReportItemDao.Properties.Id.eq(id)).build().unique();
+    }
+
+
+    public List<WashingReportItem> searchByFaceId(String faceID) {
+        List<WashingReportItem> searchHistories = washingReportItemDao.queryBuilder()
+                .where(WashingReportItemDao.Properties.FaceID.eq(faceID)).list();
+        return searchHistories;
+    }
+
+    public List<WashingReportItem> searchByFaceIdAndDate(String faceID, int startTime ) {
+        List<WashingReportItem> searchHistories = washingReportItemDao.queryBuilder()
+                .where(WashingReportItemDao.Properties.FaceID.eq(faceID),
+                        WashingReportItemDao.Properties.Time.ge(startTime),
+                        WashingReportItemDao.Properties.Time.le(startTime+24*60*60)).list();
+        return searchHistories;
     }
 }

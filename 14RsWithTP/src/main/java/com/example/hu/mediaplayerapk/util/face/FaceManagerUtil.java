@@ -246,7 +246,7 @@ public class FaceManagerUtil {
     }
 
     //获得已经保存的FaceIDList
-    private static List<FaceIDBean> getFaceIDList() {
+    public static List<FaceIDBean> getFaceIDList() {
         List<FaceIDBean> newOne;
         String json = FileUtils.readTextLine(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_FILE_PATH);
         if(json.length() <= 1)
