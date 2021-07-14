@@ -126,5 +126,22 @@ public class WashingReportItem {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "WashingReportItem{" +
+                "id=" + id +
+                ", FaceID='" + FaceID + '\'' +
+                ", washingEventCnt=" + washingEventCnt +
+                ", moveAwayCnt=" + moveAwayCnt +
+                ", tempErrorCnt=" + tempErrorCnt +
+                ", tempValidCnt=" + tempValidCnt +
+                ", averageTemp=" + averageTemp +
+                ", lastTemp=" + lastTemp +
+                ", isLadyOrMen=" + isLadyOrMen +
+                ", playNum=" + playNum +
+                ", isPlayInterrupt=" + isPlayInterrupt +
+                ", isLongInterval=" + isLongInterval +
+                ", time=" + time +
+                '}';
+    }
 }

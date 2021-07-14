@@ -70,6 +70,23 @@ public class StockBean {
         public void setTotalLongtime(int totalLongtime) {
             this.totalLongtime = totalLongtime;
         }
-    }
 
+       @Override
+       public String toString() {
+           return "Date{" +
+                   "totalWashing=" + totalWashing +
+                   ", totalInterrupt=" + totalInterrupt +
+                   ", totalLongtime=" + totalLongtime +
+                   '}';
+       }
+   }
+
+    @Override
+    public String toString() {
+        return "StockBean{" +
+                "stockName='" + stockName + '\'' +
+                ", detail=" + detail.toString() +
+                ", isLadyOrMen=" + isLadyOrMen +
+                '}';
+    }
 }

@@ -144,7 +144,7 @@ public class FaceManagerUtil {
 
     //*****************************************************************************
     //返回true表示当前有效的新event开始了
-    private static boolean refreshFaceID(String ID, String gender)
+    public static boolean refreshFaceID(String ID, String gender)
     {
         boolean ret = false;
         boolean existFaceID = false;
@@ -249,6 +249,7 @@ public class FaceManagerUtil {
     public static List<FaceIDBean> getFaceIDList() {
         List<FaceIDBean> newOne;
         String json = FileUtils.readTextLine(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_FILE_PATH);
+        Log.e(TAG, "getFaceIDList: "+json );
         if(json.length() <= 1)
         {
             json = FileUtils.readTextLine(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_BAK_FILE_PATH);
@@ -265,7 +266,7 @@ public class FaceManagerUtil {
 
 
     //保存FaceIDList
-    private static void saveFaceIDList() {
+    public static void saveFaceIDList() {
         if(FaceIDList != null) {
             String json = JsonUtils.listToJson(FaceIDList);
             FileUtils.saveTxtFile(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_FILE_PATH, json);

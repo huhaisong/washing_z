@@ -85,13 +85,13 @@
             -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:descendantFocusability="blocksDescendants">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/stockRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </RelativeLayout>
 
         </com.example.hu.mediaplayerapk.widget.CustomizeScrollView>

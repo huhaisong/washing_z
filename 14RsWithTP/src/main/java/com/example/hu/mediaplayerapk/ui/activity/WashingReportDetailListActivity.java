@@ -1,6 +1,9 @@
 package com.example.hu.mediaplayerapk.ui.activity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +38,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
     private RecyclerView mContentRecyclerView;
     private TabAdapter mTabAdapter;
     private StockAdapter mStockAdapter;
+    private TextView emptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
         mHeadRecyclerView = findViewById(R.id.headRecyclerView);
         mContentRecyclerView = findViewById(R.id.contentRecyclerView);
         headHorizontalScrollView = findViewById(R.id.headScrollView);
+        emptyView = findViewById(R.id.empty_view);
 
         // TODO:Tab栏RecycleView
         // 设置RecyclerView水平显示
@@ -74,32 +79,37 @@ public class WashingReportDetailListActivity extends BaseActivity {
         initStock(TimeUtil.getDate()[1] + 1);
     }
 
+    private static final String TAG = "WashingReportDetailList";
+
     private void initStock(int month) {
         ArrayList stockBeans = new ArrayList<StockBean>();
         List<FaceIDBean> faceIDBeans = FaceManagerUtil.getFaceIDList();
+        Log.e(TAG, "initStock:1 " + faceIDBeans.size());
         for (int i = 0; i < faceIDBeans.size(); i++) {
             StockBean stockBean = new StockBean();
             stockBean.setStockName(faceIDBeans.get(i).getFaceID());
             ArrayList<StockBean.Date> dateArrayList = new ArrayList<>();
             for (int j = 0; j < TimeUtil.getMonthLastDay(month); j++) {
+
                 StockBean.Date date = new StockBean.Date();
                 Calendar a = Calendar.getInstance();
                 a.set(Calendar.MONTH, month - 1);
-                a.set(Calendar.DATE, i + 1);//把日期设置为当月第一天
+                a.set(Calendar.DATE, j );//把日期设置为当月第一天
                 int startTime = (int) (a.getTimeInMillis() / 1000);
 
                 List<WashingReportItem> washingReportItems = WashingReportManager.getInstance(this)
                         .searchByFaceIdAndDate(stockBean.getStockName(), startTime);
+                Log.e(TAG, "initStock: "+ startTime +"stockBean.getStockName() " + stockBean.getStockName() + ",initStock:2 " + washingReportItems.size());
                 int totalWashing = washingReportItems.size();
                 int totalInterrupt = 0;
                 int totalLongtime = 0;
-                if (washingReportItems!= null && washingReportItems.size()!= 0){
-                    stockBean.setIsLadyOrMen(washingReportItems.get(i).getIsLadyOrMen());
+                if (washingReportItems != null && washingReportItems.size() != 0) {
+                    stockBean.setIsLadyOrMen(washingReportItems.get(0).getIsLadyOrMen());
                     for (int k = 0; k < washingReportItems.size(); k++) {
-                        if (washingReportItems.get(i).getIsPlayInterrupt() == 1)
+                        if (washingReportItems.get(k).getIsPlayInterrupt() == 1)
                             totalInterrupt++;
 
-                        if (washingReportItems.get(i).getIsPlayInterrupt() == 1)
+                        if (washingReportItems.get(k).getIsLongInterval() == 1)
                             totalLongtime++;
                     }
                 }
@@ -112,6 +122,16 @@ public class WashingReportDetailListActivity extends BaseActivity {
             stockBeans.add(stockBean);
         }
         mStockAdapter.setStockBeans(stockBeans);
+        for (int i = 0; i < stockBeans.size(); i++) {
+            Log.e(TAG, "initStock: "+ stockBeans.get(i).toString());
+        }
+        if (stockBeans == null || stockBeans.size() == 0) {
+            mContentRecyclerView.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+        } else {
+            mContentRecyclerView.setVisibility(View.VISIBLE);
+            emptyView.setVisibility(View.GONE);
+        }
     }
 
     private void initTab(int month) {

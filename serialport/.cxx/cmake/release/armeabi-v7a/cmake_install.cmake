@@ -1,4 +1,4 @@
-# Install script for directory: E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport
+# Install script for directory: D:/workspace/demo/washingZ_svn/serialport
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -45,9 +45,9 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         StockBean.Date item = detailBeans.get(position);
-        holder.mTotalWashing.setText(item.getTotalWashing());
-        holder.mTotalInterrupt.setText(item.getTotalInterrupt());
-        holder.mTotalLongTime.setText(item.getTotalLongtime());
+        holder.mTotalWashing.setText(item.getTotalWashing()+"");
+        holder.mTotalInterrupt.setText(item.getTotalInterrupt()+"");
+        holder.mTotalLongTime.setText(item.getTotalLongtime()+"");
         if (item.getTotalLongtime()!= 0 ){
             holder.mTotalLongTime.setBackgroundColor(mContext.getResources().getColor(R.color.yellow_volume));
         }else {

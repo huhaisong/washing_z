@@ -319,6 +319,12 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         registerReceiver(bluetoothActBroadcastReceiver, bluetoothFilter);
 
         registerHumanDetectingBroadcast();
+
+        for (int i = 1; i < 50; i++) {
+            FaceManagerUtil.refreshFaceID(i+"","");
+        }
+
+        FaceManagerUtil.saveFaceIDList();
     }
 
     public boolean isOnResume() {

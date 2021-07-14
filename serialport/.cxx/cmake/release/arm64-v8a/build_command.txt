@@ -1,19 +1,19 @@
-Executable : E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\cmake.exe
+Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
--HE:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport
+-HD:\workspace\demo\washingZ_svn\serialport
 -DCMAKE_BUILD_TYPE=Release
--DCMAKE_TOOLCHAIN_FILE=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
 -DANDROID_ABI=arm64-v8a
--DANDROID_NDK=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669
+-DANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669
 -DANDROID_PLATFORM=android-19
 -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
--DCMAKE_ANDROID_NDK=E:\WORK_CODE\Android\android_studioSDK\ndk\21.0.6113669
+-DCMAKE_ANDROID_NDK=C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\21.0.6113669
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\build\intermediates\cmake\release\obj\arm64-v8a
--DCMAKE_MAKE_PROGRAM=E:\WORK_CODE\Android\android_studioSDK\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\workspace\demo\washingZ_svn\serialport\build\intermediates\cmake\release\obj\arm64-v8a
+-DCMAKE_MAKE_PROGRAM=C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=19
--BE:\WORK_CODE\Android\studio_workspace\github\washing_z\serialport\.cxx\cmake\release\arm64-v8a
+-BD:\workspace\demo\washingZ_svn\serialport\.cxx\cmake\release\arm64-v8a
 -GNinja
 jvmArgs : 
 
