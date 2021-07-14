@@ -14,7 +14,21 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_logView"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="ログ確認"
+            android:textSize="12sp" />
 
+        <Button
+            android:id="@+id/btn_detail_logView"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="詳細なログチェック"
+            android:textSize="12sp" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -241,28 +255,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_logView"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="ログ確認"
-                android:textSize="12sp" />
-        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_detail_logView"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="詳細なログチェック"
-            android:textSize="12sp" />
+
 
     </LinearLayout>
 

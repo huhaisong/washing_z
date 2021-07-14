@@ -29,15 +29,15 @@
         <activity android:name=".ui.activity.PhotoActivity" />
         <activity android:name=".ui.activity.BGMActivity" />
         <activity android:name=".ui.activity.OSDSettingActivity" />
-        <activity android:name=".ui.activity.WashingReportDetailListActivity" />
         <activity android:name=".usb_copy.USBCopyActivity" />
+        <activity android:name=".ui.activity.WashingReportDetailListActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-date
+            <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
@@ -61,7 +61,7 @@
                 <action android:name="android.intent.action.MEDIA_CHECKING" />
                 <action android:name="android.intent.action.MEDIA_REMOVED" />
 
-                <date android:scheme="file" />
+                <data android:scheme="file" />
             </intent-filter>
         </receiver>
         <receiver
@@ -76,7 +76,7 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
 
-            <meta-date
+            <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/lock_screen" />
         </receiver>
