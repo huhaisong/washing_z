@@ -37,6 +37,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
 
     private Context mContext;
     private Bitmap lady_pic, men_pic;
+
     public StockAdapter(Context mContext) {
         this.mContext = mContext;
         lady_pic = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.lady);
@@ -111,6 +112,8 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
+        if (stockBeans == null)
+            return 0;
         return stockBeans.size() == 0 ? 0 : stockBeans.size();
     }
 

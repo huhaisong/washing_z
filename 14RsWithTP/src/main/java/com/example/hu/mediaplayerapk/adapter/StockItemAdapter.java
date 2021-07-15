@@ -45,19 +45,19 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         StockBean.Date item = detailBeans.get(position);
-        holder.mTotalWashing.setText(item.getTotalWashing()+"");
-        holder.mTotalInterrupt.setText(item.getTotalInterrupt()+"");
-        holder.mTotalLongTime.setText(item.getTotalLongtime()+"");
-        if (item.getTotalLongtime()!= 0 ){
-            holder.mTotalLongTime.setBackgroundColor(mContext.getResources().getColor(R.color.yellow_volume));
-        }else {
-            holder.mTotalLongTime.setBackgroundColor(mContext.getResources().getColor(R.color.white));
+        holder.mTotalWashing.setText(item.getTotalWashing() + "");
+        holder.mTotalInterrupt.setText(item.getTotalInterrupt() + "");
+        holder.mTotalLongTime.setText(item.getTotalLongtime() + "");
+        if (item.getTotalLongtime() != 0) {
+            holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_yellow_bg);
+        } else {
+            holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
         }
 
-        if (item.getTotalInterrupt()!= 0 ){
-            holder.mTotalInterrupt.setBackgroundColor(mContext.getResources().getColor(R.color.colorAccent));
-        }else {
-            holder.mTotalInterrupt.setBackgroundColor(mContext.getResources().getColor(R.color.white));
+        if (item.getTotalInterrupt() != 0) {
+            holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_red_bg);
+        } else {
+            holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
         }
     }
 

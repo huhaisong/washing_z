@@ -250,6 +250,27 @@ public class TimeUtil {
     }
 
 
+    public static int getLastYearMonthLastDay(int month) {
+        Calendar a = Calendar.getInstance();
+        a.set(Calendar.YEAR, a.get(Calendar.YEAR) - 1);
+        a.set(Calendar.MONTH, month + 11);
+        a.set(Calendar.DATE, 1);//把日期设置为当月第一天
+        a.roll(Calendar.DATE, -1);//日期回滚一天，也就是最后一天
+        int maxDate = a.get(Calendar.DATE);
+        return maxDate;
+    }
+
+    public static int getNextYearMonthLastDay(int month) {
+        Calendar a = Calendar.getInstance();
+        a.set(Calendar.YEAR, a.get(Calendar.YEAR) + 1);
+        a.set(Calendar.MONTH, month - 13);
+        a.set(Calendar.DATE, 1);//把日期设置为当月第一天
+        a.roll(Calendar.DATE, -1);//日期回滚一天，也就是最后一天
+        int maxDate = a.get(Calendar.DATE);
+        return maxDate;
+    }
+
+
     public static void showTime(long time, String str) {
         Calendar mCalendar = Calendar.getInstance();
         mCalendar.setTimeInMillis(time);

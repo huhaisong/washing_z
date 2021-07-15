@@ -4,8 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="在統計數據確認畫面裡，可確認特定的照片(FaceID)以及洗手結果一覽表\n（可保存6個月內的LOG資料）"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/black" />
 
     <LinearLayout
         android:id="@+id/headLayout"
@@ -16,16 +33,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="50dp"
-            android:gravity="center_vertical">
-        </LinearLayout>
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_tv_stroke_no_corners_bg"
+            android:gravity="center_vertical"></LinearLayout>
 
         <com.example.hu.mediaplayerapk.widget.CustomizeScrollView
             android:id="@+id/headScrollView"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-           >
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,16 +61,92 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:background="@color/black" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contentRecyclerView"
+    <LinearLayout
+        android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contentRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:scrollbarSize="15dp"
+            android:scrollbarThumbVertical="@color/white"
+            android:scrollbarTrackVertical="@color/black"
+            android:scrollbars="vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="100dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/left" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textSize="28dp" />
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_tv_stroke_bg"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="back"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/empty_view"
@@ -62,7 +157,9 @@
         android:drawablePadding="5dp"
         android:gravity="center"
         android:text="暂无数据"
-        android:visibility="gone"
         android:textColor="#333333"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+
 </LinearLayout>
