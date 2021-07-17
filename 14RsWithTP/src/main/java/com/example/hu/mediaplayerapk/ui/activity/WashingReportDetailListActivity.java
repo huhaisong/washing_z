@@ -1,6 +1,6 @@
 package com.example.hu.mediaplayerapk.ui.activity;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -105,7 +105,20 @@ public class WashingReportDetailListActivity extends BaseActivity {
         mHeadRecyclerView.setAdapter(mTabAdapter);
 
         mContentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mStockAdapter = new StockAdapter(this);
+        mStockAdapter = new StockAdapter(this, new StockAdapter.StockItemListener() {
+            @Override
+            public void onItemClick(StockBean item, int day) {
+                Bundle bundle = new Bundle();
+                bundle.putInt(WashingReportDetailItemActivity.DAY, day);
+                bundle.putInt(WashingReportDetailItemActivity.MONTH, curMonth);
+                bundle.putString(WashingReportDetailItemActivity.FACE_ID, item.getFaceId());
+                Intent intent = new Intent(WashingReportDetailListActivity.this, WashingReportDetailItemActivity.class);
+                if (bundle != null) {
+                    intent.putExtras(bundle);
+                }
+                startActivity(intent);
+            }
+        });
         mContentRecyclerView.setAdapter(mStockAdapter);
         mStockAdapter.setOnTabScrollViewListener(new StockAdapter.OnTabScrollViewListener() {
             @Override
@@ -173,7 +186,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
         Log.e(TAG, "initStock:1 " + faceIDBeans.size());
         for (int i = 0; i < faceIDBeans.size(); i++) {
             StockBean stockBean = new StockBean();
-            stockBean.setStockName(faceIDBeans.get(i).getFaceID());
+            stockBean.setFaceId(faceIDBeans.get(i).getFaceID());
             ArrayList<StockBean.Date> dateArrayList = new ArrayList<>();
             int days;
             if (month < 0) {
@@ -199,8 +212,8 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 a.set(Calendar.DATE, j);//把日期设置为当月第一天
                 int startTime = (int) (a.getTimeInMillis() / 1000);
                 List<WashingReportItem> washingReportItems = WashingReportManager.getInstance(this)
-                        .searchByFaceIdAndDate(stockBean.getStockName(), startTime);
-                Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getStockName() + ",initStock:2 " + washingReportItems.size());
+                        .searchByFaceIdAndDate(stockBean.getFaceId(), startTime);
+                Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getFaceId() + ",initStock:2 " + washingReportItems.size());
                 int totalWashing = washingReportItems.size();
                 int totalInterrupt = 0;
                 int totalLongtime = 0;

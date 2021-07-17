@@ -14,16 +14,16 @@ public class StockBean {
     /**
      * 股票名称
      */
-    private String stockName;
+    private String faceId;
     private List<Date> detail;
     int isLadyOrMen;  //男女 -1:unknown: 1:lady, 0: men
 
-    public String getStockName() {
-        return stockName;
+    public String getFaceId() {
+        return faceId;
     }
 
-    public void setStockName(String stockName) {
-        this.stockName = stockName;
+    public void setFaceId(String faceId) {
+        this.faceId = faceId;
     }
 
     public int getIsLadyOrMen() {
@@ -84,7 +84,7 @@ public class StockBean {
     @Override
     public String toString() {
         return "StockBean{" +
-                "stockName='" + stockName + '\'' +
+                "stockName='" + faceId + '\'' +
                 ", detail=" + detail.toString() +
                 ", isLadyOrMen=" + isLadyOrMen +
                 '}';

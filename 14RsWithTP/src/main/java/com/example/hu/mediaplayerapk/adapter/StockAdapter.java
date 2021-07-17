@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.bean.StockBean;
-import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
 
 import java.util.ArrayList;
@@ -37,11 +36,13 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
 
     private Context mContext;
     private Bitmap lady_pic, men_pic;
+    private StockItemListener stockItemListener;
 
-    public StockAdapter(Context mContext) {
+    public StockAdapter(Context mContext, StockItemListener stockItemListener) {
         this.mContext = mContext;
         lady_pic = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.lady);
         men_pic = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.gentleman);
+        this.stockItemListener = stockItemListener;
     }
 
     public void setOnTabScrollViewListener(OnTabScrollViewListener onTabScrollViewListener) {
@@ -71,7 +72,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         StockBean item = stockBeans.get(position);
-        holder.mStockName.setText(item.getStockName());
+        holder.mStockName.setText(item.getFaceId());
         if (item.getIsLadyOrMen() == 1) {
             holder.mStockImg.setImageBitmap(lady_pic);
         } else {
@@ -81,7 +82,14 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
         holder.mStockRecyclerView.setNestedScrollingEnabled(false);
 
         // TODO：文本RecyclerView中具体信息的RecyclerView（RecyclerView嵌套）
-        StockItemAdapter stockItemAdapter = new StockItemAdapter(mContext);
+        StockItemAdapter stockItemAdapter = new StockItemAdapter(mContext, new StockItemAdapter.OnItemClickListen() {
+            @Override
+            public void onItemClick(int itemPosition) {
+                if (stockItemListener != null) {
+                    stockItemListener.onItemClick(item, itemPosition);
+                }
+            }
+        });
         holder.mStockRecyclerView.setAdapter(stockItemAdapter);
         stockItemAdapter.setDetailBeans(item.getDetail());
         if (!recyclerViewHolder.contains(holder)) {
@@ -136,4 +144,10 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
     public interface OnTabScrollViewListener {
         void scrollTo(int l, int t);
     }
+
+    public interface StockItemListener {
+
+        void onItemClick(StockBean item, int day);
+    }
+
 }

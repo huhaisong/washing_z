@@ -31,6 +31,7 @@
         <activity android:name=".ui.activity.OSDSettingActivity" />
         <activity android:name=".usb_copy.USBCopyActivity" />
         <activity android:name=".ui.activity.WashingReportDetailListActivity" />
+        <activity android:name=".ui.activity.WashingReportDetailItemActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,14 +20,16 @@ import java.util.Random;
  * Created by 码农专栏
  * on 2020-06-04.
  */
-public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.ItemViewHolder> {
+public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.ItemViewHolder>  {
 
     private List<StockBean.Date> detailBeans;
 
     private Context mContext;
+    OnItemClickListen onItemClickListener;
 
-    public StockItemAdapter(Context mContext) {
+    public StockItemAdapter(Context mContext, OnItemClickListen onItemClickListen) {
         this.mContext = mContext;
+        this.onItemClickListener = onItemClickListen;
     }
 
 
@@ -59,6 +62,22 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
         } else {
             holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
         }
+
+        holder.mTotalWashing.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position);
+            }
+        });
+        holder.mTotalInterrupt.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position);
+            }
+        });
+        holder.mTotalLongTime.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -78,6 +97,12 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
             mTotalInterrupt = itemView.findViewById(R.id.tv_total_interrupt);
             mTotalLongTime = itemView.findViewById(R.id.tv_total_long_time);
         }
+    }
+
+
+    public interface OnItemClickListen {
+
+        void onItemClick(int position);
     }
 }
 
