@@ -164,15 +164,85 @@
                 android:textSize="20dp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:id="@+id/ll_recycle_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/faceIDValue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="日時"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="映像"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+                android:gravity="center"
+                android:text="結果"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+                android:gravity="center"
+                android:text="体温"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+                android:gravity="center"
+                android:text="間隔異常"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_detail"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_below="@+id/faceIDValue"
+            android:layout_below="@+id/ll_recycle_header"
+            android:scrollbarSize="15dp"
+            android:scrollbarThumbVertical="@color/white"
+            android:scrollbarTrackVertical="@color/black"
+            android:scrollbars="vertical"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp" />
 
     </RelativeLayout>

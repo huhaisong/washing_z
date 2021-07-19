@@ -20,9 +20,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hu.mediaplayerapk.R;
+import com.example.hu.mediaplayerapk.adapter.WashingReportDetailAdapter;
 import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.dao.WashingReportManager;
@@ -54,8 +56,10 @@ public class WashingReportDetailItemActivity extends BaseActivity {
     private TextView temperatureTextView;
     private TextView dateTextView;
     private TextView faceTextView;
+    private TextView backTextView;
     private ImageView imageView;
     private RecyclerView recyclerView;
+    private WashingReportDetailAdapter washingReportDetailAdapter;
 
     private int totalInterrupt, totalFirstPlay, totalLongTime, totalSecondTime, totalTemperatureTimes, totalTemperature;
 
@@ -76,6 +80,13 @@ public class WashingReportDetailItemActivity extends BaseActivity {
         totalLongTimeTextView = findViewById(R.id.tv_total_long_time);
         totalSecondPlayTextView = findViewById(R.id.tv_total_second_play);
         temperatureTextView = findViewById(R.id.tv_temperature);
+        backTextView = findViewById(R.id.tv_back);
+        backTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         dateTextView = findViewById(R.id.tv_date);
         faceTextView = findViewById(R.id.faceIDValue);
         recyclerView = findViewById(R.id.rv_detail);
@@ -145,8 +156,8 @@ public class WashingReportDetailItemActivity extends BaseActivity {
         if (totalTemperatureTimes != 0)
             temperatureTextView.setText("平均体温：" + (double) totalTemperature / totalTemperatureTimes + "℃");
 
-
-
+        washingReportDetailAdapter = new WashingReportDetailAdapter(this, washingReportItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(washingReportDetailAdapter);
     }
-
 }

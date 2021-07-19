@@ -20,7 +20,7 @@ import java.util.Random;
  * Created by 码农专栏
  * on 2020-06-04.
  */
-public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.ItemViewHolder>  {
+public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.ItemViewHolder> {
 
     private List<StockBean.Date> detailBeans;
 
@@ -55,6 +55,13 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
             holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_yellow_bg);
         } else {
             holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
+        }
+
+
+        if (item.getTotalLongtime() != 0) {
+            holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_light_blue_bg);
+        } else {
+            holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
         }
 
         if (item.getTotalInterrupt() != 0) {

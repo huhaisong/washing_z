@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="日時"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_play_number"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+        android:gravity="center_vertical"
+        android:text="映像"
+        android:paddingLeft="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16dp" />
+
+
+    <TextView
+        android:id="@+id/tv_play_result"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="結果"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+        android:gravity="center"
+        android:text="体温"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_long_time"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_tv_stroke_no_corners_blue_bg"
+        android:gravity="center"
+        android:text="間隔異常"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+</LinearLayout>
+

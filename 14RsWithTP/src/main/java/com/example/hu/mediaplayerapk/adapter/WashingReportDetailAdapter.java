@@ -12,9 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.bean.WashingReportItem;
+import com.example.hu.mediaplayerapk.util.TimeUtil;
 import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * ===================================
@@ -27,9 +31,9 @@ public class WashingReportDetailAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private static final int TYPE_HEAD = 1;
     private static final int TYPE_CONTENT = 2;
-    private ArrayList<WashingReportItem> datas = null;
+    private List<WashingReportItem> datas = null;
 
-    public WashingReportDetailAdapter(Context mContext, ArrayList<WashingReportItem> datas) {
+    public WashingReportDetailAdapter(Context mContext, List<WashingReportItem> datas) {
         this.mContext = mContext;
         this.datas = datas;
     }
@@ -37,65 +41,73 @@ public class WashingReportDetailAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_stock_content_layout, parent, false);
-        if (viewType == TYPE_HEAD) {
-            return new HeadViewHolder(view);
-        } else {
-            return new NormalViewHolder(view);
-        }
+     /*   if (viewType == TYPE_HEAD) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_washing_report_detail_header, parent, false);
+            return new ViewHolder(view);
+        } else {*/
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_washing_report_detail_content, parent, false);
+        return new NormalViewHolder(view);
+//        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+        ((ViewHolder) holder).setData(datas.get(position), position);
     }
 
 
     public class NormalViewHolder extends ViewHolder {
 
-        public TextView mStockName;
-        public ImageView mStockImg;
-        public CustomizeScrollView mStockScrollView;
-        public RecyclerView mStockRecyclerView;
-
         public NormalViewHolder(@NonNull View itemView) {
             super(itemView);
-            mStockName = itemView.findViewById(R.id.faceIDValue);
-            mStockImg = itemView.findViewById(R.id.photoView);
-            mStockScrollView = itemView.findViewById(R.id.stockScrollView);
-            mStockRecyclerView = itemView.findViewById(R.id.stockRecyclerView);
+        }
+
+        @Override
+        public void setData(WashingReportItem item, int position) {
+            super.setData(item, position);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date((item.getTime() * 1000l));
+            tv_date.setText(simpleDateFormat.format(date));
+            if (item.getPlayNum() == 1) {
+                tv_play_number.setText("初回動画");
+            } else if (item.getPlayNum() == 2) {
+                tv_play_number.setText("２回目以降動画");
+            }
+            if (item.getIsPlayInterrupt() == 1) {
+                tv_play_result.setText("中断");
+            } else {
+                tv_play_result.setText("完了");
+            }
+            tv_temperature.setText(item.getLastTemp() + "℃");
+            if (item.getIsLongInterval() == 1) {
+                tv_long_time.setText("○");
+            } else {
+                tv_long_time.setText("");
+            }
         }
     }
 
 
-    public class HeadViewHolder extends ViewHolder {
-
-        public TextView mStockName;
-        public ImageView mStockImg;
-        public CustomizeScrollView mStockScrollView;
-        public RecyclerView mStockRecyclerView;
-
-        public HeadViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mStockName = itemView.findViewById(R.id.faceIDValue);
-            mStockImg = itemView.findViewById(R.id.photoView);
-            mStockScrollView = itemView.findViewById(R.id.stockScrollView);
-            mStockRecyclerView = itemView.findViewById(R.id.stockRecyclerView);
-        }
-    }
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView mStockName;
-        public ImageView mStockImg;
-        public CustomizeScrollView mStockScrollView;
-        public RecyclerView mStockRecyclerView;
+        public TextView tv_date;
+        public TextView tv_play_number;
+        public TextView tv_play_result;
+        public TextView tv_temperature;
+        public TextView tv_long_time;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mStockName = itemView.findViewById(R.id.faceIDValue);
-            mStockImg = itemView.findViewById(R.id.photoView);
-            mStockScrollView = itemView.findViewById(R.id.stockScrollView);
-            mStockRecyclerView = itemView.findViewById(R.id.stockRecyclerView);
+            tv_date = itemView.findViewById(R.id.tv_date);
+            tv_play_number = itemView.findViewById(R.id.tv_play_number);
+            tv_play_result = itemView.findViewById(R.id.tv_play_result);
+            tv_temperature = itemView.findViewById(R.id.tv_temperature);
+            tv_long_time = itemView.findViewById(R.id.tv_long_time);
+        }
+
+        public void setData(WashingReportItem item, int position) {
+
+
         }
     }
 
