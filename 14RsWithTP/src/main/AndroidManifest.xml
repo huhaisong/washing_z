@@ -12,6 +12,7 @@
         android:theme="@style/Theme.picker">
         <activity android:name=".ui.activity.SimpleSettingActivity"></activity>
         <activity android:name=".ui.activity.WashingReportListActivity" />
+        <activity android:name=".ui.activity.ChangeAdminPassActivity" />
         <activity
             android:name=".ui.activity.TempActivity"
             android:theme="@style/Theme.picker" />

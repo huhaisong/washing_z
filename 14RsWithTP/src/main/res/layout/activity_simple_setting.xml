@@ -242,22 +242,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_logView"
+            android:id="@+id/btn_change_password"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="ログ確認"
+            android:layout_marginTop="5dp"
+            android:text="パスワードを変更する"
             android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/btn_detail_logView"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="詳細なログチェック"
-            android:textSize="12sp" />
-
-
 
     </LinearLayout>
 
@@ -401,6 +391,23 @@
                     android:inputType="numberDecimal" />
             </LinearLayout>
         </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_logView"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="ログ確認"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_detail_logView"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="詳細なログチェック"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <RelativeLayout

@@ -4,10 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
+import com.example.hu.mediaplayerapk.R;
+import com.example.hu.mediaplayerapk.config.Config;
+import com.example.hu.mediaplayerapk.ui.activity.MainActivity;
 import com.example.hu.mediaplayerapk.ui.activity.SimpleSettingActivity;
+import com.example.hu.mediaplayerapk.ui.widget.PayDialog;
+import com.example.hu.mediaplayerapk.util.SPUtils;
 
 import java.util.List;
 
@@ -48,11 +56,22 @@ public class TouchModel {
             /*localObject = new Intent("android.intent.action.MAIN");
             ((Intent) localObject).addCategory("android.intent.category.HOME");
             mContext.startActivity((Intent) localObject);*/
-            Intent intent = new Intent(mContext, SimpleSettingActivity.class);
-            mContext.startActivity(intent);
+            PayDialog payDialog = new PayDialog(mContext, new PayDialog.FinishedPass() {
+                @Override
+                public void finishedpass(String payPass) {
+                    if (payPass.equals(SPUtils.getString(mContext, Config.ADMIN_PASS, "1234"))) {
+                        Intent intent = new Intent(mContext, SimpleSettingActivity.class);
+                        mContext.startActivity(intent);
+                    } else {
+                        Toast.makeText(mContext, "間違ったパスワード", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            payDialog.show();
         }
     }
 
+    private static final String TAG = "TouchModel";
 
     public boolean onTouchEvent(MotionEvent paramMotionEvent) {
         switch (paramMotionEvent.getActionMasked()) {

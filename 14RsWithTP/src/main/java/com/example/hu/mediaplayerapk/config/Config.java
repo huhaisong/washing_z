@@ -58,6 +58,7 @@ public static int MALE = 1;
     public static final String FACEID_STORE_FILE_PATH = "washing_stored_infor.ini";
     public static final String FACEID_STORE_BAK_FILE_PATH = "washing_stored_infor.bak";
     public static final String DISPLAY_RATIO = "display_ratio";
+    public static final String ADMIN_PASS = "ADMIN_PASS";
     public static final String LANGUAGE = "language";
 
     public static final String RESET_HOUR = "reset_hour";

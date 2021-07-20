@@ -35,6 +35,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     private Button btn_return;
     private Button btn_log;
     private Button btn_detail_log;
+    private Button btn_change_password;
     private EditText editTextEmailAddr;  //邮件地址
     private EditText editTextErrorTemp;  //高温体温值
     private EditText editTextFaceDetectedTime;  //人脸检测稳定
@@ -72,6 +73,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         alarmStartTextView = findViewById(R.id.et_alarm_start_time);
         alarmEndTextView = findViewById(R.id.et_alarm_end_time);
         alarmEndTimeLL = findViewById(R.id.ll_alarm_end_time);
+        btn_change_password = findViewById(R.id.btn_change_password);
         alarmStartTimeLL = findViewById(R.id.ll_alarm_start_time);
         alarmSwitch = findViewById(R.id.switch_alarm);
         alarmStartTextView.setText(SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_HOUR, 0) + ":" + SPUtils.getInt(mContext, Config.ALARM_NOTICE_START_TIME_MINUTE, 0));
@@ -80,6 +82,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         alarmEndTextView.setOnClickListener(this);
         alarmStartTimeLL.setOnClickListener(this);
         alarmEndTimeLL.setOnClickListener(this);
+        btn_change_password.setOnClickListener(this);
         alarmValidTimeEdit.setText(SPUtils.getFloat(mContext, Config.ALARM_NOTICE_VALID_TIME, 1f) + "");
         alarmIntervalEdit.setText(SPUtils.getFloat(mContext, Config.ALARM_NOTICE_INTERVAL, 1f) + "");
 
@@ -275,6 +278,10 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_change_password:
+                Intent intent = new Intent(mContext, ChangeAdminPassActivity.class);
+                mContext.startActivity(intent);
+                break;
             case R.id.et_alarm_start_time:
             case R.id.ll_alarm_start_time:
                 TimePickerDialog tp = new TimePickerDialog(mContext, new TimePickerDialog.OnTimeSetListener() {
