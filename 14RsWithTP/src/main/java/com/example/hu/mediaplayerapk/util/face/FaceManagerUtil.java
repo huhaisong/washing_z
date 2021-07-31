@@ -110,6 +110,22 @@ public class FaceManagerUtil {
         return lastTimeInterval;
     }
 
+    public static boolean FaceRecordLastTimeIntervalError(String ID)
+    {
+        long lastWashingInterval = FaceManagerUtil.FaceRecordGetLastTime(ID);
+        if(lastWashingInterval != 0)
+        {
+            lastWashingInterval = lastWashingInterval/1000/60;  //分钟
+        }
+        if ((lastWashingInterval > SPUtils.getLong(mContext, Config.CFGFaceLongNoWashMinTime, Config.DefFaceLongNoWashMinTime))&&
+                (lastWashingInterval < SPUtils.getLong(mContext, Config.CFGFaceLongNoWashMaxTime, Config.DefFaceLongNoWashMaxTime)))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     //判断该ID是否刚刚离开
     public static boolean FaceRecordIsJustLeave(String ID)
     {
@@ -223,6 +239,51 @@ public class FaceManagerUtil {
         return playTime;
     }
 
+    public static boolean IsLadyID(String ID)
+    {
+        boolean ret = false;
+
+        for(FaceIDBean curFace:FaceIDList)
+        {
+            if(curFace.getFaceID().equalsIgnoreCase(ID))
+            {
+                ret = curFace.getGenderIsLady();
+                break;
+            }
+        }
+        return ret;
+    }
+
+    public static String getGenderStr(String ID)
+    {
+        boolean ret = false;
+
+        for(FaceIDBean curFace:FaceIDList)
+        {
+            if(curFace.getFaceID().equalsIgnoreCase(ID))
+            {
+                ret = curFace.getGenderIsLady();
+                break;
+            }
+        }
+
+        return (ret == true)?"1.0":"-1.0";
+    }
+
+    public static void setPlayEvent(String ID)
+    {
+        boolean ret = false;
+
+        for(FaceIDBean curFace:FaceIDList)
+        {
+            if(curFace.getFaceID().equalsIgnoreCase(ID))
+            {
+                curFace.setHasPlayEvent(true);
+                break;
+            }
+        }
+        return ;
+    }
     public static String getCurActiveID()
     {
         for(FaceIDBean curFace:FaceIDList)
@@ -268,6 +329,7 @@ public class FaceManagerUtil {
     //保存FaceIDList
     public static void saveFaceIDList() {
         if(FaceIDList != null) {
+            FaceIDList = checkAndDeleteOldFace(FaceIDList);
             String json = JsonUtils.listToJson(FaceIDList);
             FileUtils.saveTxtFile(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_FILE_PATH, json);
             FileUtils.saveTxtFile(Environment.getExternalStorageDirectory() + File.separator + Config.FACEID_STORE_BAK_FILE_PATH, json);
@@ -279,6 +341,15 @@ public class FaceManagerUtil {
     {
         //排序
         Collections.sort(list);
+
+        //判断是否有没有播放事件的，没有就删掉
+        /*for(int i = list.size()-1; i >= 0; i--)
+        {
+            if((list.get(i) == null)||(list.get(i).getHasPlayEvent() == false))
+            {
+                list.remove(i);
+            }
+        }*/
         //printAll(list);
         Log.d(TAG, "FaceID number = " + list.size());
         //判断个数是否超

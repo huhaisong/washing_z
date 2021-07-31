@@ -49,6 +49,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
     private EditText alarmValidTimeEdit;
     private TextView alarmStartTextView;
     private TextView alarmEndTextView;
+
     private Switch switchTempOnOff;
     private Switch alarmSwitch;
 
@@ -73,6 +74,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         alarmStartTextView = findViewById(R.id.et_alarm_start_time);
         alarmEndTextView = findViewById(R.id.et_alarm_end_time);
         alarmEndTimeLL = findViewById(R.id.ll_alarm_end_time);
+
         btn_change_password = findViewById(R.id.btn_change_password);
         alarmStartTimeLL = findViewById(R.id.ll_alarm_start_time);
         alarmSwitch = findViewById(R.id.switch_alarm);
@@ -83,7 +85,7 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         alarmStartTimeLL.setOnClickListener(this);
         alarmEndTimeLL.setOnClickListener(this);
         btn_change_password.setOnClickListener(this);
-        alarmValidTimeEdit.setText(SPUtils.getFloat(mContext, Config.ALARM_NOTICE_VALID_TIME, 1f) + "");
+        alarmValidTimeEdit.setText(SPUtils.getInt(mContext, Config.ALARM_NOTICE_VALID_TIME, Config.DefAlarmNoticeLastTime) + "");
         alarmIntervalEdit.setText(SPUtils.getFloat(mContext, Config.ALARM_NOTICE_INTERVAL, 1f) + "");
 
         btn_return = (Button) findViewById(R.id.btn_return);
@@ -265,11 +267,11 @@ public class SimpleSettingActivity extends BaseActivity implements View.OnClickL
         }
 
         Float alarmInterval = Float.valueOf(alarmIntervalEdit.getText().toString());
-        Float alarmValid = Float.valueOf(alarmValidTimeEdit.getText().toString());
+        int alarmValid = Integer.valueOf(alarmValidTimeEdit.getText().toString());
         if (alarmInterval > 1)
             SPUtils.putFloat(mContext, Config.ALARM_NOTICE_INTERVAL, alarmInterval);
         if (alarmValid > 1)
-            SPUtils.putFloat(mContext, Config.ALARM_NOTICE_VALID_TIME, alarmValid);
+            SPUtils.putInt(mContext, Config.ALARM_NOTICE_VALID_TIME, alarmValid);
 
         super.onDestroy();
     }

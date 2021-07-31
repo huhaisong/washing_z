@@ -90,7 +90,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public static int prepareBeaconTagNo;  //在触发人感后弹出对话框是否需要
     public static boolean enableWashingSelect = true;  //是否使能washing弹框选择
     public static int WashingSelected = WASHING_SELECTED_NONE;  //  如果是WASHING_SELECTED_T70，则在openService的时候播放beacon
-    private Context mContext;
+    private static  Context mContext;
     private WashingChooseDialog ChooseDialog;
     private FaceRectView faceRectView;
     private View tempWhiteView;
@@ -282,6 +282,10 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus == true) {
+            if(mFaceTemper != null)
+            {
+                mFaceTemper.close();
+            }
             mFaceTemper = new FaceTemper(mContext, faceRectView, tempWhiteView);
         }
         return;
@@ -328,6 +332,10 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     @Override
     protected void onPause() {
         Log.d(TAG, "MainActivity onPause\n\n");
+        if (mFaceTemper != null) {
+            mFaceTemper.close();
+        }
+
         unregisterReceiver(receiver);
         unregisterReceiver(bluetoothActBroadcastReceiver);
         //bluetoothActBroadcastReceiver = null;
@@ -492,6 +500,10 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         if (receiver != null) {
             unregisterReceiver(receiver);
         }
+
+        if (mFaceTemper != null) {
+            mFaceTemper.close();
+        }
         if (bluetoothActBroadcastReceiver != null) {
             unregisterReceiver(bluetoothActBroadcastReceiver);
         }
@@ -536,6 +548,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     private WashingReportItem mWashingReportItem = new WashingReportItem();
 
     private void FaceDetectPlayingStateMachine(int intentNo, String ID, String gender, Rect rect) {
+
         if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
             if (intentNo == Config.BEACON_TAG_NO_PERSION) {//没人
                 if (mFaceTemper != null) {
@@ -565,54 +578,111 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 if (intentNo == Config.BEACON_TAG_PERSION) {
                     //success washing
                     FaceManagerUtil.savePlayRecord(ID, -1, -1);
+                    //Logger.WashingLoggerAppend(ID, FaceManagerUtil.getGenderStr(ID), 1, 0, 0, 0);
+                    MainActivity.pushNewPlayEvent(ID,
+                            FaceManagerUtil.getGenderStr(ID),0, false);
                 } else {
                     if (mainActivityPlayModel != null) {
                         FaceManagerUtil.savePlayRecord(ID, mainActivityPlayModel.getCurrentNum(), mainActivityPlayModel.getCurrentPosition());
                     }
-                    beaconTagNo = intentNo;
-                    mainActivityPlayModel.startPlayBeacon(false);
-                    Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
 
                     //保存进数据库
-                    mWashingReportItem.setFaceID(ID);
-                    if (gender.equalsIgnoreCase("1.0")) {
-                        mWashingReportItem.setIsLadyOrMen(1);
-                    } else if (gender.equalsIgnoreCase("-1.0")) {
-                        mWashingReportItem.setIsLadyOrMen(0);
-                    }
-                    mWashingReportItem.setIsPlayInterrupt(1);
-                    if (mainActivityPlayModel.getCurrentNum() == EVENT_T70_FILE) {
-                        mWashingReportItem.setPlayNum(1);
-                    } else if (mainActivityPlayModel.getCurrentNum() == EVENT_T40_FILE) {
-                        mWashingReportItem.setPlayNum(2);
-                    }
-                    WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
+                    //Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
+                    pushNewPlayEvent(ID, gender,1, false);
+
+                    beaconTagNo = intentNo;
+                    mainActivityPlayModel.startPlayBeacon(false);
+
                 }
-            } else if (intentNo == Config.BEACON_TAG_PERSION/* && beaconTagNo == Config.BEACON_TAG_NO_PERSION*/) {//原来没人，现在又有人了
-                if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
+            } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来没人，现在又有人了
+                /*if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     //断点续播，不需要进入测温
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else {
+                } else */{
                     PopTempCaptureActivity(intentNo, ID, gender);
+
+                    //Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
+                    //pushNewPlayEvent(ID, gender,0);
                 }
             }
         } else {
             if (intentNo == Config.BEACON_TAG_PERSION) {//有人
-                if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
+                /*if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else {
+                } else */{
                     PopTempCaptureActivity(intentNo, ID, gender);
                 }
+                //Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
+                //pushNewPlayEvent(ID, gender,0);
             } else {
                 if (mFaceTemper != null) {
                     mFaceTemper.close();
                 }
             }
         }
+    }
+
+    public static void pushNewPlayEvent(String ID, String gender, int isInterrupt, boolean callFromFinish)
+    {
+        int curPlayNum = -1;
+        boolean isFirstMovie = false;
+        boolean isInternalError = false;
+        if(ID  == null)
+        {
+            return ;
+        }
+        FaceManagerUtil.setPlayEvent(ID);
+
+        if(mainActivityPlayModel != null)
+        {
+            curPlayNum = mainActivityPlayModel.getCurrentNum();
+        }
+
+        if(callFromFinish == true)
+        {
+            curPlayNum -= 1;  //如果是播放结束后执行，需要减1
+        }
+
+        //保存进数据库
+        WashingReportItem mWashingReportItem = new WashingReportItem();
+        mWashingReportItem.setIsPlayInterrupt(isInterrupt);
+        mWashingReportItem.setFaceID(ID);
+        if (gender.equalsIgnoreCase("1.0")) {
+            mWashingReportItem.setIsLadyOrMen(1);
+        } else if (gender.equalsIgnoreCase("-1.0")) {
+            mWashingReportItem.setIsLadyOrMen(0);
+        }
+
+        if(SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0)
+        {
+            mWashingReportItem.setLastTemp((double)MyApplication.getCurUseFulTemp());
+        }
+
+        if (FaceManagerUtil.FaceRecordLastTimeIntervalError(ID) == true)
+        {
+            mWashingReportItem.setIsLongInterval(1);
+            isInternalError = true;
+        }
+        else
+        {
+            mWashingReportItem.setIsLongInterval(0);
+            isInternalError = false;
+        }
+        Log.d(TAG,"pushNewPlayEvent "+ID +" curPlayNum "+curPlayNum);
+
+        if (curPlayNum == EVENT_T70_FILE) {
+            mWashingReportItem.setPlayNum(1);
+            isFirstMovie = true;
+        } else if (curPlayNum == EVENT_T40_FILE) {
+            mWashingReportItem.setPlayNum(2);
+        }
+        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
+
+        Logger.WashingITVLoggerAppend(ID, isFirstMovie, (isInterrupt == 1)?false:true,MyApplication.getCurUseFulTemp()+"",isInternalError);
     }
 
     //**************************************************************
@@ -677,32 +747,24 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 mFaceTemper.open();
             }
         }
-        //直接在此判断是播放长视频还是短视频
-        if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {
-            WashingSelected = WASHING_SELECTED_T70;
-        } else {
-            WashingSelected = WASHING_SELECTED_T40;
+        //判断是否断点续播
+        if ((FaceManagerUtil.FaceRecordGetLastTime(ID) < SPUtils.getLong(mContext, Config.CFGFaceResumeTime, Config.DefFaceResumeTime))
+                && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
+            beaconTagNo = intentNo;
+            mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
         }
-        beaconTagNo = intentNo;
-        BeaconEventNo = (WashingSelected == WASHING_SELECTED_T70) ? -1 : 0;  //第一个文件是T70
-        WashingSelected = WASHING_SELECTED_NONE;
-        mainActivityPlayModel.startPlayBeacon(false);
-        Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
-
-
-        //保存进数据库
-        mWashingReportItem.setFaceID(ID);
-        if (gender.equalsIgnoreCase("1.0")) {
-            mWashingReportItem.setIsLadyOrMen(1);
-        } else if (gender.equalsIgnoreCase("-1.0")) {
-            mWashingReportItem.setIsLadyOrMen(0);
+        else {
+            //直接在此判断是播放长视频还是短视频
+            if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {
+                WashingSelected = WASHING_SELECTED_T70;
+            } else {
+                WashingSelected = WASHING_SELECTED_T40;
+            }
+            beaconTagNo = intentNo;
+            BeaconEventNo = (WashingSelected == WASHING_SELECTED_T70) ? -1 : 0;  //第一个文件是T70
+            WashingSelected = WASHING_SELECTED_NONE;
+            mainActivityPlayModel.startPlayBeacon(false);
         }
-        if (mainActivityPlayModel.getCurrentNum() == EVENT_T70_FILE) {
-            mWashingReportItem.setPlayNum(1);
-        } else if (mainActivityPlayModel.getCurrentNum() == EVENT_T40_FILE) {
-            mWashingReportItem.setPlayNum(2);
-        }
-        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
     }
 
     private void PopWashingChooseDialog(int intentNo) {

@@ -3,6 +3,8 @@ package com.example.hu.mediaplayerapk.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.bean.StockBean;
+import com.example.hu.mediaplayerapk.config.Config;
+import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -25,9 +30,9 @@ import java.util.List;
  * on 2020-06-04.
  */
 public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> {
-
+    private static String TAG = "StockAdapter";
     private List<ViewHolder> recyclerViewHolder = new ArrayList<>();
-
+    private final int isSetImage = 0xFF000001;
     private int offestX;
 
     private OnTabScrollViewListener onTabScrollViewListener;
@@ -65,19 +70,44 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //Log.d(TAG, "onCreateViewHolder");
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_stock_content_layout, parent, false);
         return new ViewHolder(view);
     }
 
+    //HashMap<Integer,Boolean> states = new HashMap<Integer, Boolean>();
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         StockBean item = stockBeans.get(position);
         holder.mStockName.setText(item.getFaceId());
-        if (item.getIsLadyOrMen() == 1) {
+        /*if (item.getIsLadyOrMen() == 1) {
             holder.mStockImg.setImageBitmap(lady_pic);
         } else {
             holder.mStockImg.setImageBitmap(men_pic);
+        }*/
+        //display thumbnail
+        {
+            String picPath = Config.FACEME_PIC_PATH + item.getFaceId() + ".jpg";
+            Uri picUri= Uri.parse(picPath);
+
+            if(FileUtils.fileState(picPath) == true) {
+                holder.mStockImg.setImageURI(picUri);
+            }
+            else {
+                if (item.getIsLadyOrMen() == 1) {
+                    holder.mStockImg.setImageBitmap(lady_pic);
+                } else {
+                    holder.mStockImg.setImageBitmap(men_pic);
+                }
+            }
+            //holder.mStockImg.setTag(isSetImage, 1);
         }
+
+        /*if(!states.isEmpty() &&(states.get(position) != null)&&(states.get(position)  == true))
+        {
+            return;
+        }
+        states.put(position, true);*/
         holder.mStockRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
         holder.mStockRecyclerView.setNestedScrollingEnabled(false);
 
@@ -86,7 +116,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
             @Override
             public void onItemClick(int itemPosition) {
                 if (stockItemListener != null) {
-                    stockItemListener.onItemClick(item, itemPosition);
+                    stockItemListener.onItemClick(item, itemPosition+1);
                 }
             }
         });

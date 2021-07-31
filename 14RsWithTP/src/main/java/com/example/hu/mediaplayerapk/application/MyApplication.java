@@ -65,6 +65,7 @@ public class MyApplication extends Application {
     public static String internal_system_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.SYSTEM_FILE_NAME;
     public static String internal_washing_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME;
     public static String internal_warning_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME;
+    public static String internal_ring_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.RING_FILE_NAME;
 
     public static String usb_system_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_SYSTEM_FILE_NAME;
     public static String usb_impactv_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTV_FILE_NAME;
@@ -73,6 +74,7 @@ public class MyApplication extends Application {
     public static String usb_beacon_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_BEACON_EVENT_FILE_NAME;
     public static String usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WASHING_FILE_NAME;
     public static String usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WARNING_FILE_NAME;
+    public static String usb_ring_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_RING_FILE_NAME;
     public static boolean existExternalSDCard;
     private boolean isOpen = false;
     protected static MyApplication instance;
@@ -83,6 +85,7 @@ public class MyApplication extends Application {
     public static int ScreenHeight;
     private static Context mContext;
     private static float curTemp = 0;
+    private static double curUsefulTemp = 0;  //经过temper界面获取确认人脸后记录下的温度
 
     private static Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -105,7 +108,7 @@ public class MyApplication extends Application {
                             {
                                 //textViewTemp.setText(myformat.format(tempVal) + " " + msgPath+"\n");
                                 Log.d(TAG, myformat.format(tempVal) + " " + msgPath+"\n");
-                                curTemp = (float)(tempVal /0.1*0.1);
+                                curTemp = (float)(((int)(tempVal *10))/10f);
                             }
                         }
                     }
@@ -276,6 +279,8 @@ public class MyApplication extends Application {
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME);
         internal_washing_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME);
+        internal_ring_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
+                getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.RING_FILE_NAME);
 
         external_warning_path = Config.EXTERNAL_FILE_ROOT_PATH + File.separator +
                 getFileName(Config.EXTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME);
@@ -297,6 +302,8 @@ public class MyApplication extends Application {
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WARNING_FILE_NAME);
         usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator +
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WASHING_FILE_NAME);
+        usb_ring_path = USB_STORAGE_ROOT_PATH + File.separator +
+                getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_RING_FILE_NAME);
         Log.e(TAG, "initFilePath: " +
                 "\nexternal_impactv_path = " + external_impactv_path +
                 "\nexternal_impacttv_path = " + external_impacttv_path +
@@ -460,6 +467,7 @@ public class MyApplication extends Application {
                     Config.USB_STORAGE_BEACON_EVENT_FILE_NAME = "beacon" + serialNumberDefault;
                     Config.USB_STORAGE_WARNING_FILE_NAME = "warning" + serialNumberDefault;
                     Config.USB_STORAGE_WASHING_FILE_NAME = "washing" + serialNumberDefault;
+                    Config.USB_STORAGE_RING_FILE_NAME = "ring" + serialNumberDefault;
                     break;
             }
         } catch (Exception e) {
@@ -532,13 +540,24 @@ public class MyApplication extends Application {
     private static temp.cv.com.tempreader.broadcast.USBDeviceReceive usbDeviceReceiver = null;
     private static TempUtil tempReader = null;
 
-    public float getCurTemp()
+    public static float getCurTemp()
     {
         if(tempReader != null)
         {
             return curTemp;
         }
         return 0;
+    }
+
+    public static double getCurUseFulTemp()
+    {
+        Log.d(TAG, curUsefulTemp+"");
+        return curUsefulTemp;
+    }
+
+    public static void setCurUsefulTemp(float newValue)
+    {
+        curUsefulTemp = (double)((int)(newValue*10))/10d;
     }
 
     private void tempReaderInitialize()

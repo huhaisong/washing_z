@@ -62,8 +62,11 @@ public class FaceTemper {
     private final int FACETEMP_DETECTED = 1;  //人脸居中后人脸框消失、白色框消失、显示温度信息1秒钟
     private final int FACETEMP_FINISHED = 2;  //之后所有都消失
     private int faceTemperState = FACETEMP_DETECTING;
-    private boolean debug = true;
-    private Rect standardRect = new Rect(200, 100, 440, 440);  //640*480的面积
+    private boolean debug = false;
+    private boolean visible = false;
+    //注意:left和right因为有摄像头左右镜像的处理在，都是以右边的距离为准
+    private final Rect standardRect = new Rect(196, 90, 440, 420);  //640*480的面积
+    private final Rect standardRectMin = new Rect(230, 134, 400, 350);  //，不能小于这个框640*480的面积
 
     private Handler timeoutHandller = new Handler(new Handler.Callback() {
         @Override
@@ -71,6 +74,7 @@ public class FaceTemper {
             switch (msg.what) {
                 case NO_HUMAN_TIMEOUT:
                     drawFace(null);
+
                     break;
 
                 case TEMP_READY_PLAY:
@@ -92,6 +96,9 @@ public class FaceTemper {
 
     //开始显示人脸框和白色框
     public void open() {
+        visible = true;
+        CurTemp = 0;
+
         faceTemperState = FACETEMP_DETECTING;
         tempWhiteView.setVisibility(View.VISIBLE);
         registerHumanDetectingBroadcast();
@@ -99,9 +106,11 @@ public class FaceTemper {
 
     //关闭人脸框和白色框
     public void close() {
+
         unregisterHumanDetectingBroadcast();
         tempWhiteView.setVisibility(View.GONE);
         drawFace(null);
+        visible = false;
     }
 
     public void FaceRectInit() {
@@ -112,7 +121,7 @@ public class FaceTemper {
 
     private void finishAndSelectPlay(String ID) {
         close();
-        Logger.WashingLoggerAppend(ID, CurGender, 1, 0, CurTempIsError, CurTempStr);  //
+        /*Logger.WashingLoggerAppend(ID, CurGender, 1, 0, CurTempIsError, CurTempStr);  //
 
 
         //保存进数据库
@@ -130,13 +139,18 @@ public class FaceTemper {
         }
         mWashingReportItem.setLastTemp(Double.valueOf(CurTempStr));
         mWashingReportItem.setTempValidCnt(CurTempIsError);
-        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
+        WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);*/
         //finish();
     }
 
     private void FaceStateMachine(Rect rect) {
         if (faceTemperState == FACETEMP_DETECTING) {
-            if (standardRect.contains(rect)) {
+            if ((standardRect.contains(rect))&&(rect.contains(standardRectMin))) {
+            /*if((rect.width() >= standardRectMin.width())&&(rect.width() <= standardRect.width())&&
+                    (rect.height() >= standardRectMin.height())&&(rect.height() <= standardRect.height())&&
+                    (rect.left <= standardRectMin.left)&&(rect.left >= standardRect.left)&&
+                    (rect.top <= standardRectMin.top)&&(rect.top >= standardRect.top)
+            ){*/
                 faceTemperState = FACETEMP_DETECTED;
 
                 if (CurTemp == 0) {
@@ -157,6 +171,8 @@ public class FaceTemper {
                         mailSenderUtil.sendErrorReport(mContext, "\nDateTime: " + TimeUtil.getCurrentFormatTime() + "\nFace ID: " + CurID + "\n" + TempTitle + CurTemp, null);
                         Toast.makeText(mContext, "Exception Temperature Data detected, Please contact manager!\n", Toast.LENGTH_LONG).show();
                     }
+
+                    ((MyApplication) mContext.getApplicationContext()).setCurUsefulTemp(CurTemp);
                     close();
                     timeoutHandller.sendEmptyMessageDelayed(TEMP_READY_PLAY, 3 * 1000);
                     drawTemp();
@@ -175,6 +191,10 @@ public class FaceTemper {
         mContext.registerReceiver(humanDetectingReceiver, intentFilter);
 
         humanDetectingReceiver.setFaceDetectListener((intent, ID, gender, rect) -> {
+                    if(visible == false)
+                    {
+                        return;
+                    }
                     DrawInfo drawinfo = null;
                     if (intent == Config.BEACON_TAG_NO_PERSION) {
                         //timeoutHandller.sendEmptyMessageDelayed(NO_HUMAN_TIMEOUT, 10);
@@ -187,7 +207,7 @@ public class FaceTemper {
 
                             if (debug == false) {
                                 if (faceTemperState == FACETEMP_DETECTING) {
-                                    drawinfo = new DrawInfo(rect, 1, 2, 3, ID);
+                                    drawinfo = new DrawInfo(rect, 1, 2, 3, " ");
                                 }
                             } else {
                                 drawinfo = new DrawInfo(rect, 1, 2, 3, rect.toString());

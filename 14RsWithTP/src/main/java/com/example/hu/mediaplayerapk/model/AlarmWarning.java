@@ -13,8 +13,11 @@ import android.view.View;
 import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.ui.activity.MainActivity;
 import com.example.hu.mediaplayerapk.util.SPUtils;
+import com.example.hu.mediaplayerapk.util.VideosHelper;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.RequiresApi;
 
@@ -73,8 +76,17 @@ public class AlarmWarning {
             redStrokeView.setVisibility(View.VISIBLE);
         }
 
-        play(ToneFullPath,false,false);
-        mHandler.sendEmptyMessageDelayed(REMOVE_RED_STROKE,SPUtils.getInt(mContext, Config.ALARM_NOTICE_VALID_TIME, 1) * 60 * 1000);
+        //使能才播铃声
+        if(SPUtils.getInt(mContext, Config.CFG_ALARM_RING_ENABLE, Config.DEF_ALARM_RING_EN) > 0) {
+            List<String> selectedFileList = new ArrayList<>();
+
+            selectedFileList = VideosHelper.getInternalRingFileList();
+            if(selectedFileList.size() > 0) {
+                Log.d(TAG, "play " + selectedFileList.get(0));
+                play(selectedFileList.get(0), false, true);
+            }
+        }
+        mHandler.sendEmptyMessageDelayed(REMOVE_RED_STROKE,SPUtils.getInt(mContext, Config.ALARM_NOTICE_VALID_TIME, Config.DefAlarmNoticeLastTime) *  1000);
         mHandler.sendEmptyMessageDelayed(RED_STROKE_FLASHING,RED_STROKE_FLASHING_INTERVAL);
     }
 
@@ -96,9 +108,9 @@ public class AlarmWarning {
     public static final String ToneFullPath = "/mnt/sdcard/MUSIC/alarm.wav";
 
     private void mediaplayerClose() {
-        Log.d(TAG, "mediaplayerClose");
         //stop();
         if (mediaPlayer != null) {
+            Log.d(TAG, "mediaplayerClose");
             try {
                 if (mediaPlayer.isPlaying())
                     stop();
@@ -166,6 +178,6 @@ public class AlarmWarning {
             mediaPlayer.reset();
         } else
             mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
     }
 }

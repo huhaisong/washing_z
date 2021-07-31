@@ -31,7 +31,7 @@ public class FaceRectView extends View {
         super.onDraw(canvas);
         if (faceRectList != null && faceRectList.size() > 0) {
             for (int i = 0; i < faceRectList.size(); i++) {
-                DrawHelper.drawFaceRect(canvas, faceRectList.get(i), Color.BLUE, 2);
+                DrawHelper.drawFaceRect(canvas, faceRectList.get(i), Color.RED, 2);
             }
         }
     }

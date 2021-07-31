@@ -17,6 +17,7 @@ public class FaceIDBean implements Comparable<FaceIDBean>{
     private boolean genderIsLady; //true:lady; false
     private int lastPlayNum;
     private int lastPlayTime;
+    private boolean hasPlayEvent = false;
 
     public FaceIDBean(String newID, long newTime, boolean isLady)
     {
@@ -29,6 +30,7 @@ public class FaceIDBean implements Comparable<FaceIDBean>{
         genderIsLady = isLady;
         lastPlayNum = -1;
         lastPlayTime = -1;
+        hasPlayEvent = false;
         Log.d(TAG, "newFaceID " + newID+ " "+newTime);
     }
 
@@ -48,6 +50,17 @@ public class FaceIDBean implements Comparable<FaceIDBean>{
         lastPlayTime = newPlayTime;
     }
     public int getLastPlayTime() {return lastPlayTime;}
+
+    public boolean getGenderIsLady() {return genderIsLady;}
+
+    public void setHasPlayEvent(boolean input)
+    {
+        hasPlayEvent = input;
+    }
+    public boolean getHasPlayEvent()
+    {
+        return hasPlayEvent;
+    }
 
     public void faceIdleHook()
     {

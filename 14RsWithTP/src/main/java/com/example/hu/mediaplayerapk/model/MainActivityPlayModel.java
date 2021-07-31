@@ -42,6 +42,7 @@ import com.example.hu.mediaplayerapk.ui.activity.MainActivity;
 import com.example.hu.mediaplayerapk.ui.activity.OSDSettingActivity;
 import com.example.hu.mediaplayerapk.util.BitmapUtil;
 import com.example.hu.mediaplayerapk.util.FileUtils;
+import com.example.hu.mediaplayerapk.util.Logger;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.example.hu.mediaplayerapk.util.ScheduleParse;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
@@ -611,12 +612,13 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
         }
         Log.i(TAG, "playNext " + currentNum + " " + selectedFileList.size());
         if (currentNum >= selectedFileList.size()) {
-            currentNum = 0;
+            //currentNum = 0;    //pushNewEvent需要用到所以后面再清0
             if ((is_auto_play == 1) && (isEVENT)) {
                 isStartMotionCheck = true;
                 canSetRestartTime = true;
                 isEVENT = false;
                 isButtonKey = false;
+                currentNum = 0;
                 Log.e(TAG, "play 1 event video mode --------------startPlay()" + startPlay());
                 return;
             }
@@ -626,10 +628,17 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
                 if (beaconTagNo == Config.BEACON_TAG_PERSION) {
                     //success washing
                     FaceManagerUtil.savePlayRecord(FaceManagerUtil.getCurActiveID(), -1, -1);
+
+                    //Logger.WashingLoggerAppend(FaceManagerUtil.getCurActiveID(),
+                    //        FaceManagerUtil.getGenderStr(FaceManagerUtil.getCurActiveID()), 1, 0, 0, 0);
+                    MainActivity.pushNewPlayEvent(FaceManagerUtil.getCurActiveID(),
+                            FaceManagerUtil.getGenderStr(FaceManagerUtil.getCurActiveID()),0, true);
                 }
-                Log.e(TAG, "currentNum >= selectedFileList.size() --------------startPlay()" + startPlay());
+                currentNum = 0;
+                Log.e(TAG, "beaconTagNo "+beaconTagNo+" currentNum >= selectedFileList.size() --------------startPlay()" + startPlay());
                 return;
             }
+            currentNum = 0;
             if (isMotionDetector) {
                 isStartMotionCheck = true;
                 if (isECO) {
@@ -666,6 +675,15 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             if ((is_auto_play == 1) && (enableWashingSelect == true) && (isPlayingBeaconEvent)) {
                 isPlayingBeaconEvent = false;
                 FileUtils.movePhotoToTargetFolder(beaconTagNo);
+                if (beaconTagNo == Config.BEACON_TAG_PERSION) {
+                    //success washing
+                    FaceManagerUtil.savePlayRecord(FaceManagerUtil.getCurActiveID(), -1, -1);
+
+                    //Logger.WashingLoggerAppend(FaceManagerUtil.getCurActiveID(),
+                    //        FaceManagerUtil.getGenderStr(FaceManagerUtil.getCurActiveID()), 1, 0, 0, 0);
+                    MainActivity.pushNewPlayEvent(FaceManagerUtil.getCurActiveID(),
+                            FaceManagerUtil.getGenderStr(FaceManagerUtil.getCurActiveID()),0, true);
+                }
                 Log.e(TAG, "enableWashingSelect ==true --------------startPlay()" + startPlay());
                 return;
             }
@@ -733,7 +751,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
     public void startPlayBeacon(boolean enableSeek, int seekPlayingNum, int seekPlayingTime) {
         Log.d(TAG, "startPlayBeacon enableSeek " + enableSeek + " seekPlayingNum " + seekPlayingNum + " seekPlayingTime " + seekPlayingTime);
         if (enableSeek == true) {
-            if (seekPlayingTime != -1) {
+            if ((seekPlayingNum >= -1)&&(seekPlayingTime >= 0)) {
                 savedPlayingTime = seekPlayingTime;
                 savedPlayingNum = seekPlayingNum;
                 BeaconEventNo = savedPlayingNum;

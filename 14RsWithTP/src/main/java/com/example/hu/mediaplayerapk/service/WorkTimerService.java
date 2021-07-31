@@ -119,6 +119,7 @@ public class WorkTimerService extends Service {
 
 
                     if (loop) {
+                        RestartAlarmWatcher.cancelAlarms();  //stop alarm
                         checkRestart();
                     }
                 }
@@ -187,8 +188,15 @@ public class WorkTimerService extends Service {
             calendar.set(Calendar.SECOND, 0);
             long sub = System.currentTimeMillis() - calendar.getTimeInMillis();
             if (Math.abs(sub) <= 5 * 1000) {
-                Intent restartIntent = new Intent("android.intent.action.MY_REBOOT");
+                Intent restartIntent = new Intent("com.rockchip.reboot");
                 sendBroadcast(restartIntent);
+                try {
+                    Thread.sleep(30*1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Intent restartIntent2 = new Intent("android.intent.action.MY_REBOOT");
+                sendBroadcast(restartIntent2);
             }
         }
     }
@@ -460,7 +468,9 @@ public class WorkTimerService extends Service {
         super.onDestroy();
         isSchedule = false;
         loop = false;
-        mHandler.removeMessages(1111);
-        mHandler.removeMessages(2222);
+        if(mHandler != null) {
+            mHandler.removeMessages(1111);
+            mHandler.removeMessages(2222);
+        }
     }
 }

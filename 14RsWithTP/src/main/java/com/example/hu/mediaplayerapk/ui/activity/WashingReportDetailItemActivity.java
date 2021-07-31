@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -28,14 +29,17 @@ import com.example.hu.mediaplayerapk.adapter.WashingReportDetailAdapter;
 import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.dao.WashingReportManager;
+import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.RestartAlarmWatcher;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
+import com.example.hu.mediaplayerapk.util.face.FaceManagerUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class WashingReportDetailItemActivity extends BaseActivity {
 
@@ -61,7 +65,8 @@ public class WashingReportDetailItemActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private WashingReportDetailAdapter washingReportDetailAdapter;
 
-    private int totalInterrupt, totalFirstPlay, totalLongTime, totalSecondTime, totalTemperatureTimes, totalTemperature;
+    private int totalInterrupt, totalFirstPlay, totalLongTime, totalSecondTime, totalTemperatureTimes;
+    private double totalTemperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +77,6 @@ public class WashingReportDetailItemActivity extends BaseActivity {
         day = intent.getIntExtra(DAY, 0);
         month = intent.getIntExtra(MONTH, 0);
         faceId = intent.getStringExtra(FACE_ID);
-
 
         totalWashingTextView = findViewById(R.id.tv_total_washing);
         totalInterruptTextView = findViewById(R.id.tv_total_interrupt);
@@ -98,7 +102,7 @@ public class WashingReportDetailItemActivity extends BaseActivity {
     private static final String TAG = "WashingReportDetailItem";
 
     private void initData() {
-
+        double averageTemp;
         Calendar a = Calendar.getInstance();
         if (month < 0) {
             a.set(Calendar.YEAR, a.get(Calendar.YEAR) - 1);
@@ -109,7 +113,12 @@ public class WashingReportDetailItemActivity extends BaseActivity {
         } else {
             a.set(Calendar.MONTH, month - 1);
         }
-        a.set(Calendar.DATE, day);
+        a.setTimeZone(TimeZone.getDefault());
+        a.set(Calendar.DATE, day);//
+        a.set(Calendar.HOUR_OF_DAY, 0);
+        a.set(Calendar.MINUTE, 0);
+        a.set(Calendar.SECOND, 0);
+
         int startTime = (int) (a.getTimeInMillis() / 1000);
         List<WashingReportItem> washingReportItems = WashingReportManager.getInstance(this)
                 .searchByFaceIdAndDate(faceId, startTime);
@@ -118,15 +127,27 @@ public class WashingReportDetailItemActivity extends BaseActivity {
         Date date = new Date(a.getTimeInMillis());
         dateTextView.setText("実施日付　　 " + simpleDateFormat.format(date));
 
-        totalInterrupt = totalFirstPlay = totalLongTime = totalSecondTime = totalTemperature = totalTemperatureTimes = 0;
+        totalInterrupt = totalFirstPlay = totalLongTime = totalSecondTime =  totalTemperatureTimes = 0;
+        totalTemperature = 0;
 
-        if (washingReportItems.size() > 0) {
-            if (washingReportItems.get(0).getIsLadyOrMen() == 1) {
-                imageView.setImageResource(R.drawable.lady);
-            } else {
-                imageView.setImageResource(R.drawable.gentleman);
+        //if (washingReportItems.size() > 0) {
+            //display thumbnail
+            {
+                String picPath = Config.FACEME_PIC_PATH + faceId + ".jpg";
+                Uri picUri= Uri.parse(picPath);
+
+                if(FileUtils.fileState(picPath) == true) {
+                    imageView.setImageURI(picUri);
+                }
+                else {
+                    if (FaceManagerUtil.IsLadyID(faceId) == true) {
+                        imageView.setImageResource(R.drawable.lady);
+                    } else {
+                        imageView.setImageResource(R.drawable.gentleman);
+                    }
+                }
             }
-        }
+        //}
 
         for (int i = 0; i < washingReportItems.size(); i++) {
             WashingReportItem item = washingReportItems.get(i);
@@ -150,12 +171,13 @@ public class WashingReportDetailItemActivity extends BaseActivity {
 
         totalWashingTextView.setText("手洗い回数：" + washingReportItems.size() + "回");
         totalInterruptTextView.setText("中断回数：" + totalInterrupt + "回");
-        totalFirstPlayTextView.setText("初回動画：：" + totalFirstPlay + "回");
+        totalFirstPlayTextView.setText("初回動画：" + totalFirstPlay + "回");
         totalSecondPlayTextView.setText("２回目以降動画：" + totalSecondTime + "回");
         totalLongTimeTextView.setText("長間隔：" + totalLongTime + "回");
-        if (totalTemperatureTimes != 0)
-            temperatureTextView.setText("平均体温：" + (double) totalTemperature / totalTemperatureTimes + "℃");
-
+        if (totalTemperatureTimes != 0) {
+            averageTemp = (double)totalTemperature / totalTemperatureTimes;
+            temperatureTextView.setText("平均体温：" + (double) ((int)( averageTemp * 10) / 10d) + "℃");
+        }
         washingReportDetailAdapter = new WashingReportDetailAdapter(this, washingReportItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(washingReportDetailAdapter);

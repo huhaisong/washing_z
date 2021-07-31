@@ -21,6 +21,7 @@ public class PistaEyesReceiver extends BroadcastReceiver {
     public final static String ACTION_PERSON_IN = "BeeSight_People_In";
     public final static String EXTRA  = "BeeSightString";
     private PistaEyesReceiver.FaceDetectInterface cbk = null;
+    private String lastGender = "1.0";
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
@@ -53,6 +54,7 @@ public class PistaEyesReceiver extends BroadcastReceiver {
                         cbk.FaceDetectCallback(Config.BEACON_TAG_PERSION_REFRESH, temp[5],temp[7], rect);
                     }
                 }
+                lastGender = temp[7];
             }
             else
             {
@@ -63,7 +65,7 @@ public class PistaEyesReceiver extends BroadcastReceiver {
         {
             if(cbk != null) {
                 String ID = intent.getStringExtra("ID");
-                cbk.FaceDetectCallback(Config.BEACON_TAG_NO_PERSION,ID, null,null);
+                cbk.FaceDetectCallback(Config.BEACON_TAG_NO_PERSION,ID, lastGender,null);
             }
         }
     }

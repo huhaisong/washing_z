@@ -2,679 +2,769 @@
   {
     "level": "INFO",
     "message": "Start JSON generation. Platform version: 19 min SDK version: x86",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Trying to locate CMake in local SDK repository.",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\21.1.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\add-ons\\addon-google_apis-google-23\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\23.0.1\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\add-ons\\addon-google_apis-google-24\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\23.0.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing legacy package: E:\\WORK_CODE\\Android\\android_studioSDK\\android-ndk-r16b-windows-x86_64\\android-ndk-r16b",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\23.0.3\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\22.0.0\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\24.0.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\23.0.0\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\24.0.3\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\23.0.3\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\25.0.0\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\25.0.0\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\26.0.0\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\25.0.1\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\26.0.1\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\25.0.2\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\26.0.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\26.0.0\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\27.0.3\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\26.0.2\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\27.0.3\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.3\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\28.0.0\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\29.0.2\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\28.0.3\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\29.0.3\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\29.0.2\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\29.0.3\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\build-tools\\30.0.3\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\emulator\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk-bundle\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.6.4111459\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\docs\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\patcher\\v4\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\emulator\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\extras\\android\\m2repository\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-21\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\extras\\google\\m2repository\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-22\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\extras\\intel\\Hardware_Accelerated_Execution_Manager\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-23\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\extras\\m2repository\\com\\android\\support\\constraint\\constraint-layout-solver\\1.0.1\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-24\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\extras\\m2repository\\com\\android\\support\\constraint\\constraint-layout\\1.0.1\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-25\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\lldb\\3.1\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-26\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\ndk-bundle\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-27\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\20.0.5594570\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-28\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-29\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\patcher\\v4\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platforms\\android-30\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platform-tools\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-23\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-10\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-24\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-17\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-25\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-19\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-26\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-22\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-27\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-23\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-28\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-24\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\sources\\android-29\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-25\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Parsing C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\tools\\package.xml",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-26\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "- CMake found in SDK at \u0027C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-27\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-28\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-29\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\platforms\\android-30\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-23\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-24\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-25\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-26\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-27\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-28\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-29\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\sources\\android-30\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\system-images\\android-24\\google_apis\\x86\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\system-images\\android-25\\google_apis\\x86\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing E:\\WORK_CODE\\Android\\android_studioSDK\\tools\\package.xml",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
+    "tag": "release|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "CMake \u00273.6.0\u0027 found in SDK did not match requested version \u00273.10.2\u0027.",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "rebuilding JSON D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\\android_gradle_build.json due to:",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "rebuilding JSON E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\\android_gradle_build.json due to:",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "- command changed from previous, will remove stale json folder",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "- a dependent build file changed",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "  - E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "  - C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "  - E:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "  - D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "  - E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "  - C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "removing stale contents from \u0027D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\u0027",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "removing stale contents from \u0027E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "created folder \u0027D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\u0027",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "created folder \u0027E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\u0027",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "executing cmake Executable : C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe\narguments : \n-HD:\\workspace\\demo\\washingZ_svn\\serialport\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake\n-DANDROID_ABI\u003dx86\n-DANDROID_NDK\u003dC:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\n-DANDROID_PLATFORM\u003dandroid-19\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86\n-DCMAKE_ANDROID_NDK\u003dC:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\workspace\\demo\\washingZ_svn\\serialport\\build\\intermediates\\cmake\\release\\obj\\x86\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d19\n-BD:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\n-GNinja\njvmArgs : \n\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "executing cmake Executable : E:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe\narguments : \n-HE:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DCMAKE_TOOLCHAIN_FILE\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake\n-DANDROID_ABI\u003dx86\n-DANDROID_NDK\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\n-DANDROID_PLATFORM\u003dandroid-19\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86\n-DCMAKE_ANDROID_NDK\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\ndk\\21.0.6113669\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\build\\intermediates\\cmake\\release\\obj\\x86\n-DCMAKE_MAKE_PROGRAM\u003dE:\\WORK_CODE\\Android\\android_studioSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d19\n-BE:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\n-GNinja\njvmArgs : \n\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"D:/workspace/demo/washingZ_svn/serialport\",\n  \"buildDirectory\": \"D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86\",\n  \"generator\": \"Ninja\"\n}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport\",\n  \"buildDirectory\": \"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/release/x86\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_BUILD_TYPE\\u003dRelease\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003dC:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\21.0.6113669\\\\build\\\\cmake\\\\android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003dx86\",\n    \"-DANDROID_NDK\\u003dC:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\21.0.6113669\",\n    \"-DANDROID_PLATFORM\\u003dandroid-19\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003dx86\",\n    \"-DCMAKE_ANDROID_NDK\\u003dC:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\21.0.6113669\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003dD:\\\\workspace\\\\demo\\\\washingZ_svn\\\\serialport\\\\build\\\\intermediates\\\\cmake\\\\release\\\\obj\\\\x86\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003dC:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.10.2.4988404\\\\bin\\\\ninja.exe\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d19\"\n  ]\n}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_BUILD_TYPE\\u003dRelease\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk\\\\21.0.6113669\\\\build\\\\cmake\\\\android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003dx86\",\n    \"-DANDROID_NDK\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk\\\\21.0.6113669\",\n    \"-DANDROID_PLATFORM\\u003dandroid-19\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003dx86\",\n    \"-DCMAKE_ANDROID_NDK\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\ndk\\\\21.0.6113669\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003dE:\\\\WORK_CODE\\\\Android\\\\studio_workspace\\\\github\\\\washing_z\\\\serialport\\\\build\\\\intermediates\\\\cmake\\\\release\\\\obj\\\\x86\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003dE:\\\\WORK_CODE\\\\Android\\\\android_studioSDK\\\\cmake\\\\3.10.2.4988404\\\\bin\\\\ninja.exe\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d19\"\n  ]\n}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Check for working C compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Check for working C compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":33,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Check for working C compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Check for working C compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compiler ABI info\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting C compiler ABI info",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":65,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compiler ABI info - done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting C compiler ABI info - done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compile features\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting C compile features",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":96,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":126,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":155,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compile features - done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting C compile features - done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Check for working CXX compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":184,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works\",\"type\":\"message\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "Check for working CXX compiler: C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "Check for working CXX compiler: E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting CXX compiler ABI info",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":211,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info - done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting CXX compiler ABI info - done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting CXX compile features",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":237,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":262,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":287,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":311,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features - done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Detecting CXX compile features - done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Configuring done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Configuring done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"type\":\"reply\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"type\":\"compute\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Generating\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"message\":\"Generating done\",\"type\":\"message\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "Generating done",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"type\":\"reply\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"type\":\"cmakeInputs\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"buildFiles\":[{\"isCMake\":true,\"isTemporary\":false,\"sources\":[\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\"]},{\"isCMake\":false,\"isTemporary\":false,\"sources\":[\"CMakeLists.txt\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/platforms.cmake\",\"C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake\"]},{\"isCMake\":false,\"isTemporary\":true,\"sources\":[\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeSystem.cmake\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\"]}],\"cmakeRootDirectory\":\"C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10\",\"cookie\":\"\",\"inReplyTo\":\"cmakeInputs\",\"sourceDirectory\":\"D:/workspace/demo/washingZ_svn/serialport\",\"type\":\"reply\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"buildFiles\":[{\"isCMake\":true,\"isTemporary\":false,\"sources\":[\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"../../../../android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\"]},{\"isCMake\":false,\"isTemporary\":false,\"sources\":[\"CMakeLists.txt\",\"../../../../android_studioSDK/ndk/21.0.6113669/build/cmake/android.toolchain.cmake\",\"../../../../android_studioSDK/ndk/21.0.6113669/build/cmake/platforms.cmake\",\"../../../../android_studioSDK/ndk/21.0.6113669/build/cmake/android.toolchain.cmake\"]},{\"isCMake\":false,\"isTemporary\":true,\"sources\":[\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeSystem.cmake\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\"]}],\"cmakeRootDirectory\":\"E:/WORK_CODE/Android/android_studioSDK/cmake/3.10.2.4988404/share/cmake-3.10\",\"cookie\":\"\",\"inReplyTo\":\"cmakeInputs\",\"sourceDirectory\":\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport\",\"type\":\"reply\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "{\"type\":\"codemodel\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "{\"configurations\":[{\"name\":\"Release\",\"projects\":[{\"buildDirectory\":\"D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86\",\"name\":\"Project\",\"sourceDirectory\":\"D:/workspace/demo/washingZ_svn/serialport\",\"targets\":[{\"artifacts\":[\"D:/workspace/demo/washingZ_svn/serialport/build/intermediates/cmake/release/obj/x86/libserial_port.so\"],\"buildDirectory\":\"D:/workspace/demo/washingZ_svn/serialport/.cxx/cmake/release/x86\",\"fileGroups\":[{\"compileFlags\":\"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE\u003d2 -Wformat -Werror\u003dformat-security  -O2 -DNDEBUG  -fPIC  \",\"defines\":[\"serial_port_EXPORTS\"],\"isGenerated\":false,\"language\":\"C\",\"sources\":[\"src/main/cpp/SerialPort.c\"]}],\"fullName\":\"libserial_port.so\",\"linkFlags\":\"-Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments\",\"linkLibraries\":\"-llog -latomic -lm\",\"linkerLanguage\":\"C\",\"name\":\"serial_port\",\"sourceDirectory\":\"D:/workspace/demo/washingZ_svn/serialport\",\"sysroot\":\"C:/Users/Administrator/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot\",\"type\":\"SHARED_LIBRARY\"}]}]}],\"cookie\":\"\",\"inReplyTo\":\"codemodel\",\"type\":\"reply\"}\n",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "{\"configurations\":[{\"name\":\"Release\",\"projects\":[{\"buildDirectory\":\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/release/x86\",\"name\":\"Project\",\"sourceDirectory\":\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport\",\"targets\":[{\"artifacts\":[\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/build/intermediates/cmake/release/obj/x86/libserial_port.so\"],\"buildDirectory\":\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport/.cxx/cmake/release/x86\",\"fileGroups\":[{\"compileFlags\":\"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE\u003d2 -Wformat -Werror\u003dformat-security  -O2 -DNDEBUG  -fPIC  \",\"defines\":[\"serial_port_EXPORTS\"],\"isGenerated\":false,\"language\":\"C\",\"sources\":[\"src/main/cpp/SerialPort.c\"]}],\"fullName\":\"libserial_port.so\",\"linkFlags\":\"-Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments\",\"linkLibraries\":\"-llog -latomic -lm\",\"linkerLanguage\":\"C\",\"name\":\"serial_port\",\"sourceDirectory\":\"E:/WORK_CODE/Android/studio_workspace/github/washing_z/serialport\",\"sysroot\":\"E:/WORK_CODE/Android/android_studioSDK/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot\",\"type\":\"SHARED_LIBRARY\"}]}]}],\"cookie\":\"\",\"inReplyTo\":\"codemodel\",\"type\":\"reply\"}\n",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "done executing cmake",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "write build output D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\\build_output.txt",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "write build output E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\\build_output.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
-    "message": "write command file D:\\workspace\\demo\\washingZ_svn\\serialport\\.cxx\\cmake\\release\\x86\\build_command.txt",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "message": "write command file E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\.cxx\\cmake\\release\\x86\\build_command.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   },
   {
     "level": "INFO",
     "message": "JSON generation completed without problems",
-    "file": "D:\\workspace\\demo\\washingZ_svn\\serialport\\CMakeLists.txt",
+    "file": "E:\\WORK_CODE\\Android\\studio_workspace\\github\\washing_z\\serialport\\CMakeLists.txt",
     "tag": "release|x86"
   }
 ]

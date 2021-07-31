@@ -29,6 +29,7 @@ import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * ===================================
@@ -43,27 +44,28 @@ public class WashingReportDetailListActivity extends BaseActivity {
     private RecyclerView mHeadRecyclerView;
     private RecyclerView mContentRecyclerView;
     private LinearLayout llContent;
-    private TabAdapter mTabAdapter;
-    private StockAdapter mStockAdapter;
+    private TabAdapter mTabAdapter;  //标题栏的title
+    private StockAdapter mStockAdapter; //face id list
     private TextView emptyView;
     private TextView monthTextView;
     private TextView backTextView;
     private ImageView leftImg;
     private ImageView rightImg;
     LoadingDialog loadingDialog;
-    ArrayList stockBeans = new ArrayList<StockBean>();
+    ArrayList stockBeans = new ArrayList<StockBean>(); //每个ID下的3个统计数据
     private int curMonth;
 
     private static final int DATA_PREPARE = 1;
+    private static final int LOADING_FINISH = 2;
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
             if (msg.what == DATA_PREPARE) {//1111表示熄灭
                 mStockAdapter.setStockBeans(stockBeans);
-                for (int i = 0; i < stockBeans.size(); i++) {
+                /*for (int i = 0; i < stockBeans.size(); i++) {
                     Log.e(TAG, "initStock: " + stockBeans.get(i).toString());
-                }
+                }*/
                 if (stockBeans == null || stockBeans.size() == 0) {
                     llContent.setVisibility(View.GONE);
                     emptyView.setVisibility(View.VISIBLE);
@@ -71,6 +73,11 @@ public class WashingReportDetailListActivity extends BaseActivity {
                     llContent.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.GONE);
                 }
+                //mHandler.sendEmptyMessageDelayed(LOADING_FINISH, 1000+stockBeans.size()*50);
+                mHandler.sendEmptyMessage(LOADING_FINISH);
+            }
+            else if(msg.what == LOADING_FINISH)
+            {
                 if (loadingDialog != null)
                     loadingDialog.dismiss();
             }
@@ -100,11 +107,18 @@ public class WashingReportDetailListActivity extends BaseActivity {
 
         mHeadRecyclerView.setLayoutManager(
                 new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+
         mTabAdapter = new TabAdapter(this);
         mHeadRecyclerView.setNestedScrollingEnabled(false);
         mHeadRecyclerView.setAdapter(mTabAdapter);
 
+        mContentRecyclerView.setNestedScrollingEnabled(false);
+        mContentRecyclerView.setItemViewCacheSize(100);
+        mContentRecyclerView.setDrawingCacheEnabled(true);
+
         mContentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //mContentRecyclerView.getLayoutManager().setItemPrefetchEnabled(false);
+
         mStockAdapter = new StockAdapter(this, new StockAdapter.StockItemListener() {
             @Override
             public void onItemClick(StockBean item, int day) {
@@ -130,7 +144,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
         });
 
         LoadingDialog.Builder builder1 = new LoadingDialog.Builder(this)
-                .setMessage("データのロード...")
+                .setMessage("Loading...")
                 .setCancelable(false);
         loadingDialog = builder1.create();
         curMonth = TimeUtil.getDate()[1] + 1;
@@ -196,7 +210,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
             } else {
                 days = TimeUtil.getMonthLastDay(month);
             }
-            for (int j = 0; j < days; j++) {
+            for (int j = 1; j <= days; j++) {
 
                 StockBean.Date date = new StockBean.Date();
                 Calendar a = Calendar.getInstance();
@@ -209,11 +223,15 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 } else {
                     a.set(Calendar.MONTH, month - 1);
                 }
+                a.setTimeZone(TimeZone.getDefault());
                 a.set(Calendar.DATE, j);//把日期设置为当月第一天
+                a.set(Calendar.HOUR_OF_DAY, 0);
+                a.set(Calendar.MINUTE, 0);
+                a.set(Calendar.SECOND, 0);
                 int startTime = (int) (a.getTimeInMillis() / 1000);
                 List<WashingReportItem> washingReportItems = WashingReportManager.getInstance(this)
                         .searchByFaceIdAndDate(stockBean.getFaceId(), startTime);
-                Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getFaceId() + ",initStock:2 " + washingReportItems.size());
+                //Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getFaceId() + ",initStock:2 " + washingReportItems.size());
                 int totalWashing = washingReportItems.size();
                 int totalInterrupt = 0;
                 int totalLongtime = 0;
@@ -234,8 +252,8 @@ public class WashingReportDetailListActivity extends BaseActivity {
             }
             stockBean.setDetail(dateArrayList);
             stockBeans.add(stockBean);
-            mHandler.sendEmptyMessageDelayed(DATA_PREPARE, 1000);
         }
+        mHandler.sendEmptyMessageDelayed(DATA_PREPARE, 10);
     }
 
     private void initTab(int month) {

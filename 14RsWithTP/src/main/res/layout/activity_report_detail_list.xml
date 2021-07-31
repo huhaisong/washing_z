@@ -73,18 +73,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contentRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+        <ScrollView
             android:layout_weight="1"
-            android:scrollbarSize="15dp"
-            android:scrollbarThumbVertical="@color/white"
-            android:scrollbarTrackVertical="@color/black"
-            android:scrollbars="vertical" />
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/contentRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scrollbarSize="15dp"
+                android:scrollbarThumbVertical="@color/white"
+                android:scrollbarTrackVertical="@color/black"
+                android:scrollbars="vertical" />
+        </ScrollView>
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
@@ -156,7 +160,7 @@
         android:drawableTop="@mipmap/icon_empty"
         android:drawablePadding="5dp"
         android:gravity="center"
-        android:text="暂无数据"
+        android:text="Empty Data"
         android:textColor="#333333"
         android:textSize="16dp"
         android:visibility="gone" />

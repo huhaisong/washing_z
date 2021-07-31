@@ -136,11 +136,7 @@ public class washingReportAdapter extends BaseAdapter {
                 }
                 else {
                     if (item.getIsLadyOrMen() == 1) {
-
-
                         holder.image.setImageBitmap(lady_pic);
-
-
                     } else {
                         holder.image.setImageBitmap(men_pic);
                     }

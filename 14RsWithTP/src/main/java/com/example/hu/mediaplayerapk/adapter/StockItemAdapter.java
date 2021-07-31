@@ -32,7 +32,6 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
         this.onItemClickListener = onItemClickListen;
     }
 
-
     public void setDetailBeans(List<StockBean.Date> detailBeans) {
         this.detailBeans = detailBeans;
         notifyDataSetChanged();
@@ -48,25 +47,36 @@ public class StockItemAdapter extends RecyclerView.Adapter<StockItemAdapter.Item
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         StockBean.Date item = detailBeans.get(position);
-        holder.mTotalWashing.setText(item.getTotalWashing() + "");
-        holder.mTotalInterrupt.setText(item.getTotalInterrupt() + "");
-        holder.mTotalLongTime.setText(item.getTotalLongtime() + "");
-        if (item.getTotalLongtime() != 0) {
-            holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_yellow_bg);
-        } else {
-            holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
-        }
+        if(item.getTotalWashing() != 0) {
+            holder.mTotalWashing.setText(item.getTotalWashing() + "");
+            holder.mTotalInterrupt.setText(item.getTotalInterrupt() + "");
+            holder.mTotalLongTime.setText(item.getTotalLongtime() + "");
+            if (item.getTotalLongtime() != 0) {
+                holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_yellow_bg);
+            } else {
+                holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_light_blue_bg);
+            }
 
-
-        if (item.getTotalLongtime() != 0) {
             holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_light_blue_bg);
-        } else {
-            holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
-        }
+            /*if (item.getTotalLongtime() != 0) {
+                holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_light_blue_bg);
+            } else {
+                holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
+            }*/
 
-        if (item.getTotalInterrupt() != 0) {
-            holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_red_bg);
-        } else {
+            if (item.getTotalInterrupt() != 0) {
+                holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_red_bg);
+            } else {
+                holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_light_blue_bg);
+            }
+        }
+        else
+        {
+            holder.mTotalWashing.setText("-");
+            holder.mTotalInterrupt.setText("-");
+            holder.mTotalLongTime.setText("-");
+            holder.mTotalLongTime.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
+            holder.mTotalWashing.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
             holder.mTotalInterrupt.setBackgroundResource(R.drawable.shape_tv_stroke_no_corners_bg);
         }
 

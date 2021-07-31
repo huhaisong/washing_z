@@ -100,6 +100,11 @@ public class Logger {
                 + File.separator + ID+File.separator+getSerialNumber()+"_"+  ID+"_"+ getCurrentFormatDate() + ".csv";
     }
 
+    public static String getWashingITVLogFilePath(String ID)
+    {
+        return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Config.WashingLOGFolder+File.separator+getSerialNumber()+"_"+  ID+"_"+ getCurrentFormatDate() + ".csv";
+    }
+
     public static String getWashingRawLogIDFolderPath(String ID)
     {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Config.LOGFolder+File.separator+Config.WashingRawFolderName
@@ -251,6 +256,10 @@ public class Logger {
 
     public static void WashingLoggerAppend(String ID,String gender,  int washingEventCode, int moveAwayEventCode, int tempErrorEventCode,double tempValue)
     {
+        if(ID == null)
+        {
+            return;
+        }
         String tower = getCurrentFormatDate()+","+getCurrentFormatTimeOnly()+","+gender +","+ washingEventCode+","+moveAwayEventCode+","+tempErrorEventCode+","+tempValue +"\n";
         Log.d(TAG, "WashingLoggerAppend: " + tower);
         saveTxtFile(getWashingRawLogFilePath(ID), tower);
@@ -258,8 +267,25 @@ public class Logger {
 
     public static void WashingLoggerAppend(String ID,String gender,  int washingEventCode, int moveAwayEventCode, int tempErrorEventCode,String tempValue)
     {
+        if(ID == null)
+        {
+            return;
+        }
         String tower = getCurrentFormatDate()+","+getCurrentFormatTimeOnly()+","+gender +","+ washingEventCode+","+moveAwayEventCode+","+tempErrorEventCode+","+tempValue +"\n";
         Log.d(TAG, "WashingLoggerAppend: " + tower);
         saveTxtFile(getWashingRawLogFilePath(ID), tower);
+    }
+
+    //按照ITV新规格要求记录:日期,序列号,FaceID,MovieType,Finish,Temperature,InternalError
+    public static void WashingITVLoggerAppend(String ID,boolean isFirstMovie,  boolean isFinishPlay, String tempValue, boolean isInternalError)
+    {
+        String MovieType = (isFirstMovie)?"1st":"2nd";
+        if(ID == null)
+        {
+            return;
+        }
+        String tower = getCurrentFormatDate()+","+getCurrentFormatTimeOnly()+","+getSerialNumber()+","+ID+","+MovieType+","+isFinishPlay+","+tempValue+","+isInternalError+"\n";
+        Log.d(TAG, "WashingITVLoggerAppend: " + tower);
+        saveTxtFile(getWashingITVLogFilePath(ID), tower);
     }
 }

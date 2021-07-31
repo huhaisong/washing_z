@@ -9,7 +9,7 @@ import java.util.List;
 public class StockBean {
     /**
      * detail : ["1","2","3","4","5","6","7","8","9","10"]
-     * stockName : 捷顺科技
+     * stockName :
      */
     /**
      * 股票名称

@@ -79,6 +79,7 @@ public static int MALE = 1;
     public static final String USB_STORAGE_SYSTEM_FILE_NAME_INVARIANT = "system14";
     public static final String USB_STORAGE_WASHING_FILE_NAME_INVARIANT = "washing14";
     public static final String USB_STORAGE_WARNING_FILE_NAME_INVARIANT = "warning14";
+    public static final String USB_STORAGE_RING_FILE_NAME_INVARIANT = "ringTones14";
     public static String USB_STORAGE_IMPACTTV_FILE_NAME = USB_STORAGE_IMPACTTV_FILE_NAME_INVARIANT;
     public static String USB_STORAGE_IMPACTV_FILE_NAME = USB_STORAGE_IMPACTV_FILE_NAME_INVARIANT;
     public static String USB_STORAGE_EVENT_FILE_NAME = USB_STORAGE_EVENT_FILE_NAME_INVARIANT;
@@ -86,9 +87,11 @@ public static int MALE = 1;
     public static String USB_STORAGE_BEACON_EVENT_FILE_NAME = USB_STORAGE_BEACON_EVENT_FILE_NAME_INVARIANT;
     public static String USB_STORAGE_WASHING_FILE_NAME = USB_STORAGE_WASHING_FILE_NAME_INVARIANT;
     public static String USB_STORAGE_WARNING_FILE_NAME = USB_STORAGE_WARNING_FILE_NAME_INVARIANT;
+    public static String USB_STORAGE_RING_FILE_NAME = USB_STORAGE_RING_FILE_NAME_INVARIANT;
     public static final String USB_STORAGE_PATH = "/mnt/usb_storage/USB_DISK0";
     public static String USB_STORAGE_ROOT_PATH = USB_STORAGE_PATH;
     public static final String LOGFolder = "ITVLog";
+    public static final String WashingLOGFolder = "WashingLog";
     public static final String PlayLogName = "PlayLog";
     public static final String SysLogName = "SysLog";
     public static final String FaceLogName = "FaceLog";
@@ -97,6 +100,8 @@ public static int MALE = 1;
     //文件路径
     public static final String EXTERNAL_FILE_PATH = "/mnt/external_sd";
     public static final String INTERNAL_FILE_PATH = "/mnt/internal_sd";
+    public static final  String FACEME_PIC_PATH = "/mnt/sdcard/pista/tearai/thumbnail/";
+
     public static String EXTERNAL_FILE_ROOT_PATH = EXTERNAL_FILE_PATH;
     public static String INTERNAL_FILE_ROOT_PATH = INTERNAL_FILE_PATH;
     public static final String IMPACTV_FILE_NAME = "impactv";
@@ -106,6 +111,7 @@ public static int MALE = 1;
     public static final String BEACON_FILE_NAME = "Beacons";
     public static final String EVENT_FILE_NAME = "Event";
     public static final String SYSTEM_FILE_NAME = "System";
+    public static final String RING_FILE_NAME = "RingTones";
 
     public static final String APK_PACKAGE_NAME = "com.example.hu.mediaplayerapk";
 
@@ -136,6 +142,12 @@ public static int MALE = 1;
     public static final long DefFaceDisappearEventTime = (long)(1500L);  //至少1秒表示才算离开
     public static final long MinFaceDisappearEventTime = (long)(500L);  //
 
+    public static final String CFGFaceLongNoWashMinTime = "CFGFaceLongNoWashMinTime";
+    public static final int DefFaceLongNoWashMinTime = (90);  //Unit: 分钟;超过1.5小时视为过长时间没有洗手
+
+    public static final String CFGFaceLongNoWashMaxTime = "CFGFaceLongNoWashMaxTime";
+    public static final int DefFaceLongNoWashMaxTime = (300);  //Unit: 分钟;没有达到5小时视为过长时间没有洗手
+
     public static final String CFGWashingZEmailAddr = "CFGWashingZEmailAddr";
     public static final String DefWashingZEmailRXAddr = "test@null.com";
 
@@ -154,15 +166,16 @@ public static int MALE = 1;
     public static final String ALARM_NOTICE_END_TIME_HOUR = "ALARM_NOTICE_END_TIME_HOUR";
     public static final String ALARM_NOTICE_END_TIME_MINUTE = "ALARM_NOTICE_END_TIME_MINUTE";
     public static final String ALARM_NOTICE_INTERVAL = "ALARM_NOTICE_INTERVAL";  //unit: hour
-    public static final String ALARM_NOTICE_VALID_TIME = "ALARM_NOTICE_VALID_TIME";
-
-
-	//提前结束判断时间算完成
+    public static final String ALARM_NOTICE_VALID_TIME = "ALARM_NOTICE_VALID_TIME";  //Seconds
+    public static final String CFG_ALARM_RING_ENABLE = "CFG_ALARM_RING_ENABLE";     //是否使能铃声播放
+    public static final int DEF_ALARM_RING_EN = 1;    //默认使能铃声播放
+    public static final int DefAlarmNoticeLastTime = 60;
+    //提前结束算完成
     public static final String CFGInterrupptingFinishEN = "CFGInterrupptingFinishEN";
     public static final int DefInterruptingFinishEN = 1;
 
     public static final String CFGLongWashingFinishTime = "CFGLongWashingFinishTime";
-    public static final int DefLongWashingFinishTime = 66;  //播完到66秒即表示洗手完成，不用拷贝到NG
+    public static final int DefLongWashingFinishTime = 63;  //播完到63秒即表示洗手完成，不用拷贝到NG
     public static final int MinLongWashingFinishTime = 1;
     public static final int MaxLongWashingFinishTime = 100;
 
@@ -170,4 +183,7 @@ public static int MALE = 1;
     public static final int DefShortWashingFinishTime = 31;  //播完到31秒即表示洗手完成，不用拷贝到NG
     public static final int MinShortWashingFinishTime = 1;
     public static final int MaxShortWashingFinishTime = 100;
+
+
+
 }

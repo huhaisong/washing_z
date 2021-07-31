@@ -22,6 +22,7 @@ import static com.example.hu.mediaplayerapk.application.MyApplication.external_w
 import static com.example.hu.mediaplayerapk.application.MyApplication.internal_beacon_path;
 import static com.example.hu.mediaplayerapk.application.MyApplication.internal_event_path;
 import static com.example.hu.mediaplayerapk.application.MyApplication.internal_impactv_path;
+import static com.example.hu.mediaplayerapk.application.MyApplication.internal_ring_path;
 import static com.example.hu.mediaplayerapk.application.MyApplication.internal_warning_path;
 import static com.example.hu.mediaplayerapk.application.MyApplication.internal_washing_path;
 import static com.example.hu.mediaplayerapk.ui.activity.MainActivity.beaconTagNo;
@@ -35,6 +36,17 @@ public class VideosHelper {
     public static List<String> getAllFileList(String path) {
         List<String> list = new ArrayList<>();
         File[] files = FileUtils.getVideoAndPhoto(new File(path));
+        if (files != null && files.length > 0) {
+            for (File item : files) {
+                list.add(item.getAbsolutePath());
+            }
+        }
+        return list;
+    }
+
+    public static List<String> getAudioFileList(String path) {
+        List<String> list = new ArrayList<>();
+        File[] files = FileUtils.getAudio(new File(path));
         if (files != null && files.length > 0) {
             for (File item : files) {
                 list.add(item.getAbsolutePath());
@@ -301,6 +313,16 @@ public class VideosHelper {
         for (String item : allVideoFileList) {
             Log.e(TAG, "getExternalBeaconEventFileList: allVideoFileList" + item);
         }
+        return fileList;
+    }
+
+    public static List<String> getInternalRingFileList() {
+
+        ArrayList<String> allVideoFileList = (ArrayList<String>)getAudioFileList(internal_ring_path);
+        ArrayList<String> fileList = new ArrayList<>();
+
+        fileList = allVideoFileList;
+        fileList = (ArrayList<String>) FileUtils.orderList(fileList);
         return fileList;
     }
 
