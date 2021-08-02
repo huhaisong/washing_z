@@ -73,14 +73,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ScrollView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contentRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
@@ -88,7 +85,6 @@
                 android:scrollbarThumbVertical="@color/white"
                 android:scrollbarTrackVertical="@color/black"
                 android:scrollbars="vertical" />
-        </ScrollView>
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,37 +50,70 @@ public class WashingReportDetailListActivity extends BaseActivity {
     private TextView emptyView;
     private TextView monthTextView;
     private TextView backTextView;
-    private ImageView leftImg;
-    private ImageView rightImg;
+    private ImageView leftMonthImg;
+    private ImageView rightMonthImg;
+
+    private static final int PAGE_SIZE = 10;
     LoadingDialog loadingDialog;
     ArrayList stockBeans = new ArrayList<StockBean>(); //每个ID下的3个统计数据
     private int curMonth;
 
-    private static final int DATA_PREPARE = 1;
+    private static final int UPDATE_DATA = 1;
     private static final int LOADING_FINISH = 2;
+    private int currentPage = 0;
+    private int totalPage = 0;
+
+    private RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+            int lastItemPosition = ((LinearLayoutManager) mContentRecyclerView.getLayoutManager()).findLastVisibleItemPosition();
+            Log.e(TAG, "onScrolled: size = " + mStockAdapter.getItemCount() + ",lastItemPosition = " + lastItemPosition);
+            if (lastItemPosition >= mStockAdapter.getItemCount() - 1) {
+                mContentRecyclerView.removeOnScrollListener(onScrollListener);
+                currentPage++;
+                if (currentPage == totalPage)
+                    return;
+
+                if (loadingDialog != null)
+                    loadingDialog.show();
+                List date = new ArrayList();
+                if (currentPage < totalPage - 1) {
+                    date = stockBeans.subList(currentPage * PAGE_SIZE, currentPage * PAGE_SIZE + PAGE_SIZE);
+                } else if (currentPage == totalPage - 1) {
+                    date = stockBeans.subList(currentPage * PAGE_SIZE, stockBeans.size());
+                }
+                mStockAdapter.addStockBeans(date);
+                mHandler.sendEmptyMessageDelayed(LOADING_FINISH, 1000);
+            }
+        }
+    };
+
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
-            if (msg.what == DATA_PREPARE) {//1111表示熄灭
-                mStockAdapter.setStockBeans(stockBeans);
-                /*for (int i = 0; i < stockBeans.size(); i++) {
-                    Log.e(TAG, "initStock: " + stockBeans.get(i).toString());
-                }*/
+            if (msg.what == UPDATE_DATA) {
                 if (stockBeans == null || stockBeans.size() == 0) {
                     llContent.setVisibility(View.GONE);
                     emptyView.setVisibility(View.VISIBLE);
                 } else {
                     llContent.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.GONE);
+                    List currentDate = new ArrayList();
+                    currentDate = stockBeans.subList(0, PAGE_SIZE );
+                    mStockAdapter.setStockBeans(currentDate);
+                    Log.e(TAG, "handleMessage: 222   " +currentDate.size());
+                /*for (int i = 0; i < stockBeans.size(); i++) {
+                    Log.e(TAG, "initStock: " + stockBeans.get(i).toString());
+                }*/
                 }
                 //mHandler.sendEmptyMessageDelayed(LOADING_FINISH, 1000+stockBeans.size()*50);
                 mHandler.sendEmptyMessage(LOADING_FINISH);
-            }
-            else if(msg.what == LOADING_FINISH)
-            {
+            } else if (msg.what == LOADING_FINISH) {
                 if (loadingDialog != null)
                     loadingDialog.dismiss();
+                mContentRecyclerView.addOnScrollListener(onScrollListener);
             }
             return false;
         }
@@ -94,9 +128,10 @@ public class WashingReportDetailListActivity extends BaseActivity {
         llContent = findViewById(R.id.ll_content);
         headHorizontalScrollView = findViewById(R.id.headScrollView);
         emptyView = findViewById(R.id.empty_view);
-        leftImg = findViewById(R.id.iv_left);
         backTextView = findViewById(R.id.tv_back);
-        rightImg = findViewById(R.id.iv_right);
+        leftMonthImg = findViewById(R.id.iv_left);
+        rightMonthImg = findViewById(R.id.iv_right);
+
         monthTextView = findViewById(R.id.tv_month);
         backTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +150,6 @@ public class WashingReportDetailListActivity extends BaseActivity {
         mContentRecyclerView.setNestedScrollingEnabled(false);
         mContentRecyclerView.setItemViewCacheSize(100);
         mContentRecyclerView.setDrawingCacheEnabled(true);
-
         mContentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         //mContentRecyclerView.getLayoutManager().setItemPrefetchEnabled(false);
 
@@ -149,7 +183,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
         loadingDialog = builder1.create();
         curMonth = TimeUtil.getDate()[1] + 1;
 
-        leftImg.setOnClickListener(new View.OnClickListener() {
+        leftMonthImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (curMonth <= TimeUtil.getDate()[1] - 5)
@@ -158,7 +192,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 initData();
             }
         });
-        rightImg.setOnClickListener(new View.OnClickListener() {
+        rightMonthImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (curMonth >= TimeUtil.getDate()[1] + 1)
@@ -167,6 +201,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 initData();
             }
         });
+
         initData();
         initListener();
     }
@@ -177,11 +212,11 @@ public class WashingReportDetailListActivity extends BaseActivity {
         initTab(curMonth);
 
         if (curMonth < 0) {
-            monthTextView.setText("" + (curMonth + 12));
+            monthTextView.setText((curMonth + 12) + "月");
         } else if (curMonth > 12) {
-            monthTextView.setText("" + (curMonth - 12));
+            monthTextView.setText((curMonth - 12) + "月");
         } else {
-            monthTextView.setText("" + curMonth);
+            monthTextView.setText(curMonth + "月");
         }
 
         new Thread(new Runnable() {
@@ -211,7 +246,6 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 days = TimeUtil.getMonthLastDay(month);
             }
             for (int j = 1; j <= days; j++) {
-
                 StockBean.Date date = new StockBean.Date();
                 Calendar a = Calendar.getInstance();
                 if (month < 0) {
@@ -231,7 +265,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 int startTime = (int) (a.getTimeInMillis() / 1000);
                 List<WashingReportItem> washingReportItems = WashingReportManager.getInstance(this)
                         .searchByFaceIdAndDate(stockBean.getFaceId(), startTime);
-                //Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getFaceId() + ",initStock:2 " + washingReportItems.size());
+//                Log.e(TAG, "initStock: " + startTime + "stockBean.getStockName() " + stockBean.getFaceId() + ",initStock:2 " + washingReportItems.size());
                 int totalWashing = washingReportItems.size();
                 int totalInterrupt = 0;
                 int totalLongtime = 0;
@@ -253,7 +287,13 @@ public class WashingReportDetailListActivity extends BaseActivity {
             stockBean.setDetail(dateArrayList);
             stockBeans.add(stockBean);
         }
-        mHandler.sendEmptyMessageDelayed(DATA_PREPARE, 10);
+
+        totalPage = stockBeans.size() / PAGE_SIZE;
+        if (stockBeans.size() % PAGE_SIZE != 0) {
+            totalPage++;
+        }
+        currentPage = 0;
+        mHandler.sendEmptyMessageDelayed(UPDATE_DATA, 10);
     }
 
     private void initTab(int month) {

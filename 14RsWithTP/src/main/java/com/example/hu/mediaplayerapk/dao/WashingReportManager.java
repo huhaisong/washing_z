@@ -3,6 +3,7 @@ package com.example.hu.mediaplayerapk.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.hu.mediaplayerapk.bean.WashingReportItem;
 

@@ -80,6 +80,8 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         StockBean item = stockBeans.get(position);
         holder.mStockName.setText(item.getFaceId());
+
+        Log.e(TAG, "onBindViewHolder: " + position);
         /*if (item.getIsLadyOrMen() == 1) {
             holder.mStockImg.setImageBitmap(lady_pic);
         } else {
@@ -88,12 +90,11 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
         //display thumbnail
         {
             String picPath = Config.FACEME_PIC_PATH + item.getFaceId() + ".jpg";
-            Uri picUri= Uri.parse(picPath);
+            Uri picUri = Uri.parse(picPath);
 
-            if(FileUtils.fileState(picPath) == true) {
+            if (FileUtils.fileState(picPath) == true) {
                 holder.mStockImg.setImageURI(picUri);
-            }
-            else {
+            } else {
                 if (item.getIsLadyOrMen() == 1) {
                     holder.mStockImg.setImageBitmap(lady_pic);
                 } else {
@@ -116,7 +117,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
             @Override
             public void onItemClick(int itemPosition) {
                 if (stockItemListener != null) {
-                    stockItemListener.onItemClick(item, itemPosition+1);
+                    stockItemListener.onItemClick(item, itemPosition + 1);
                 }
             }
         });
@@ -153,6 +154,14 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
         if (stockBeans == null)
             return 0;
         return stockBeans.size() == 0 ? 0 : stockBeans.size();
+    }
+
+    public void addStockBeans(List date) {
+        List list = new ArrayList();
+        list.addAll(stockBeans);
+        list.addAll(date);
+        stockBeans = list;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

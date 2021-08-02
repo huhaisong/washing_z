@@ -1,5 +1,6 @@
 package com.example.hu.mediaplayerapk.ui.activity;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -53,6 +54,8 @@ import com.example.hu.mediaplayerapk.util.Logger;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
 import com.example.hu.mediaplayerapk.util.face.FaceManagerUtil;
+import com.example.hu.mediaplayerapk.util.runtimepermissions.PermissionsManager;
+import com.example.hu.mediaplayerapk.util.runtimepermissions.PermissionsResultAction;
 import com.example.hu.mediaplayerapk.widget.FaceRectView;
 import com.rockchip.Gpio;
 
@@ -90,7 +93,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public static int prepareBeaconTagNo;  //在触发人感后弹出对话框是否需要
     public static boolean enableWashingSelect = true;  //是否使能washing弹框选择
     public static int WashingSelected = WASHING_SELECTED_NONE;  //  如果是WASHING_SELECTED_T70，则在openService的时候播放beacon
-    private static  Context mContext;
+    private static Context mContext;
     private WashingChooseDialog ChooseDialog;
     private FaceRectView faceRectView;
     private View tempWhiteView;
@@ -190,6 +193,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
             }
             return false;
         }
+
+
     });
 
     private ServiceConnection workTimeServiceConnection = new WorkTimeServiceConnection();
@@ -282,8 +287,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus == true) {
-            if(mFaceTemper != null)
-            {
+            if (mFaceTemper != null) {
                 mFaceTemper.close();
             }
             mFaceTemper = new FaceTemper(mContext, faceRectView, tempWhiteView);
@@ -580,7 +584,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     FaceManagerUtil.savePlayRecord(ID, -1, -1);
                     //Logger.WashingLoggerAppend(ID, FaceManagerUtil.getGenderStr(ID), 1, 0, 0, 0);
                     MainActivity.pushNewPlayEvent(ID,
-                            FaceManagerUtil.getGenderStr(ID),0, false);
+                            FaceManagerUtil.getGenderStr(ID), 0, false);
                 } else {
                     if (mainActivityPlayModel != null) {
                         FaceManagerUtil.savePlayRecord(ID, mainActivityPlayModel.getCurrentNum(), mainActivityPlayModel.getCurrentPosition());
@@ -588,7 +592,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
 
                     //保存进数据库
                     //Logger.WashingLoggerAppend(ID, gender, 0, 1, 0, 0);  //中途离开加1
-                    pushNewPlayEvent(ID, gender,1, false);
+                    pushNewPlayEvent(ID, gender, 1, false);
 
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(false);
@@ -600,7 +604,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     //断点续播，不需要进入测温
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else */{
+                } else */
+                {
                     PopTempCaptureActivity(intentNo, ID, gender);
 
                     //Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
@@ -613,7 +618,8 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                         && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-                } else */{
+                } else */
+                {
                     PopTempCaptureActivity(intentNo, ID, gender);
                 }
                 //Logger.WashingLoggerAppend(ID, gender, 1, 0, 0, 0);
@@ -626,24 +632,20 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         }
     }
 
-    public static void pushNewPlayEvent(String ID, String gender, int isInterrupt, boolean callFromFinish)
-    {
+    public static void pushNewPlayEvent(String ID, String gender, int isInterrupt, boolean callFromFinish) {
         int curPlayNum = -1;
         boolean isFirstMovie = false;
         boolean isInternalError = false;
-        if(ID  == null)
-        {
-            return ;
+        if (ID == null) {
+            return;
         }
         FaceManagerUtil.setPlayEvent(ID);
 
-        if(mainActivityPlayModel != null)
-        {
+        if (mainActivityPlayModel != null) {
             curPlayNum = mainActivityPlayModel.getCurrentNum();
         }
 
-        if(callFromFinish == true)
-        {
+        if (callFromFinish == true) {
             curPlayNum -= 1;  //如果是播放结束后执行，需要减1
         }
 
@@ -657,22 +659,18 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
             mWashingReportItem.setIsLadyOrMen(0);
         }
 
-        if(SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0)
-        {
-            mWashingReportItem.setLastTemp((double)MyApplication.getCurUseFulTemp());
+        if (SPUtils.getInt(mContext, Config.CFGTempFunctionEn, Config.DefTempFunctionEn) > 0) {
+            mWashingReportItem.setLastTemp((double) MyApplication.getCurUseFulTemp());
         }
 
-        if (FaceManagerUtil.FaceRecordLastTimeIntervalError(ID) == true)
-        {
+        if (FaceManagerUtil.FaceRecordLastTimeIntervalError(ID) == true) {
             mWashingReportItem.setIsLongInterval(1);
             isInternalError = true;
-        }
-        else
-        {
+        } else {
             mWashingReportItem.setIsLongInterval(0);
             isInternalError = false;
         }
-        Log.d(TAG,"pushNewPlayEvent "+ID +" curPlayNum "+curPlayNum);
+        Log.d(TAG, "pushNewPlayEvent " + ID + " curPlayNum " + curPlayNum);
 
         if (curPlayNum == EVENT_T70_FILE) {
             mWashingReportItem.setPlayNum(1);
@@ -682,7 +680,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         }
         WashingReportManager.getInstance(mContext).insertOrReplace(mWashingReportItem);
 
-        Logger.WashingITVLoggerAppend(ID, isFirstMovie, (isInterrupt == 1)?false:true,MyApplication.getCurUseFulTemp()+"",isInternalError);
+        Logger.WashingITVLoggerAppend(ID, isFirstMovie, (isInterrupt == 1) ? false : true, MyApplication.getCurUseFulTemp() + "", isInternalError);
     }
 
     //**************************************************************
@@ -752,8 +750,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 && ((FaceManagerUtil.getPlayTimeRecord(ID) != -1))) {
             beaconTagNo = intentNo;
             mainActivityPlayModel.startPlayBeacon(true, FaceManagerUtil.getPlayNumRecord(ID), FaceManagerUtil.getPlayTimeRecord(ID));
-        }
-        else {
+        } else {
             //直接在此判断是播放长视频还是短视频
             if (FaceManagerUtil.FaceRecordNeedLongWashing(ID) == true) {
                 WashingSelected = WASHING_SELECTED_T70;
