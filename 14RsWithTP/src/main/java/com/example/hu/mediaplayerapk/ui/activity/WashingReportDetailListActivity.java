@@ -6,10 +6,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,7 +26,8 @@ import com.example.hu.mediaplayerapk.dao.WashingReportManager;
 import com.example.hu.mediaplayerapk.ui.widget.LoadingDialog;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
 import com.example.hu.mediaplayerapk.util.face.FaceManagerUtil;
-import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
+import com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView;
+import com.example.hu.mediaplayerapk.widget.CustomizeVerticalScrollView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,7 +43,7 @@ import java.util.TimeZone;
  */
 public class WashingReportDetailListActivity extends BaseActivity {
 
-    private CustomizeScrollView headHorizontalScrollView;
+    private CustomizeHorizontalScrollView headHorizontalScrollView;
     private RecyclerView mHeadRecyclerView;
     private RecyclerView mContentRecyclerView;
     private LinearLayout llContent;
@@ -49,6 +51,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
     private StockAdapter mStockAdapter; //face id list
     private TextView emptyView;
     private TextView monthTextView;
+    private CustomizeVerticalScrollView scrollView;
     private TextView backTextView;
     private ImageView leftMonthImg;
     private ImageView rightMonthImg;
@@ -63,18 +66,17 @@ public class WashingReportDetailListActivity extends BaseActivity {
     private int currentPage = 0;
     private int totalPage = 0;
 
-    private RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+    private CustomizeVerticalScrollView.OnScrollViewListener onScrollViewListener = new CustomizeVerticalScrollView.OnScrollViewListener() {
         @Override
-        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-            super.onScrolled(recyclerView, dx, dy);
-            int lastItemPosition = ((LinearLayoutManager) mContentRecyclerView.getLayoutManager()).findLastVisibleItemPosition();
-            Log.e(TAG, "onScrolled: size = " + mStockAdapter.getItemCount() + ",lastItemPosition = " + lastItemPosition);
-            if (lastItemPosition >= mStockAdapter.getItemCount() - 1) {
-                mContentRecyclerView.removeOnScrollListener(onScrollListener);
+        public void onScroll(int l, int t, int oldl, int oldt) {
+            int recyclerViewHeight = mContentRecyclerView.getHeight();
+            Log.e(TAG, "onScroll: y = " + t + ",recyclerViewHeight = " + recyclerViewHeight + ",scrollView = " + scrollView.getHeight());
+            if (t + scrollView.getHeight() > recyclerViewHeight-50){
+                Log.e(TAG, "onScroll: 11111" );
+                scrollView.removeViewListener();
                 currentPage++;
                 if (currentPage == totalPage)
                     return;
-
                 if (loadingDialog != null)
                     loadingDialog.show();
                 List date = new ArrayList();
@@ -86,6 +88,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 mStockAdapter.addStockBeans(date);
                 mHandler.sendEmptyMessageDelayed(LOADING_FINISH, 1000);
             }
+
         }
     };
 
@@ -100,20 +103,21 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 } else {
                     llContent.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.GONE);
-                    List currentDate = new ArrayList();
-                    currentDate = stockBeans.subList(0, PAGE_SIZE );
-                    mStockAdapter.setStockBeans(currentDate);
-                    Log.e(TAG, "handleMessage: 222   " +currentDate.size());
+                    if (totalPage == 1) {
+                        mStockAdapter.setStockBeans(stockBeans);
+                    } else {
+                        List currentDate = stockBeans.subList(0, PAGE_SIZE);
+                        mStockAdapter.setStockBeans(currentDate);
+                    }
                 /*for (int i = 0; i < stockBeans.size(); i++) {
                     Log.e(TAG, "initStock: " + stockBeans.get(i).toString());
                 }*/
                 }
-                //mHandler.sendEmptyMessageDelayed(LOADING_FINISH, 1000+stockBeans.size()*50);
                 mHandler.sendEmptyMessage(LOADING_FINISH);
             } else if (msg.what == LOADING_FINISH) {
                 if (loadingDialog != null)
                     loadingDialog.dismiss();
-                mContentRecyclerView.addOnScrollListener(onScrollListener);
+                scrollView.setViewListener(onScrollViewListener);
             }
             return false;
         }
@@ -131,7 +135,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
         backTextView = findViewById(R.id.tv_back);
         leftMonthImg = findViewById(R.id.iv_left);
         rightMonthImg = findViewById(R.id.iv_right);
-
+        scrollView = findViewById(R.id.sv_contain);
         monthTextView = findViewById(R.id.tv_month);
         backTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +143,7 @@ public class WashingReportDetailListActivity extends BaseActivity {
                 onBackPressed();
             }
         });
+
 
         mHeadRecyclerView.setLayoutManager(
                 new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
@@ -316,22 +321,12 @@ public class WashingReportDetailListActivity extends BaseActivity {
     }
 
     private void initListener() {
-        headHorizontalScrollView.setViewListener(new CustomizeScrollView.OnScrollViewListener() {
+        headHorizontalScrollView.setViewListener(new CustomizeHorizontalScrollView.OnScrollViewListener() {
             @Override
             public void onScroll(int l, int t, int oldl, int oldt) {
                 List<StockAdapter.ViewHolder> viewHolders = mStockAdapter.getRecyclerViewHolder();
                 for (StockAdapter.ViewHolder viewHolder : viewHolders) {
                     viewHolder.mStockScrollView.scrollTo(l, 0);
-                }
-            }
-        });
-        mContentRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                List<StockAdapter.ViewHolder> viewHolders = mStockAdapter.getRecyclerViewHolder();
-                for (StockAdapter.ViewHolder viewHolder : viewHolders) {
-                    viewHolder.mStockScrollView.scrollTo(mStockAdapter.getOffestX(), 0);
                 }
             }
         });

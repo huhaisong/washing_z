@@ -19,10 +19,9 @@ import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.bean.StockBean;
 import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.util.FileUtils;
-import com.example.hu.mediaplayerapk.widget.CustomizeScrollView;
+import com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -130,7 +129,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
         /**
          * 第一步：水平滑动item时，遍历所有ViewHolder，使得整个列表的HorizontalScrollView同步滚动
          */
-        holder.mStockScrollView.setViewListener(new CustomizeScrollView.OnScrollViewListener() {
+        holder.mStockScrollView.setViewListener(new CustomizeHorizontalScrollView.OnScrollViewListener() {
             @Override
             public void onScroll(int l, int t, int oldl, int oldt) {
                 for (ViewHolder viewHolder : recyclerViewHolder) {
@@ -168,7 +167,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.ViewHolder> 
 
         public TextView mStockName;
         public ImageView mStockImg;
-        public CustomizeScrollView mStockScrollView;
+        public CustomizeHorizontalScrollView mStockScrollView;
         public RecyclerView mStockRecyclerView;
 
         public ViewHolder(@NonNull View itemView) {

@@ -39,7 +39,7 @@
             android:background="@drawable/shape_tv_stroke_no_corners_bg"
             android:gravity="center_vertical"></LinearLayout>
 
-        <com.example.hu.mediaplayerapk.widget.CustomizeScrollView
+        <com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView
             android:id="@+id/headScrollView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content" />
             </RelativeLayout>
 
-        </com.example.hu.mediaplayerapk.widget.CustomizeScrollView>
+        </com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView>
     </LinearLayout>
 
     <View
@@ -74,6 +74,12 @@
         android:orientation="vertical">
 
 
+        <com.example.hu.mediaplayerapk.widget.CustomizeVerticalScrollView
+            android:id="@+id/sv_contain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contentRecyclerView"
                 android:layout_width="match_parent"
@@ -85,6 +91,8 @@
                 android:scrollbarThumbVertical="@color/white"
                 android:scrollbarTrackVertical="@color/black"
                 android:scrollbars="vertical" />
+        </com.example.hu.mediaplayerapk.widget.CustomizeVerticalScrollView>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"

@@ -75,7 +75,7 @@
 
         </LinearLayout>
 
-        <com.example.hu.mediaplayerapk.widget.CustomizeScrollView
+        <com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView
             android:id="@+id/stockScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -95,7 +95,7 @@
                     android:layout_height="match_parent" />
             </RelativeLayout>
 
-        </com.example.hu.mediaplayerapk.widget.CustomizeScrollView>
+        </com.example.hu.mediaplayerapk.widget.CustomizeHorizontalScrollView>
     </LinearLayout>
 
     <View
